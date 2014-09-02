@@ -7,7 +7,7 @@
 
 import urllib2
 
-countriesList = ["CAN"];
+countriesList = ["AUS"];
 mapTypes = ["adm", "adm1", "adm2", "adm3", 'adm4', "wat", "rds", "rrd"]
 
 # need to find a way to recover from 404
