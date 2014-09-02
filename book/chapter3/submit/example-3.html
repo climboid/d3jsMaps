@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>A simple square</title>
+</head>
+
+<body>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script>
+
+		var svg = d3.select("body")
+									.append("svg")
+									.attr("width", 200)
+									.attr("height", 200);
+
+			svg.selectAll('.square')
+					.data([1,2]).enter()
+						.append('rect')
+						.attr('x', 10)
+						.attr('y', 10)
+						.attr("width",50)
+						.attr("height",100);
+  </script>
+</body>
+</html>
+

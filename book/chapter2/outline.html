@@ -1,0 +1,171 @@
+<html><meta charset="UTF-8"><style>html { 
+    font-size: 100%; 
+    overflow-y: scroll; 
+    -webkit-text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%; 
+}
+
+body{
+    font-family: helvetica, arial, freesans, clean, sans-serif;
+    color: #333;
+    background-color: #fff;
+    border-color: #999999;
+    border-width: 2px;
+    line-height: 1.5;
+    margin: 2em 3em;
+    text-align:left;
+    padding: 0 100px 0 100px;
+}
+
+pre{
+    background-color: #eee;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    overflow: auto;
+}
+code{
+    background-color: #eee;
+    padding: 1px 3px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px; 
+}
+pre code {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+li p{
+    margin: 0.3em;
+}
+ul > li{
+    list-style-type: disc;
+}
+a:link, a:visited{
+    color: #33e;
+    text-decoration: none;
+}
+a:hover{
+    color: #00f;
+    text-shadow:1px 1px 2px #ccf;
+    text-decoration:underline;
+}
+h1{
+    color: #999;
+    font-weight: 400;
+    font-size: 36px;
+}
+h2{
+    border-bottom: 1px dotted #aaa;
+    margin-bottom: 1em;
+    color: #333;
+    font-size: 30px;
+}
+h3{
+    color: #666;
+    font-size: 24px;
+}
+h4 {
+    font-size: 21px;
+}
+h5 {
+    font-size: 18px;
+}
+.shadow{
+    -webkit-box-shadow:0 5px 15px #000;
+    -moz-box-shadow:0 5px 15px #000;
+    box-shadow:0 5px 15px #000;     
+}
+</style><body><h1>2 - SVG Basics</h1>
+<p>Intro</p>
+<p>Objective by the end of the chapter is to be able to
+<em> Create a group that contains group of paths and rotate-translate-scale them
+</em> Create a circle
+<em> Create a rectangle
+</em> Create a triangle
+<em> Add some text
+</em> Add some text with line breaks
+* Create a polygon that looks a little like a simple state.. maybe colorado or Utah with just commands, paths,
+    * Style it with CSS
+    * Add a "hotspot" to it with a circle
+    * Add houses on it with a rectangle</p>
+<h2>Simple Objects</h2>
+<p>Go over the basic objects and most common attributes. </p>
+<h3>Line</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line">https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line</a>
+What is the difference between a path and a line?
+<em> line caps
+</em> Attributes for a line
+    * x1,y1,x2,y2
+    * stroke
+    * stroke-width
+    * transform
+        * rotate
+* Styling</p>
+<h3>Rectangle</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect">https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect</a>
+<em> Attributes for a square
+    * x, y, width, height, rx, ry
+</em> Styling</p>
+<h3>Circle</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle">https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle</a>
+<em> Attributes for a circle
+    * cx, cy, r
+</em> Styling</p>
+<h3>Path</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths">https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths</a>
+The basics of what we will be using when working with maps
+<em> Attributes for a path
+    * commands
+    * Bezier curves
+    * Arcs
+</em> Grid System - coordinates of SVG
+    * where is x0 and where does it increase
+    * where is y0 and where does it increase
+<em> Order of objects on the screen. No z-layer
+    * top to bottom
+</em> Complexity / Simplicity algorithms
+<em> Show how long paths are more complex and lead to larger command structures and bigger DOM objects
+    * Do this via the chrome dev tools
+</em> Styling</p>
+<h2>Polygon</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon">https://developer.mozilla.org/en-US/docs/Web/SVG/Element/polygon</a>
+<em> Difference in commands from a path. 
+    * p attribute versus d attribute
+</em> Styling</p>
+<h2>Text</h2>
+<ul>
+<li>Text<ul>
+<li>Gotchas - word wrapping</li>
+<li>Injecting HTML - avoid</li>
+</ul>
+</li>
+<li>Creating curved text that follows a path</li>
+<li>Styling</li>
+</ul>
+<h2>Group or G tag</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g">https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g</a>
+<em> Encompassing items via the group tag
+    * Gotchas of using the group tag
+    * No styling, its not like a div 
+</em> attributes apply to its child elements
+* Styling</p>
+<h2>Transform, translate and scale</h2>
+<ul>
+<li>What it is and how it works</li>
+<li>What difference is there between scaling and zooming</li>
+<li>What happens when you transform and translate?<ul>
+<li>moving on the x/y grid and rotating given an angle in ... radians?</li>
+</ul>
+</li>
+</ul>
+<h2>Annex</h2>
+<ul>
+<li>Convert to PNG with popular JS libraries</li>
+<li>Visual elements that could come in handy<ul>
+<li>Gradients</li>
+<li>Filters</li>
+</ul>
+</li>
+</ul></body></html>

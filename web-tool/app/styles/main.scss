@@ -1,0 +1,32 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+body{
+	font-family: 'Lato', sans-serif;
+	padding-bottom:80px;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+}
+
+.btn{
+	font-size:2em;
+	padding:6px 30px;
+}
+
+.alert{
+	margin-top:15px;
+}
+
+map{
+	display:block;
+}
+
+path{
+	fill: none;
+  stroke: #000;
+  stroke-linejoin: round;
+}

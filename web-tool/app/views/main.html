@@ -1,0 +1,110 @@
+<h1>Welcome to auto D3 Maps</h1>
+<div class="jumbotron">
+  <p>The purpose of this app is to make building maps with D3 as easy as possible. All you have to do is type in the country you want and select what kind of map you want. 
+    We will then generate the map for you, show it to you and allow you to download the code for further customization</p>
+  <h3>Enjoy!</h3>
+</div>
+<form role="form">
+  <div class="form-group">
+    <h2>Type in a name of a country</h2>
+    <input list="countries" ng-model="selectedCountry" class="form-control input-lg" name="countries" placeholder="Type country name">
+    <datalist id="countries" ng-model="selectedCountry">
+      <select ng-model='selectedCountry' ng-options='c.value for c in countries track by c.value'></select>
+    </datalist>
+  </div>
+  <!-- <div class="text-center">
+    <button type="btn" class="btn btn-default btn-lg" ng-click="getCountrySelected()">Select Country</button>
+  </div> -->
+</form>
+<div class="row">
+  <div class="col-md-6">
+    <h2>What kind of map do you want?</h2>
+    <form role="form">
+      <!-- <div class="radio" ng-repeat="radioOption in radioList">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="radioOption.value">{{radioOption.title}}<span class="text-muted" ng-if="radioOption.desc"> - {{radioOption.desc}}</span>
+        </label>
+      </div> -->
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="_adm0"> country outline
+          <span class="text-muted"> - with 1st level of sub division</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="_adm1"> country outline
+          <span class="text-muted"> - with 1st level of sub division</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="_adm2"> country outline <span class="text-muted"> - with 2nd level of sub division</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="_adm3"> Inner division of country <span class="text-muted"> - (counties/regions)</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="_water_areas_dcw"> Inland water
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="_roads"> roads
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="_rails"> railroads
+        </label>
+      </div>
+      <!-- <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="_alt"> elevation
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="msk_alt"> elevation <span class="text-muted"> - country mask</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="_cov"> land cover
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="msk_cov"> land cover <span class="text-muted"> - country mask</span>
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="_pop"> population
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="msk_pop"> climate
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="mapkind" ng-model="mapKind" value="_wat"> gazetteer
+        </label>
+      </div> -->
+    </form>
+  </div>
+  <div class="col-md-6">
+    <div class="alert alert-danger" ng-show="showError" ng-bind="errorMsg"></div>
+    <map></map>
+  </div>
+</div>
+<div class="text-center">
+  <button class="btn btn-primary" ng-click="getCountrySelected()">Fetch the map !</button>
+  <spinner></spinner>
+</div>
