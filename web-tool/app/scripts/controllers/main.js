@@ -51,18 +51,18 @@ angular.module('appApp')
 	// find them from a different data source or, re-download them
 	//
 
-	// _.each(countrylist, function(item){
-	// 	var id = item.id.slice(0,3);
-	// 	_.each($scope.radioList, function(radio){
-	// 		$http({method: 'GET', url: ('https:' === document.location.protocol ? 'https://' : 'http://') + 'd3automaps-topojson.s3.amazonaws.com/'+id+radio.value+'.json'}).
-	// 		success(function(data, status, headers, config) {
-	// 		}).
-	// 		error(function(data, status, headers, config) {
-	// 			console.log(item);
-	// 		});
-	// 	})
+	_.each(countrylist, function(item){
+		var id = item.id.slice(0,3);
+		_.each($scope.radioList, function(radio){
+			$http({method: 'GET', url: ('https:' === document.location.protocol ? 'https://' : 'http://') + 'd3automaps-topojson.s3.amazonaws.com/'+id+radio.value+'.json'}).
+			success(function(data, status, headers, config) {
+			}).
+			error(function(data, status, headers, config) {
+				console.log(item, radio.value);
+			});
+		})
 
-	// })
+	})
 
 
 	function getDataFromAmazon(countryObj){

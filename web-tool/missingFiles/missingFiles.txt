@@ -1,0 +1,222 @@
+
+
+ { id: "MLT_Malta", value: "Malta" } "_adm1" 
+ { id: "MLT_Malta", value: "Malta" } "_adm2" 
+ { id: "MLT_Malta", value: "Malta" } "_adm3" 
+
+ { id: "MHL_Marshall Islands", value: "Marshall Islands" } "_adm1" 
+ { id: "MHL_Marshall Islands", value: "Marshall Islands" } "_adm2" 
+ { id: "MHL_Marshall Islands", value: "Marshall Islands" } "_adm3" 
+
+
+ { id: "MUS_Mauritius", value: "Mauritius" } "_adm2" 
+ { id: "MUS_Mauritius", value: "Mauritius" } "_adm3" 
+
+ { id: "MYT_Mayotte", value: "Mayotte" } "_adm1" 
+ { id: "MYT_Mayotte", value: "Mayotte" } "_adm2" 
+ { id: "MYT_Mayotte", value: "Mayotte" } "_adm3" 
+
+ { id: "FSM_Micronesia,Federated States of ", value: "Micronesia,Federated States of " } "_adm3" 
+ { id: "FSM_Micronesia,Federated States of ", value: "Micronesia,Federated States of " } "_adm2" 
+
+ { id: "MEX_Mexico", value: "Mexico" } "_adm3" 
+
+ 
+
+ { id: "MDA_Moldova", value: "Moldova" } "_adm2" 
+ { id: "MDA_Moldova", value: "Moldova" } "_adm3" 
+
+
+ { id: "NAM_Namibia", value: "Namibia" } "_adm3" 
+
+ { id: "NRU_Nauru", value: "Nauru" } "_adm2" 
+ { id: "NRU_Nauru", value: "Nauru" } "_adm3" 
+
+ { id: "NLD_Netherlands", value: "Netherlands" } "_adm3" 
+
+ { id: "ANT_Netherlands Antilles", value: "Netherlands Antilles" } "_adm2" 
+ { id: "ANT_Netherlands Antilles", value: "Netherlands Antilles" } "_adm3" 
+
+ { id: "NCL_New Caledonia", value: "New Caledonia" } "_adm3" 
+
+ { id: "NIC_Nicaragua", value: "Nicaragua" } "_adm3" 
+
+ { id: "NGA_Nigeria", value: "Nigeria" } "_adm3" 
+
+ { id: "NIU_Niue", value: "Niue" } "_adm2" 
+ { id: "NIU_Niue", value: "Niue" } "_adm3" 
+
+ { id: "NFK_Norfolk Island", value: "Norfolk Island" } "_adm1" 
+ { id: "NFK_Norfolk Island", value: "Norfolk Island" } "_adm2" 
+ { id: "NFK_Norfolk Island", value: "Norfolk Island" } "_adm3" 
+
+ { id: "PRK_North Korea", value: "North Korea" } "_adm3" 
+
+ { id: "MNP_Northern Mariana Islands", value: "Northern Mariana Islands" } "_adm2" 
+ { id: "MNP_Northern Mariana Islands", value: "Northern Mariana Islands" } "_adm3" 
+
+ { id: "NOR_Norway", value: "Norway" } "_adm3" 
+
+ { id: "OMN_Oman", value: "Oman" } "_adm3" 
+
+ { id: "PLW_Palau", value: "Palau" } "_adm2" 
+ { id: "PLW_Palau", value: "Palau" } "_adm3" 
+
+ { id: "PSE_Palestina", value: "Palestina" } "_adm3" 
+
+ { id: "PNG_Papua New Guinea", value: "Papua New Guinea" } "_adm3" 
+
+ { id: "PRY_Paraguay", value: "Paraguay" } "_adm3" 
+
+ { id: "PCN_Pitcairn Islands", value: "Pitcairn Islands" } "_adm1" 
+ { id: "PCN_Pitcairn Islands", value: "Pitcairn Islands" } "_adm2" 
+ { id: "PCN_Pitcairn Islands", value: "Pitcairn Islands" } "_adm3" 
+
+ { id: "POL_Poland", value: "Poland" } "_adm3" 
+
+ { id: "PRI_Puerto Rico", value: "Puerto Rico" } "_adm2" 
+ { id: "PRI_Puerto Rico", value: "Puerto Rico" } "_adm3" 
+
+ { id: "QAT_Qatar", value: "Qatar" } "_adm2" 
+ { id: "QAT_Qatar", value: "Qatar" } "_adm3" 
+
+ { id: "REU_Reunion", value: "Reunion" } "_adm3" 
+
+ { id: "RUS_Russian Federation", value: "Russian Federation" } "_adm3" 
+
+ { id: "RWA_Rwanda", value: "Rwanda" } "_adm3" 
+
+ { id: "SHN_Saint Helena", value: "Saint Helena" } "_adm2" 
+ { id: "SHN_Saint Helena", value: "Saint Helena" } "_adm3" 
+
+ { id: "KNA_Saint Kitts and Nevis", value: "Saint Kitts and Nevis" } "_adm2" 
+ { id: "KNA_Saint Kitts and Nevis", value: "Saint Kitts and Nevis" } "_adm3" 
+
+ { id: "SPM_Saint Pierre and Miquelon", value: "Saint Pierre and Miquelon" } "_adm3" 
+ { id: "SPM_Saint Pierre and Miquelon", value: "Saint Pierre and Miquelon" } "_adm2" 
+
+ { id: "VCT_Saint Vincent and the Grenadines", value: "Saint Vincent and the Grenadines" } "_adm2" 
+ { id: "VCT_Saint Vincent and the Grenadines", value: "Saint Vincent and the Grenadines" } "_adm3" 
+
+ { id: "WSM_Samoa", value: "Samoa" } "_adm3" 
+
+ { id: "SMR_San Marino", value: "San Marino" } "_adm2" 
+ { id: "SMR_San Marino", value: "San Marino" } "_adm3" 
+
+ { id: "LCA_Santa Lucia", value: "Santa Lucia" } "_adm2" 
+ { id: "LCA_Santa Lucia", value: "Santa Lucia" } "_adm3" 
+
+ { id: "STP_Sao Tome and Principe", value: "Sao Tome and Principe" } "_adm2" 
+ { id: "STP_Sao Tome and Principe", value: "Sao Tome and Principe" } "_adm3" 
+
+ { id: "SAU_Saudi Arabia", value: "Saudi Arabia" } "_adm2" 
+ { id: "SAU_Saudi Arabia", value: "Saudi Arabia" } "_adm3" 
+
+ { id: "SRB_Serbia", value: "Serbia" } "_adm3" 
+
+ { id: "SYC_Seychelles", value: "Seychelles" } "_adm1" 
+ { id: "SYC_Seychelles", value: "Seychelles" } "_adm2" 
+ { id: "SYC_Seychelles", value: "Seychelles" } "_adm3" 
+
+ { id: "SGP_Singapore", value: "Singapore" } "_adm1" 
+ { id: "SGP_Singapore", value: "Singapore" } "_adm2" 
+ { id: "SGP_Singapore", value: "Singapore" } "_adm3" 
+
+ { id: "SVK_Slovakia", value: "Slovakia" } "_adm3" 
+ { id: "SVN_Slovenia", value: "Slovenia" } "_adm3" 
+
+ { id: "SLB_Solomon Islands", value: "Solomon Islands" } "_adm2" 
+ { id: "SLB_Solomon Islands", value: "Solomon Islands" } "_adm3" 
+
+ { id: "SOM_Somalia", value: "Somalia" } "_adm3" 
+
+ { id: "ZAF_South Africa", value: "South Africa" } "_adm3" 
+
+ { id: "SGS_South Georgia and the South Sandwich Islands", value: "South Georgia and the South Sandwich Islands" } "_adm1" 
+ { id: "SGS_South Georgia and the South Sandwich Islands", value: "South Georgia and the South Sandwich Islands" } "_adm2" 
+ { id: "SGS_South Georgia and the South Sandwich Islands", value: "South Georgia and the South Sandwich Islands" } "_adm3" 
+
+ { id: "KOR_South Korea", value: "South Korea" } "_adm3" 
+
+ { id: "LKA_Sri Lanka", value: "Sri Lanka" } "_adm3" 
+
+ { id: "SUR_Suriname", value: "Suriname" } "_adm3" 
+
+ { id: "SJM_Svalbard and Jan Mayen", value: "Svalbard and Jan Mayen" } "_adm2" 
+ { id: "SJM_Svalbard and Jan Mayen", value: "Svalbard and Jan Mayen" } "_adm3" 
+
+ { id: "SWZ_Swaziland", value: "Swaziland" } "_adm2" 
+ { id: "SWZ_Swaziland", value: "Swaziland" } "_adm3" 
+
+ { id: "SWE_Sweden", value: "Sweden" } "_adm3" 
+
+ { id: "CHE_Switzerland", value: "Switzerland" } "_adm2" 
+ { id: "CHE_Switzerland", value: "Switzerland" } "_adm3" 
+
+ { id: "SYR_Syria", value: "Syria" } "_adm2" 
+ { id: "SYR_Syria", value: "Syria" } "_adm3" 
+
+ { id: "TWN_Taiwan", value: "Taiwan" } "_adm3" 
+
+ { id: "TLS_Timor-Leste", value: "Timor-Leste" } "_adm3" 
+
+ { id: "TGO_Togo", value: "Togo" } "_adm3" 
+
+ { id: "TKL_Tokelau", value: "Tokelau" } "_adm2" 
+ { id: "TKL_Tokelau", value: "Tokelau" } "_adm3" 
+
+ { id: "TON_Tonga", value: "Tonga" } "_adm2" 
+ { id: "TON_Tonga", value: "Tonga" } "_adm3" 
+
+ { id: "TUN_Tunisia", value: "Tunisia" } "_adm3" 
+
+ { id: "TUR_Turkey", value: "Turkey" } "_adm2" 
+ { id: "TUR_Turkey", value: "Turkey" } "_adm3" 
+
+ { id: "TKM_Turkmenistan", value: "Turkmenistan" } "_adm2" 
+ { id: "TKM_Turkmenistan", value: "Turkmenistan" } "_adm3" 
+
+ { id: "TCA_Turks and Caicos Islands", value: "Turks and Caicos Islands" } "_adm1" 
+ { id: "TCA_Turks and Caicos Islands", value: "Turks and Caicos Islands" } "_adm2" 
+ { id: "TCA_Turks and Caicos Islands", value: "Turks and Caicos Islands" } "_adm3" 
+
+ { id: "TUV_Tuvalu", value: "Tuvalu" } "_adm2" 
+ { id: "TUV_Tuvalu", value: "Tuvalu" } "_adm3" 
+
+ { id: "UKR_Ukraine", value: "Ukraine" } "_adm3" 
+
+ { id: "ARE_United Arab Emirates", value: "United Arab Emirates" } "_adm2" 
+ { id: "ARE_United Arab Emirates", value: "United Arab Emirates" } "_adm3" 
+
+ { id: "GBR_United Kingdom", value: "United Kingdom" } "_adm3" 
+
+ { id: "USA_United States", value: "United States" } "_adm3" 
+
+ { id: "UMI_United States Minor Outlying Island", value: "United States Minor Outlying Island" } "_adm2" 
+ { id: "UMI_United States Minor Outlying Island", value: "United States Minor Outlying Island" } "_adm3" 
+
+ { id: "URY_Uruguay", value: "Uruguay" } "_adm3" 
+
+ { id: "UZB_Uzbekistan", value: "Uzbekistan" } "_adm3" 
+ { id: "UZB_Uzbekistan", value: "Uzbekistan" } "_adm2" 
+
+ { id: "VUT_Vanuatu", value: "Vanuatu" } "_adm2" 
+ { id: "VUT_Vanuatu", value: "Vanuatu" } "_adm3" 
+
+ { id: "VAT_Vatican", value: "Vatican" } "_adm1" 
+ { id: "VAT_Vatican", value: "Vatican" } "_adm2" 
+ { id: "VAT_Vatican", value: "Vatican" } "_adm3" 
+
+ { id: "VIR_Virgin Islands,U.S", value: "Virgin Islands,U.S" } "_adm2" 
+ { id: "VIR_Virgin Islands,U.S", value: "Virgin Islands,U.S" } "_adm3" 
+
+ { id: "WLF_Wallis and Futuna", value: "Wallis and Futuna" } "_adm3" 
+
+ { id: "ESH_Western Sahara", value: "Western Sahara" } "_adm2" 
+ { id: "ESH_Western Sahara", value: "Western Sahara" } "_adm3" 
+
+ { id: "YEM_Yemen", value: "Yemen" } "_adm3" 
+
+ { id: "ZMB_Zambia", value: "Zambia" } "_adm3" 
+
+ { id: "ZWE_Zimbabwe", value: "Zimbabwe" } "_adm3" 
