@@ -7,6 +7,8 @@ angular.module('appApp')
 
 	$scope.toggleCode = false;
 
+	$scope.test = "helloWorld";
+
 
 
 	//

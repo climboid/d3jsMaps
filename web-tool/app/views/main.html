@@ -119,7 +119,7 @@
 &lt;body&gt;
  &lt;div id="map"&gt;&lt;/div&gt;
  &lt;script src="http://d3js.org/d3.v3.min.js"&gt;&lt;/script&gt;
- &lt;script src=”http://d3js.org/topojson.v1.min.js”&gt;&lt;/script&gt;
+ &lt;script src="http://d3js.org/topojson.v1.min.js"&gt;&lt;/script&gt;
  &lt;script&gt;
   var height = 469;
   var width = 750;
@@ -129,13 +129,13 @@
 
   d3.json('mapData.json', function(country) {
     var b, s, t;
-    var countryTopo = topojson.feature(country, country.objects.[typeOfMapv] change);
+    var countryTopo = topojson.feature(country, country.objects.{{countryObj.id}}{{mapKind}});
     projection.scale(1).translate([0, 0]);
     b = path.bounds(countryTopo);
     s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
     t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
     projection.scale(s).translate(t);
-    var features = topojson.feature(country, country.objects[typeOfMap]).features;
+    var features = topojson.feature(country, country.objects.{{countryObj.id}}{{mapKind}}).features;
     svg.append('g')
       .attr('class', 'boundary')
       .selectAll('path')
