@@ -79,7 +79,7 @@ angular.module('appApp')
 		if ($scope.loading) return;
 
 		$scope.loading = true;
-		$scope.toggleCode = false;
+		$scope.toggleCode = false;	
 		$("svg").remove();
 		$http({method: 'GET', url: ('https:' === document.location.protocol ? 'https://' : 'http://') + 'd3automaps-topojson.s3.amazonaws.com/'+countryObj.id+$scope.mapKind+'.json'}).
 			success(function(data, status, headers, config) {
@@ -103,6 +103,8 @@ angular.module('appApp')
 		$scope.countryObj = _.find($scope.countries, function(country){ return country.value === $scope.selectedCountry; });
 		$scope.countryObj.id = $scope.countryObj.id.slice(0,3);
 		$scope.showError = false;
+		$scope.countryObj.id === 'USA' ? $scope.countryProjection = 'd3.geo.albersUsa()' :  $scope.countryProjection = 'd3.geo.mercator()';
+		console.log($scope.countryObj);
 		getDataFromAmazon($scope.countryObj);
 	};
 

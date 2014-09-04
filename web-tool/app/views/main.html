@@ -123,10 +123,10 @@
  &lt;script&gt;
   var height = 469;
   var width = 750;
-  var projection = d3.geo.mercator();
+  var projection = {{countryProjection}};
   var path = d3.geo.path().projection(projection);
-  var svg = d3.select("#map").append("svg").attr("width", width).attr("height", height);
 
+  var svg = d3.select("#map").append("svg").attr("width", width).attr("height", height);
   d3.json('mapData.json', function(country) {
     var b, s, t;
     var countryTopo = topojson.feature(country, country.objects.{{countryObj.id}}{{mapKind}});
