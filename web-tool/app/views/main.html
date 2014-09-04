@@ -1,24 +1,21 @@
 <h1>Welcome to auto D3 Maps</h1>
-<div class="well">
+<div class="well" ng-if="!hasUsed">
   <p>The purpose of this app is to make building maps with D3 as easy as possible. All you have to do is type in the country you want and select what kind of map you want. 
     We will then generate the map for you, show it to you and allow you to download the code for further customization</p>
   <h3>Enjoy!</h3>
 </div>
-<form role="form">
-  <div class="form-group">
-    <h2>Type in a name of a country</h2>
-    <input list="countries" ng-model="selectedCountry" class="form-control input-lg" name="countries" placeholder="Type country name">
-    <datalist id="countries" ng-model="selectedCountry">
-      <select ng-model='selectedCountry' ng-options='c.value for c in countries track by c.value'></select>
-    </datalist>
-  </div>
-  <!-- <div class="text-center">
-    <button type="btn" class="btn btn-default btn-lg" ng-click="getCountrySelected()">Select Country</button>
-  </div> -->
-</form>
 <div class="row">
-  <div class="col-md-6">
-    <h2>What kind of map do you want?</h2>
+  <div class="col-xs-5">
+    <form role="form">
+      <div class="form-group">
+        <h2 ng-if="!hasUsed" class="noTopMargin">Type in a name of a country</h2>
+        <input list="countries" ng-model="selectedCountry" class="form-control input-lg" name="countries" placeholder="Type country name">
+        <datalist id="countries" ng-model="selectedCountry">
+          <select ng-model='selectedCountry' ng-options='c.value for c in countries track by c.value'></select>
+        </datalist>
+      </div>
+    </form>
+    <h2 class="noTopMargin">What kind of map do you want?</h2>
     <form role="form">
       <div class="radio">
         <label>
@@ -94,7 +91,7 @@
       </div> -->
     </form>
   </div>
-  <div class="col-md-6">
+  <div class="col-xs-7">
     <div class="alert alert-danger" ng-show="showError" ng-bind="errorMsg"></div>
     <div class="spinner" ng-show="loading">
       <div class="double-bounce1"></div>
@@ -104,14 +101,13 @@
   </div>
 </div>
 <div class="text-center">
-  <button class="btn btn-primary" ng-click="getCountrySelected()" ng-disabled="fetching">Fetch the map !</button>
+  <button class="btn btn-primary" ng-click="getCountrySelected()" ng-disabled="loading">Fetch the map !</button>
 </div>
-<div class="row" ng-if="!fetching">
+<div class="row" id="codeTemplates" ng-if="toggleCode">
   <div class="col-xs-6">
     <h3>index.html</h3>
     <pre>
-<code language="html">
-&lt;!DOCTYPE html&gt;
+<code language="html">&lt;!DOCTYPE html&gt;
 &lt;meta charset="utf-8"&gt;
 &lt;style&gt;
  .boundary{
@@ -132,17 +128,13 @@
   var svg = d3.select("#map").append("svg").attr("width", width).attr("height", height);
 
   d3.json('mapData.json', function(country) {
-    
     var b, s, t;
     var countryTopo = topojson.feature(country, country.objects.[typeOfMapv] change);
     projection.scale(1).translate([0, 0]);
-
     b = path.bounds(countryTopo);
     s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
     t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
-
     projection.scale(s).translate(t);
-
     var features = topojson.feature(country, country.objects[typeOfMap]).features;
     svg.append('g')
       .attr('class', 'boundary')
@@ -152,16 +144,13 @@
       .attr('d', path);
   });
  &lt;/script&gt;
-&lt;/body&gt;
-</code>
+&lt;/body&gt;</code>
     </pre>
   </div>
   <div class="col-xs-6">
     <h3>mapData.json</h3>
-    <pre>
-<code language="javascript">
-{{mapData}}
-</code>
+    <pre class="dataBox">
+<code language="javascript">{{mapData}}</code>
     </pre>
   </div>
 </div>

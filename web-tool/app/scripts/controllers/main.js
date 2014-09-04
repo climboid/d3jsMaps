@@ -1,11 +1,13 @@
 'use strict';
 
 angular.module('appApp')
-.controller('MainCtrl', function ($scope, countrylist, $http) {
+.controller('MainCtrl', function ($scope, countrylist, $http, $window) {
 
 	$scope.countries = countrylist;
 
-	$scope.downloadCode = true;
+	$scope.toggleCode = false;
+
+
 
 	//
 	// not all countries have the missing properties from DIVA, need to make a new script
@@ -68,26 +70,26 @@ angular.module('appApp')
 
 	function hideUIHelpers () {
 		$scope.loading = false;
-		$scope.fetching = false;
-		$scope.downloadCode = false;
 	}
 
 
 	function getDataFromAmazon(countryObj){
-		if ($scope.fetching) return;
+		if ($scope.loading) return;
 
 		$scope.loading = true;
-		$scope.fetching = true;
+		$scope.toggleCode = false;
+		$("svg").remove();
 		$http({method: 'GET', url: ('https:' === document.location.protocol ? 'https://' : 'http://') + 'd3automaps-topojson.s3.amazonaws.com/'+countryObj.id+$scope.mapKind+'.json'}).
 			success(function(data, status, headers, config) {
 				hideUIHelpers();
-				console.log('data',data);
 				$scope.mapData = data;
-				$scope.downloadCode = false;
+				$scope.toggleCode = true;
+				$scope.hasUsed = true;
 			}).
 			error(function(data, status, headers, config) {
 				hideUIHelpers();
 				$scope.showError = true;
+				$scope.toggleCode = false;
 				$scope.mapData = [0];
 				$scope.errorMsg = 'Sorry, we are still working on that one, try another country';
 			});
