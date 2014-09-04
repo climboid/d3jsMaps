@@ -20,11 +20,6 @@
   <div class="col-md-6">
     <h2>What kind of map do you want?</h2>
     <form role="form">
-      <!-- <div class="radio" ng-repeat="radioOption in radioList">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="radioOption.value">{{radioOption.title}}<span class="text-muted" ng-if="radioOption.desc"> - {{radioOption.desc}}</span>
-        </label>
-      </div> -->
       <div class="radio">
         <label>
           <input type="radio" name="mapkind" ng-model="mapKind" value="_adm0"> country outline
@@ -101,10 +96,14 @@
   </div>
   <div class="col-md-6">
     <div class="alert alert-danger" ng-show="showError" ng-bind="errorMsg"></div>
+    <div class="spinner" ng-show="loading">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
     <map></map>
   </div>
 </div>
 <div class="text-center">
-  <button class="btn btn-primary" ng-click="getCountrySelected()">Fetch the map !</button>
+  <button class="btn btn-primary" ng-click="getCountrySelected()" ng-disabled="fetching">Fetch the map !</button>
   <spinner></spinner>
 </div>

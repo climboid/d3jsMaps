@@ -4,14 +4,13 @@ angular.module('appApp').directive('map', function () {
 	return {
 		restrict: 'E',
 		link: function postLink(scope, element, attrs) {
-			console.log('attrs',attrs);
 			scope.$watch('mapData', function() {
 				if(scope.mapData){
 					$(element[0]).empty();
 					var width = $(element[0]).parent().width(),
 					height = 384;
 
-					var projection = d3.geo.mercator();
+					var projection = scope.selectedCountry === 'United States' ? d3.geo.albersUsa() : d3.geo.mercator();
 
 					var path = d3.geo.path()
 					.projection(projection);
@@ -40,7 +39,6 @@ angular.module('appApp').directive('map', function () {
 					.translate(t);
 
 					var features = topojson.feature(country, country.objects[typeOfMap]).features;
-					console.log('features',features);
 					svg.append('g')
 					.attr('class', 'boundary')
 					.selectAll('path')

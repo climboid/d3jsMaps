@@ -50,29 +50,32 @@ angular.module('appApp')
 	// It allows for easy finding of what countries we don't have in order to 
 	// find them from a different data source or, re-download them
 	//
+	// _.each(countrylist, function(item){
+	// 	var id = item.id.slice(0,3);
+	// 	_.each($scope.radioList, function(radio){
+	// 		$http({method: 'GET', url: ('https:' === document.location.protocol ? 'https://' : 'http://') + 'd3automaps-topojson.s3.amazonaws.com/'+id+radio.value+'.json'}).
+	// 		success(function(data, status, headers, config) {
+	// 		}).
+	// 		error(function(data, status, headers, config) {
+	// 			console.log(item, radio.value);
+	// 		});
+	// 	})
 
-	_.each(countrylist, function(item){
-		var id = item.id.slice(0,3);
-		_.each($scope.radioList, function(radio){
-			$http({method: 'GET', url: ('https:' === document.location.protocol ? 'https://' : 'http://') + 'd3automaps-topojson.s3.amazonaws.com/'+id+radio.value+'.json'}).
-			success(function(data, status, headers, config) {
-			}).
-			error(function(data, status, headers, config) {
-				console.log(item, radio.value);
-			});
-		})
-
-	})
+	// })
 
 
 	function getDataFromAmazon(countryObj){
+		if ($scope.fetching) return;
+		
+		$scope.loading = $scope.fetching = true;
 		$http({method: 'GET', url: ('https:' === document.location.protocol ? 'https://' : 'http://') + 'd3automaps-topojson.s3.amazonaws.com/'+countryObj.id+$scope.mapKind+'.json'}).
 			success(function(data, status, headers, config) {
-				console.log(config, headers, status);
+				$scope.loading = $scope.fetching = false;
 				$scope.mapData = data;
 			}).
 			error(function(data, status, headers, config) {
-				console.log(data, status, headers, config);
+				$scope.loading = false;
+				$scope.fetching = false;
 				$scope.showError = true;
 				$scope.mapData = [0];
 				$scope.errorMsg = 'Sorry, we are still working on that one, try another country';
