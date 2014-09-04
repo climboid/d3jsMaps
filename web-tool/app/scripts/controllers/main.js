@@ -5,6 +5,8 @@ angular.module('appApp')
 
 	$scope.countries = countrylist;
 
+	$scope.downloadCode = true;
+
 	//
 	// not all countries have the missing properties from DIVA, need to make a new script
 	// to not fail on 404 and continue fetching in order to update the missing files
@@ -64,18 +66,27 @@ angular.module('appApp')
 	// })
 
 
+	function hideUIHelpers () {
+		$scope.loading = false;
+		$scope.fetching = false;
+		$scope.downloadCode = false;
+	}
+
+
 	function getDataFromAmazon(countryObj){
 		if ($scope.fetching) return;
-		
-		$scope.loading = $scope.fetching = true;
+
+		$scope.loading = true;
+		$scope.fetching = true;
 		$http({method: 'GET', url: ('https:' === document.location.protocol ? 'https://' : 'http://') + 'd3automaps-topojson.s3.amazonaws.com/'+countryObj.id+$scope.mapKind+'.json'}).
 			success(function(data, status, headers, config) {
-				$scope.loading = $scope.fetching = false;
+				hideUIHelpers();
+				console.log('data',data);
 				$scope.mapData = data;
+				$scope.downloadCode = false;
 			}).
 			error(function(data, status, headers, config) {
-				$scope.loading = false;
-				$scope.fetching = false;
+				hideUIHelpers();
 				$scope.showError = true;
 				$scope.mapData = [0];
 				$scope.errorMsg = 'Sorry, we are still working on that one, try another country';
@@ -83,6 +94,7 @@ angular.module('appApp')
 	}
 
 	$scope.getCountrySelected = function(){
+		$scope.mapData = [];
 		$scope.mapOptions = true;
 		$scope.countryObj = _.find($scope.countries, function(country){ return country.value === $scope.selectedCountry; });
 		$scope.countryObj.id = $scope.countryObj.id.slice(0,3);

@@ -17,6 +17,12 @@ h1, h2, h3, h4, h5, h6{
 	padding:6px 30px;
 }
 
+.btn-warning {
+	&:disabled{
+		opacity: 0;
+	}
+}
+
 .alert{
 	margin-top:15px;
 }
@@ -31,6 +37,11 @@ path{
   stroke-linejoin: round;
 }
 
+pre {
+	code {
+		font-size: 0.875em;
+	}
+}
 .spinner {
   width: 40px;
   height: 40px;

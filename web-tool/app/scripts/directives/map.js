@@ -23,30 +23,28 @@ angular.module('appApp').directive('map', function () {
 					var typeOfMap = scope.countryObj.id + scope.mapKind;
 					var country = scope.mapData;
 
-					// d3.json('/data/allOfEurope.json', function(error, europe) {
-					var selectedCountry = topojson.feature(country, country.objects[typeOfMap]);
+					
+					if (country.objects) {
+						var selectedCountry = topojson.feature(country, country.objects[typeOfMap]);
 
-					projection
-					.scale(1)
-					.translate([0,0]);
+						projection.scale(1).translate([0,0]);
 
-					var b = path.bounds(selectedCountry),
-					s = 0.95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
-					t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+						var b = path.bounds(selectedCountry),
+						s = 0.95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
+						t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
 
-					projection
-					.scale(s)
-					.translate(t);
+						projection.scale(s).translate(t);
 
-					var features = topojson.feature(country, country.objects[typeOfMap]).features;
-					svg.append('g')
-					.attr('class', 'boundary')
-					.selectAll('path')
-					.data(features)
-					.enter().append('path')
-					.attr('d', path);
+						var features = topojson.feature(country, country.objects[typeOfMap]).features;
+						svg.append('g')
+							.attr('class', 'boundary')
+							.selectAll('path')
+							.data(features)
+							.enter().append('path')
+							.attr('d', path);	
+					}
+					
 
-					// });
 				}
 			});
 		}
