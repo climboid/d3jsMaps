@@ -46,6 +46,15 @@ pre {
 		font-size: 0.875em;
 	}
 }
+
+.radio{
+  text-transform: capitalize;
+  .text-muted{
+    display: block;
+  }
+}
+
+
 .spinner {
 	position: absolute;
   width: 40px;

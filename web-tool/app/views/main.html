@@ -16,88 +16,73 @@
       </div>
     </form>
     <h2 class="noTopMargin">What kind of map do you want?</h2>
-    <form role="form">
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="_adm0"> country outline
-          <span class="text-muted"> - with 1st level of sub division</span>
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="_adm1"> country outline 2
-          <span class="text-muted"> - with 1st level of sub division</span>
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="_adm2"> country outline <span class="text-muted"> - with 2nd level of sub division</span>
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="_adm3"> Inner division of country <span class="text-muted"> - (counties/regions)</span>
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="_water_areas_dcw"> Inland water
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="_roads"> roads
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="_rails"> railroads
-        </label>
-      </div>
-      <!-- <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="_alt"> elevation
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="msk_alt"> elevation <span class="text-muted"> - country mask</span>
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="_cov"> land cover
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="msk_cov"> land cover <span class="text-muted"> - country mask</span>
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="_pop"> population
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="msk_pop"> climate
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="_wat"> gazetteer
-        </label>
-      </div> -->
-    </form>
   </div>
-  <div class="col-xs-7">
-    <div class="alert alert-danger" ng-show="showError" ng-bind="errorMsg"></div>
-    <div class="spinner" ng-show="loading">
-      <div class="double-bounce1"></div>
-      <div class="double-bounce2"></div>
+</div>
+<div class="row">
+  <form role="form">
+    <div class="row">
+      <div class="col-xs-2">
+        <div class="radio">
+          <label>
+            <input type="radio" name="mapkind" ng-model="mapKind" value="_adm0"> country outline
+            <span class="text-muted">with 1st level of sub division</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <div class="radio">
+          <label>
+            <input type="radio" name="mapkind" ng-model="mapKind" value="_adm1"> country outline 2
+            <span class="text-muted">with 1st level of sub division</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <div class="radio">
+          <label>
+            <input type="radio" name="mapkind" ng-model="mapKind" value="_adm2"> country outline <span class="text-muted">with 2nd level of sub division</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <div class="radio">
+          <label>
+            <input type="radio" name="mapkind" ng-model="mapKind" value="_adm3"> Inner division of country <span class="text-muted">(counties/regions)</span>
+          </label>
+        </div>
+      </div>
+      <div class="col-xs-1">
+        <div class="radio">
+          <label>
+            <input type="radio" name="mapkind" ng-model="mapKind" value="_water_areas_dcw"> Inland water
+          </label>
+        </div>
+      </div>
+      <div class="col-xs-1">
+        <div class="radio">
+          <label>
+            <input type="radio" name="mapkind" ng-model="mapKind" value="_roads"> roads
+          </label>
+        </div>
+      </div>
+      <div class="col-xs-2">
+        <div class="radio">
+          <label>
+            <input type="radio" name="mapkind" ng-model="mapKind" value="_rails"> railroads
+          </label>
+        </div>
+      </div>
     </div>
-    <map></map>
+  </form>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+      <div class="alert alert-danger" ng-show="showError" ng-bind="errorMsg"></div>
+      <div class="spinner" ng-show="loading">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+      <map></map>
   </div>
 </div>
 <div class="text-center">
