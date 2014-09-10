@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appApp')
-.controller('MainCtrl', function ($scope, countrylist, $http, $window, $timeout) {
+.controller('MainCtrl', function ($scope, countrylist, $http) {
 
 	$scope.countries = countrylist;
 
@@ -60,12 +60,6 @@ angular.module('appApp')
 
 	// })
 
-	function scrollToCode () {
-		$timeout(function() {
-			$('html, body').animate({ scrollTop: '300px' });
-		}, 1000);
-	}
-
 	function getDataFromAmazon(countryObj){
 		if ($scope.loading) {
 			return;
@@ -79,7 +73,6 @@ angular.module('appApp')
 				$scope.loading = false;
 				$scope.mapData = data;
 				$scope.toggleCode = $scope.hasUsed = true;
-				scrollToCode();
 			}).
 			error(function() {
 				$scope.loading = false;

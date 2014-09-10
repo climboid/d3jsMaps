@@ -8,7 +8,7 @@ angular.module('appApp').directive('map', function () {
 				if(scope.mapData){
 					$(element[0]).empty();
 					var width = $(element[0]).parent().width(),
-					height = 484;
+					height = 384;
 
 					var projection = scope.selectedCountry === 'United States' ? d3.geo.albersUsa() : d3.geo.mercator();
 

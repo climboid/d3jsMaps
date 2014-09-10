@@ -25,6 +25,14 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 @import "sass-bootstrap/lib/utilities";
 @import "sass-bootstrap/lib/responsive-utilities";
 
+
+body{
+  background: url(/images/bg-slide3.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 body{
 	font-family: 'Lato', sans-serif;
 	padding-bottom:80px;
