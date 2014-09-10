@@ -3,7 +3,7 @@
 angular.module('appApp').directive('map', function () {
 	return {
 		restrict: 'E',
-		link: function postLink(scope, element, attrs) {
+		link: function postLink(scope, element) {
 			scope.$watch('mapData', function() {
 				if(scope.mapData){
 					$(element[0]).empty();
@@ -30,7 +30,7 @@ angular.module('appApp').directive('map', function () {
 						projection.scale(1).translate([0,0]);
 
 						var b = path.bounds(selectedCountry),
-						s = .99 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
+						s = 0.99 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
 						t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
 
 						projection.scale(s).translate(t);
@@ -41,7 +41,7 @@ angular.module('appApp').directive('map', function () {
 							.selectAll('path')
 							.data(features)
 							.enter().append('path')
-							.attr('d', path);	
+							.attr('d', path);
 					}
 					
 

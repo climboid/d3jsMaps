@@ -62,10 +62,9 @@ angular.module('appApp')
 
 	function scrollToCode () {
 		$timeout(function() {
-      $("html, body").animate({ scrollTop: "300px" });
-  	}, 1000);
+			$('html, body').animate({ scrollTop: '300px' });
+		}, 1000);
 	}
-
 
 	function getDataFromAmazon(countryObj){
 		if ($scope.loading) {
@@ -73,16 +72,16 @@ angular.module('appApp')
 		}
 
 		$scope.loading = true;
-		$scope.toggleCode = false;	
-		$("svg").remove();
+		$scope.toggleCode = false;
+		$('svg').remove();
 		$http({method: 'GET', url: ('https:' === document.location.protocol ? 'https://' : 'http://') + 'd3automaps-topojson.s3.amazonaws.com/'+countryObj.id+$scope.mapKind+'.json'}).
-			success(function(data, status, headers, config) {
+			success(function(data) {
 				$scope.loading = false;
 				$scope.mapData = data;
 				$scope.toggleCode = $scope.hasUsed = true;
 				scrollToCode();
 			}).
-			error(function(data, status, headers, config) {
+			error(function() {
 				$scope.loading = false;
 				$scope.showError = true;
 				$scope.toggleCode = false;
@@ -91,14 +90,21 @@ angular.module('appApp')
 			});
 	}
 
+	function setProjection () {
+		if ($scope.countryObj.id === 'USA') {
+			$scope.countryProjection = 'd3.geo.albersUsa()';
+		} else {
+			$scope.countryProjection = 'd3.geo.mercator()';
+		}
+	}
+
 	$scope.getCountrySelected = function(){
 		$scope.mapData = [];
 		$scope.mapOptions = true;
 		$scope.countryObj = _.find($scope.countries, function(country){ return country.value === $scope.selectedCountry; });
 		$scope.countryObj.id = $scope.countryObj.id.slice(0,3);
 		$scope.showError = false;
-		$scope.countryObj.id === 'USA' ? $scope.countryProjection = 'd3.geo.albersUsa()' :  $scope.countryProjection = 'd3.geo.mercator()';
-		console.log($scope.countryObj);
+		setProjection();
 		getDataFromAmazon($scope.countryObj);
 	};
 
