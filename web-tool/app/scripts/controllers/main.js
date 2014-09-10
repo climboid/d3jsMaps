@@ -1,20 +1,11 @@
 'use strict';
 
 angular.module('appApp')
-.controller('MainCtrl', function ($scope, countrylist, $http, $window) {
+.controller('MainCtrl', function ($scope, countrylist, $http, $window, $timeout) {
 
 	$scope.countries = countrylist;
 
 	$scope.toggleCode = false;
-
-	$scope.test = "helloWorld";
-
-
-
-	//
-	// not all countries have the missing properties from DIVA, need to make a new script
-	// to not fail on 404 and continue fetching in order to update the missing files
-	// 
 	
 	$scope.radioList = [{
 		value : '_adm0',
@@ -69,27 +60,30 @@ angular.module('appApp')
 
 	// })
 
-
-	function hideUIHelpers () {
-		$scope.loading = false;
+	function scrollToCode () {
+		$timeout(function() {
+      $("html, body").animate({ scrollTop: "300px" });
+  	}, 1000);
 	}
 
 
 	function getDataFromAmazon(countryObj){
-		if ($scope.loading) return;
+		if ($scope.loading) {
+			return;
+		}
 
 		$scope.loading = true;
 		$scope.toggleCode = false;	
 		$("svg").remove();
 		$http({method: 'GET', url: ('https:' === document.location.protocol ? 'https://' : 'http://') + 'd3automaps-topojson.s3.amazonaws.com/'+countryObj.id+$scope.mapKind+'.json'}).
 			success(function(data, status, headers, config) {
-				hideUIHelpers();
+				$scope.loading = false;
 				$scope.mapData = data;
-				$scope.toggleCode = true;
-				$scope.hasUsed = true;
+				$scope.toggleCode = $scope.hasUsed = true;
+				scrollToCode();
 			}).
 			error(function(data, status, headers, config) {
-				hideUIHelpers();
+				$scope.loading = false;
 				$scope.showError = true;
 				$scope.toggleCode = false;
 				$scope.mapData = [0];
