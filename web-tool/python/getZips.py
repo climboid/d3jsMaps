@@ -7,7 +7,7 @@
 
 import urllib2
 
-countriesList = ["ITA"];
+countriesList = ["FLK"];
 mapTypes = ["adm", "wat", "rds", "rrd"]
 
 # need to find a way to recover from 404
