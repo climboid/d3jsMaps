@@ -45,6 +45,15 @@ h1, h2, h3, h4, h5, h6{
   color:#333;
 }
 
+label{
+  &.disabled{
+    opacity:0.2;
+    .text-muted{
+      opacity:0.2;
+    }
+  }
+}
+
 .noTopMargin{
 	margin-top:0;
 }

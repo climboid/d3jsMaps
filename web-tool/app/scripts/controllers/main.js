@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appApp')
-.controller('MainCtrl', function ($scope, countrylist, $http) {
+.controller('MainCtrl', function ($scope, countrylist, missingCountries, $http) {
 
 	$scope.countries = countrylist;
 
@@ -10,34 +10,41 @@ angular.module('appApp')
 	$scope.radioList = [{
 		value : '_adm0',
 		title : 'country outline',
-		desc : 'width 1st level of sub division'
+		desc : 'width 1st level of sub division',
+		disabled : false
 	},
 	{
 		value : '_adm1',
 		title : 'country outline',
-		desc : 'with 2nd level of sub division'
+		desc : 'with 2nd level of sub division',
+		disabled : false
 	},
 	{
 		value : '_adm2',
 		title : 'country outline',
-		desc : 'with 2nd level of sub divisions'
+		desc : 'with 2nd level of sub divisions',
+		disabled : false
 	},
 	{
 		value : '_adm3',
 		title : 'Inland division of country',
-		desc : 'counties regions'
+		desc : 'counties regions',
+		disabled : false
 	},
 	{
 		value : '_water_areas_dcw',
-		title : 'inland wter'
+		title : 'inland wter',
+		disabled : false
 	},
 	{
 		value : '_roads',
-		title : 'roads'
+		title : 'roads',
+		disabled : false
 	},
 	{
 		value : '_rails',
-		title : 'railroads'
+		title : 'railroads',
+		disabled : false
 	}];
 
 
@@ -54,11 +61,11 @@ angular.module('appApp')
 	// 		success(function(data, status, headers, config) {
 	// 		}).
 	// 		error(function(data, status, headers, config) {
-	// 			console.log(item, radio.value);
+	// 			item['missing'] = radio.value
+	// 			console.log(item);
 	// 		});
 	// 	})
-
-	// })
+	// });
 
 	function getDataFromAmazon(countryObj){
 		if ($scope.loading) {
@@ -90,6 +97,34 @@ angular.module('appApp')
 			$scope.countryProjection = 'd3.geo.mercator()';
 		}
 	}
+
+	function disableMissingMapTypes (country) {
+		_.each($scope.radioList, function(radio){
+			_.each(country.missing, function(missing){
+				if (radio.value === missing) {
+					console.log('radio',radio);
+					radio.disabled = true;
+				}
+			});
+		});
+	}
+
+	function enableRadios () {
+		_.each($scope.radioList, function(radio){
+			radio.disabled = false;
+		})
+	}
+
+	$scope.$watch('selectedCountry', function(newValue){
+		if (newValue) {
+			enableRadios();
+			_.each(missingCountries, function(country){
+				if (country.value.toLowerCase() === newValue.toLowerCase()) {
+					disableMissingMapTypes(country);
+				}
+			});
+		}
+	});
 
 	$scope.getCountrySelected = function(){
 		$scope.mapData = [];

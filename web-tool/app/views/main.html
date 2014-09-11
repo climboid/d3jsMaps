@@ -22,13 +22,13 @@
         </datalist>
       </div>
       <h3 class="noTopMargin">What kind of map do you want?</h3>
-      <div class="radio">
-        <label>
-          <input type="radio" name="mapkind" ng-model="mapKind" value="_adm0"> country outline
-          <span class="text-muted">with 1st level of sub division</span>
+      <div class="radio" ng-repeat="item in radioList">
+        <label ng-class="item.disabled ? 'disabled' : ''">
+          <input type="radio" name="mapkind" ng-model="mapKind" value="{{item.value}}" ng-disabled="item.disabled"> {{item.title}}
+          <span class="text-muted" ng-bind="item.desc"></span>
         </label>
       </div>
-      <div class="radio">
+      <!-- <div class="radio">
         <label>
           <input type="radio" name="mapkind" ng-model="mapKind" value="_adm1"> country outline 2
           <span class="text-muted">with 1st level of sub division</span>
@@ -58,7 +58,7 @@
         <label>
           <input type="radio" name="mapkind" ng-model="mapKind" value="_rails"> railroads
         </label>
-      </div>
+      </div> -->
     </div>
     <div class="col-xs-6">
       <div class="alert alert-danger" ng-show="showError" ng-bind="errorMsg"></div>
