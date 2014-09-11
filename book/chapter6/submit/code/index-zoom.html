@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+path{
+  stroke-width : 1;
+  stroke : black;
+  fill:transparent;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+
+</style>
+<body>
+
+  <div id="map"></div>
+  <div id="tooltip"></div>
+
+  <script src="lib/d3.min.js"></script>
+  <script src="lib/topojson.js"></script>
+  <script>
+    var height = 469;
+    var width = 750;
+    var projection = d3.geo.mercator();
+    var path = d3.geo.path().projection(projection);
+    var svg = d3.select("#map").append("svg").attr("width", width).attr("height", height);
+    var container;
+
+    var zoom = d3.behavior.zoom()
+    .scaleExtent([1, 2])
+    .on("zoom", zooming);
+
+    svg.append("rect")
+    .attr("class", "overlay")
+    .attr("width", width)
+    .attr("height", height)
+    .call(zoom);
+
+    function zooming() {
+      container.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+    }
+
+    d3.json('/data/MEX_adm/output.json', function(mexico) {
+      var features = topojson.feature(mexico, mexico.objects.MEX_adm1).features;
+      var b, s, t;
+      var mextopo = topojson.feature(mexico, mexico.objects.MEX_adm1);
+      projection.scale(1).translate([0, 0]);
+
+      b = path.bounds(mextopo);
+      s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
+      t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+
+      projection.scale(s).translate(t);
+
+      container = svg.append("g").call(zoom).selectAll("path").data(features)
+      container.enter().append("path").attr("d", path).call(zoom);
+    });
+
+  </script>
+</body>
+</html>
