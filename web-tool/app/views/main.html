@@ -21,7 +21,7 @@
         </datalist>
       </div> -->
       <div class="form-group">
-        <input type="text" ng-model="selectedCountry" typeahead="c.value for c in countries | filter:{value:$viewValue}" class="form-control">
+        <input type="text" ng-model="selectedCountry" typeahead="c.value for c in countries | filter:{value:$viewValue}" class="form-control input-lg" placeholder="Type in a country name">
       </div>
       <h3 class="noTopMargin">What kind of map do you want?</h3>
       <div class="radio">
@@ -70,13 +70,10 @@
     </div>
 </div>
 <div class="text-center">
-  <button class="btn btn-primary" ng-click="getCountrySelected()" ng-disabled="loading">Fetch the map !</button>
+  <button class="btn btn-primary" ng-click="getCountrySelected()" ng-disabled="loading">Get map &amp; code</button>
 </div>
 <div class="row" id="codeTemplates" ng-if="toggleCode">
-  <div clas="col-xs-12">
-    <p class="help-block">You will need to be running a local server in order to make an ajax call to fetch the mapData.json file </p>
-
-  </div>
+  <p class="help-block text-center">You will need to be running a local server in order to make an ajax call to fetch the mapData.json file </p>
   <div class="col-xs-6">
     <h3 class="noMarginTop">index.html</h3>
     <pre>
