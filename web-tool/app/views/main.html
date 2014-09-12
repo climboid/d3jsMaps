@@ -5,21 +5,8 @@
   <h4>Enjoy!</h4>
 </div>
 <div class="row">
-  <div class="col-xs-5">
-    
-    </form>
-  </div>
-</div>
-<div class="row">
   <form role="form">
-    <div class="col-xs-4">
-
-      <!-- <div class="form-group">
-        <input list="countries" ng-model="selectedCountry" class="form-control input-lg" name="countries" placeholder="Type country name">
-        <datalist id="countries" ng-model="selectedCountry">
-          <select ng-model='selectedCountry' ng-options='c.value for c in countries track by c.value'></select>
-        </datalist>
-      </div> -->
+    <div class="col-xs-12 col-sm-4">
       <div class="form-group">
         <input type="text" ng-model="selectedCountry" typeahead="c.value for c in countries | filter:{value:$viewValue}" class="form-control input-lg" placeholder="Type in a country name">
       </div>
@@ -60,7 +47,7 @@
         </label>
       </div>
     </div>
-    <div class="col-xs-8">
+    <div class="col-xs-12 col-sm-8">
       <div class="alert alert-danger" ng-show="showError" ng-bind="errorMsg"></div>
       <div class="spinner" ng-show="loading">
         <div class="double-bounce1"></div>
@@ -74,7 +61,7 @@
 </div>
 <div class="row" id="codeTemplates" ng-if="toggleCode">
   <p class="help-block text-center">You will need to be running a local server in order to make an ajax call to fetch the mapData.json file </p>
-  <div class="col-xs-6">
+  <div class="col-xs-12 col-sm-6">
     <h3 class="noMarginTop">index.html</h3>
     <pre>
 <code language="html">&lt;!DOCTYPE html&gt;
@@ -117,7 +104,7 @@
 &lt;/body&gt;</code>
     </pre>
   </div>
-  <div class="col-xs-6">
+  <div class="col-xs-12 col-sm-6">
     <h3>mapData.json</h3>
     <pre class="dataBox">
 <code language="javascript">{{mapData}}</code>
