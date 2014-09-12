@@ -58,6 +58,18 @@ label{
 	margin-top:0;
 }
 
+.countryList{
+  list-style:none;
+  padding:0px;
+  border:1px solid;
+  border-bottom:0;
+  border-top:0;
+  li{
+    padding:5px 5px 5px 15px;
+    border-bottom:1px solid;
+  }
+}
+
 .btn{
 	font-size:2em;
 	padding:6px 30px;

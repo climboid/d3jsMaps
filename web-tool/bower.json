@@ -13,7 +13,9 @@
     "angular-route": "1.2.16",
     "underscore": "~1.6.0",
     "d3": "~3.4.6",
-    "code-box": "~0.0.4"
+    "code-box": "~0.0.4",
+    "topojson": "~1.6.18",
+    "angular-bootstrap": "~0.11.0"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",

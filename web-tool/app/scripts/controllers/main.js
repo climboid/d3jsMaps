@@ -105,7 +105,7 @@ angular.module('appApp')
 
 	function enableRadios () {
 		_.each($scope.radioList, function(radio){
-			radio.disabled = false;
+			$scope[radio.value] = false;
 		})
 	}
 
