@@ -10,41 +10,34 @@ angular.module('appApp')
 	$scope.radioList = [{
 		value : '_adm0',
 		title : 'country outline',
-		desc : 'width 1st level of sub division',
-		disabled : false
+		desc : 'width 1st level of sub division'
 	},
 	{
 		value : '_adm1',
 		title : 'country outline',
-		desc : 'with 2nd level of sub division',
-		disabled : false
+		desc : 'with 2nd level of sub division'
 	},
 	{
 		value : '_adm2',
 		title : 'country outline',
-		desc : 'with 2nd level of sub divisions',
-		disabled : false
+		desc : 'with 2nd level of sub divisions'
 	},
 	{
 		value : '_adm3',
 		title : 'Inland division of country',
-		desc : 'counties regions',
-		disabled : false
+		desc : 'counties regions'
 	},
 	{
 		value : '_water_areas_dcw',
-		title : 'inland wter',
-		disabled : false
+		title : 'inland wter'
 	},
 	{
 		value : '_roads',
-		title : 'roads',
-		disabled : false
+		title : 'roads'
 	},
 	{
 		value : '_rails',
-		title : 'railroads',
-		disabled : false
+		title : 'railroads'
 	}];
 
 
@@ -72,6 +65,7 @@ angular.module('appApp')
 			return;
 		}
 
+		console.log('countryObj',countryObj);
 		$scope.loading = true;
 		$scope.toggleCode = false;
 		$('svg').remove();
@@ -102,8 +96,8 @@ angular.module('appApp')
 		_.each($scope.radioList, function(radio){
 			_.each(country.missing, function(missing){
 				if (radio.value === missing) {
-					console.log('radio',radio);
-					radio.disabled = true;
+					console.log('radio',radio.value);
+					$scope[radio.value] = true;
 				}
 			});
 		});
@@ -129,9 +123,12 @@ angular.module('appApp')
 	$scope.getCountrySelected = function(){
 		$scope.mapData = [];
 		$scope.mapOptions = true;
-		$scope.countryObj = _.find($scope.countries, function(country){ return country.value === $scope.selectedCountry; });
+		$scope.countryObj = _.find($scope.countries, function(country){ 
+			return country.value === $scope.selectedCountry; 
+		});
 		$scope.countryObj.id = $scope.countryObj.id.slice(0,3);
 		$scope.showError = false;
+		console.log('$scope.countryObj',$scope.countryObj);
 		setProjection();
 		getDataFromAmazon($scope.countryObj);
 	};
