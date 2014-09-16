@@ -21,7 +21,7 @@ angular.module('appApp').constant('missingCountries',[
   { id: 'KGZ_Kyrgyzstan',value: 'Kyrgyzstan',missing: ['_adm3']},
   { id: 'LAO_Laos',value: 'Laos',missing: ['_adm3']},
   { id: 'LVA_Latvia',value: 'Latvia',missing: ['_adm3']},
-  { id: 'LSO_Lesotho',value: 'Lesotho',missing: ['_adm3']},
+  { id: 'LSO_Lesotho',value: 'Lesotho',missing: ['_adm3','_adm2']},
   { id: 'LBN_Lebanon',value: 'Lebanon',missing: ['_adm3']},
   { id: 'LBY_Libya',value: 'Libya',missing: ['_adm2']},
   { id: 'LIE_Liechtenstein',value: 'Liechtenstein',missing: ['_adm3']},

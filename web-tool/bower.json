@@ -15,7 +15,8 @@
     "d3": "~3.4.6",
     "code-box": "~0.0.4",
     "topojson": "~1.6.18",
-    "angular-bootstrap": "~0.11.0"
+    "angular-bootstrap": "~0.11.0",
+    "prismjs": "*"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",
