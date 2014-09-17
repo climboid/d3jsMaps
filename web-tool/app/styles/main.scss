@@ -67,7 +67,7 @@ label{
 
 .aboutMe{
   position: absolute;
-  top: -37%;
+  top: 10px;
   right: 20px;
   a{
     color: white;
@@ -86,10 +86,13 @@ label{
 .background{
   width:100%; 
   box-shadow:3px 3px 14px #999; 
+  min-height: 60px;
+  margin-bottom:10px;
 }
 
 .input-lg{
   width:90%;
+  margin-bottom:30px;
 }
 
 .noTopMargin{
@@ -111,6 +114,7 @@ label{
 .btn{
 	font-size:1.7em;
 	padding:3px 20px;
+  margin:30px 0 0;
 }
 
 .btn-warning {
