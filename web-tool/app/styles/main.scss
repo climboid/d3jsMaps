@@ -28,17 +28,19 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 @import "sass-bootstrap/lib/responsive-utilities";
 
 
-body{
-  background: url(/images/bg-slide3.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+html{
+  font-size: 62.5%;
 }
 
 body{
 	font-family: 'Lato', sans-serif;
 	padding-bottom:80px;
+  font-size: 1.8rem;
+}
+
+.container{
+  padding-top:3%;
+  position:relative;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -54,6 +56,40 @@ label{
       opacity:0.2;
     }
   }
+}
+
+.number{
+  padding-right:13px;
+  &.fixAlign{
+    padding: 10px 10px 0px 0px;
+  }
+}
+
+.aboutMe{
+  position: absolute;
+  top: -37%;
+  right: 20px;
+  a{
+    color: white;
+  }
+}
+
+.donateBtn{
+  position:absolute;
+  right:17px;
+  top:20px;
+  @media(max-width:$screen-sm-max){
+    top:10px;
+  }
+}
+
+.background{
+  width:100%; 
+  box-shadow:3px 3px 14px #999; 
+}
+
+.input-lg{
+  width:90%;
 }
 
 .noTopMargin{
