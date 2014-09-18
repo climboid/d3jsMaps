@@ -32,15 +32,27 @@ html{
   font-size: 62.5%;
 }
 
+html { 
+  background: url(/images/background/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body{
 	font-family: 'Lato', sans-serif;
 	padding-bottom:80px;
   font-size: 1.8rem;
+  background-color: transparent;
 }
 
 .container{
   padding-top:3%;
+  padding-bottom:5%;
   position:relative;
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0 0 1em gold;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -67,7 +79,7 @@ label{
 
 .aboutMe{
   position: absolute;
-  top: 10px;
+  top: 18px;
   right: 20px;
   a{
     color: white;
@@ -84,10 +96,11 @@ label{
 }
 
 .background{
-  width:100%; 
-  box-shadow:3px 3px 14px #999; 
-  min-height: 60px;
-  margin-bottom:10px;
+  background-image: url('/images/background.png');
+  background-size:30%;
+  background-position:center;
+  background-repeat: no-repeat;
+  height: 100px;
 }
 
 .input-lg{
