@@ -36,27 +36,11 @@ body{
 	font-family: 'Lato', sans-serif;
 	padding-bottom:80px;
   font-size: 1.8rem;
-    background: url(/images/background/bg.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.logo{
-  margin:1em auto;
-  display: block;
-  width:40%;
-  min-width:200px;
 }
 
 .container{
   padding-top:3%;
   position:relative;
-  background:rgba(255,255,255,0.9);
-  padding-bottom:3%;
-  margin-top:1em;
-  border-radius:8px;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -83,14 +67,10 @@ label{
 
 .aboutMe{
   position: absolute;
-  top: 17px;
-  right: 120px;
+  top: 10px;
+  right: 20px;
   a{
     color: white;
-  }
-  @media(max-width:$screen-xs-max){
-    right:20px;
-    top:40px;
   }
 }
 
