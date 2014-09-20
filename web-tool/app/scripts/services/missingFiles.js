@@ -151,4 +151,5 @@ angular.module('appApp').constant('missingCountries',[
  { id: "IRN_Iran", value: "Iran", missing: ["_adm3"] }, 
  { id: "CRI_Costa Rica", value: "Costa Rica", missing: ["_adm3"] },
  { id:'LSO_Lesotho', value:'Lesotho', missing:['_adm2','_adm3','_rails']},
+ { id:'AUS_Australia', value:'Australia', missing:['_adm3']}
 ]);
