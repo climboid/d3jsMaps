@@ -1,9 +1,6 @@
 'use strict';
 
 angular.module('appApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
   'ngRoute',
   'ui.bootstrap'
 ])
