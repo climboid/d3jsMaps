@@ -49,13 +49,15 @@
         .selectAll('path')
         .data(features)
 
+    //Enter
     mexico.enter()
        .append('path')
        .attr('d', path);
 
-    // mexico.attr('fill', function(d,i) {return color(i)})
+    //Update
     mexico.attr('fill', '#eee');
 
+    //Exit
     mexico.exit().remove();
   });
  </script>

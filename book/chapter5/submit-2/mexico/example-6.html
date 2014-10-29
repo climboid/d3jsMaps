@@ -2,14 +2,22 @@
 <meta charset="utf-8">
 <style>
 .boundary {
- fill: none;
- stroke: #888;
- stroke-linejoin: round;
+  fill: none;
+  stroke: #ccc;
+  stroke-linejoin: round;
 }
 svg {
  border-style: solid;
  border-width: 1px;
  border-color: #ccc;
+}
+text{
+  font-family: Helvetica;
+  font-weight: 300;
+  font-size: 12px;
+}
+circle{
+  fill:red;
 }
 
 </style>
@@ -69,22 +77,38 @@ svg {
         .data(features);
 
     mexico.enter()
-        .append('path')
-        .attr('d', path)
-        .attr('id', geoID)
-        .style('fill', colors[0]);
+      .append('path')
+      .attr('d', path)
+      .attr('id', geoID)
+      .style('fill', colors[0]);
 
     setInterval(function(){
       data = randomColor(countryTopo.features);
-
       mexico.transition().duration(500)
-          .style('fill', function(d) {
-            return data.get(geoID(d));
-          });
-
-      mexico.exit().remove();
-
+        .style('fill', function(d) {return data.get(geoID(d));})
+        .style('fill-opacity', 0.5);
     },2000);
+
+    mexico.exit().remove();
+
+    d3.csv('cities.csv', function(cities) {
+      var cityPoints = svg.selectAll('circle').data(cities);
+      var cityText = svg.selectAll('text').data(cities);
+
+      cityPoints.enter()
+          .append('circle')
+          .attr('cx', function(d) {return projection([d.lon, d.lat])[0]})
+          .attr('cy', function(d) {return projection([d.lon, d.lat])[1]})
+          .attr('r', 4);
+
+      cityText.enter()
+          .append('text')
+          .attr('x', function(d) {return projection([d.lon, d.lat])[0]})
+          .attr('y', function(d) {return projection([d.lon, d.lat])[1]})
+          .attr('dx', 5)
+          .attr('dy', 3)
+          .text(function(d) {return d.name});
+    });
 
   });
  </script>
