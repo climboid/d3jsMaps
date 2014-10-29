@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.boundary {
+ fill: none;
+ stroke: #888;
+ stroke-linejoin: round;
+}
+svg {
+ border-style: solid;
+ border-width: 1px;
+ border-color: #ccc;
+}
+
+</style>
+<body>
+ <div id="map"></div>
+ <script src="http://d3js.org/d3.v3.min.js"></script>
+ <script src="http://d3js.org/topojson.v1.min.js"></script>
+ <script src="lodash.js"></script>
+
+ <script>
+  var height = 600;
+  var width = 900;
+  var mexico = void 0;
+  var projection = d3.geo.mercator();
+  var range = 100;
+  var colors = ['#deebf7', '#9ecae1', '#3182bd'];
+
+  // Special d3 helper that converts geo coordinates to paths
+  // based on a projection
+  var path = d3.geo.path().projection(projection);
+  var svg = d3.select("#map")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
+
+  var geoID = function(d) {
+    return "c" + d.properties.ID_1;
+  };
+
+  var randomColor = function(features) {
+    var data = d3.map();
+    for (var i = features.length - 1; i >= 0; i--) {
+      data.set(
+        geoID(features[i]),
+        colors[Math.floor((Math.random() * 3))]
+      );
+    };
+    return data;
+  };
+
+  d3.json('geo-data.json', function(country) {
+    var b, s, t;
+    var countryTopo = topojson.feature(country, country.objects.MEX_adm1);
+    var data = randomColor(countryTopo.features);
+
+    // Setup the scale and translate
+    projection.scale(1).translate([0, 0]);
+    b = path.bounds(countryTopo);
+    s = .9 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
+    t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+    projection.scale(s).translate(t);
+
+    var features = topojson.feature(country, country.objects.MEX_adm1).features;
+
+    mexico = svg.append('g')
+        .attr('class', 'boundary')
+        .selectAll('path')
+        .data(features);
+
+    mexico.enter()
+      .append('path')
+      .attr('d', path)
+      .attr('id', geoID)
+      .style('fill', colors[0]);
+
+    mexico.style('fill', function(d) {
+      return data.get(geoID(d));
+    });
+
+    mexico.exit().remove();
+
+  });
+ </script>
+</body>

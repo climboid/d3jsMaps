@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+ .boundary {
+  fill: none;
+  stroke: #888;
+  stroke-linejoin: round;
+ }
+ svg {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+ }
+</style>
+<body>
+ <div id="map"></div>
+ <script src="http://d3js.org/d3.v3.min.js"></script>
+ <script src="http://d3js.org/topojson.v1.min.js"></script>
+
+ <script>
+  var height = 600;
+  var width = 900;
+  var projection = d3.geo.mercator();
+  var color = d3.scale.category20c(); // add a new color scale
+
+  // Special d3 helper that converts geo coordinates to paths
+  // based on a projection
+  var path = d3.geo.path().projection(projection);
+
+  var svg = d3.select("#map").append("svg").attr("width", width).attr("height", height);
+
+  d3.json('geo-data.json', function(country) {
+    var b, s, t;
+    var countryTopo = topojson.feature(country, country.objects.MEX_adm1);
+
+    // Setup the scale and translate
+    projection.scale(1).translate([0, 0]);
+    b = path.bounds(countryTopo);
+    s = .9 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
+    t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+    projection.scale(s).translate(t);
+
+    // Convert the topojson to GeoJSON features
+    // This is now our "data" for enter/update/exit
+    var features = topojson.feature(country, country.objects.MEX_adm1).features;
+
+    var mexico = svg.append('g')
+        .attr('class', 'boundary')
+        .selectAll('path')
+        .data(features)
+
+    mexico.enter()
+       .append('path')
+       .attr('d', path);
+
+    mexico.attr('fill', function(d,i) {return color(i)}) // update the color
+
+    mexico.exit().remove();
+  });
+ </script>
+</body>
