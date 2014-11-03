@@ -20,14 +20,8 @@
  <script>
   var height = 600;
   var width = 900;
-  var mexico = void 0;
   var projection = d3.geo.mercator();
-  var color = d3.scale.category20(); // add a new color scale
-
-  // Special d3 helper that converts geo coordinates to paths
-  // based on a projection
-  var path = d3.geo.path().projection(projection);
-  var svg = d3.select("#map").append("svg").attr("width", width).attr("height", height);
+  var mexico = void 0;
 
   var geoID = function(d) {
     return "c" + d.properties.ID_1;
@@ -38,35 +32,39 @@
     d3.select('#' + geoID(d)).attr('fill-opacity', 1);
   };
 
-  d3.json('geo-data.json', function(country) {
-    var b, s, t;
-    var countryTopo = topojson.feature(country, country.objects.MEX_adm1);
+  var path = d3.geo.path().projection(projection);
+
+  var svg = d3.select("#map")
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
+
+  d3.json('geo-data.json', function(data) {
+    var states = topojson.feature(data, data.objects.MEX_adm1);
 
     // Setup the scale and translate
+    var b, s, t;
     projection.scale(1).translate([0, 0]);
-    b = path.bounds(countryTopo);
-    s = .9 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
-    t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+    var b = path.bounds(states);
+    var s = .9 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
+    var t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
     projection.scale(s).translate(t);
 
-    // Convert the topojson to GeoJSON features
-    // This is now our "data" for enter/update/exit
-    var features = topojson.feature(country, country.objects.MEX_adm1).features;
+    var map = svg.append('g').attr('class', 'boundary');
+    mexico = map.selectAll('path').data(states.features);
 
-    mexico = svg.append('g')
-        .attr('class', 'boundary')
-        .selectAll('path')
-        .data(features)
-
+    //Enter
     mexico.enter()
-        .append('path')
-        .attr('d', path)
-        .attr('id', geoID)
-        .on("click", click);
+       .append('path')
+       .attr('d', path)
+       .attr('id', geoID)
+       .on("click", click);
 
-    mexico.attr('fill', function(d,i) {return color(i)})
-        .attr('fill-opacity', 0.2);
+    //Update
+    var color = d3.scale.linear().domain([0,33]).range(['red', 'yellow']);
+    mexico.attr('fill', function(d,i) {return color(i)});
 
+    //Exit
     mexico.exit().remove();
   });
  </script>

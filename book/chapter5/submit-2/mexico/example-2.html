@@ -21,6 +21,7 @@
   var height = 600;
   var width = 900;
   var projection = d3.geo.mercator();
+  var mexico = void 0;
 
   // Special d3 helper that converts geo coordinates to paths
   // based on a projection
@@ -32,7 +33,6 @@
       .attr("height", height);
 
   d3.json('geo-data.json', function(data) {
-    console.log('mexico', data);
     var states = topojson.feature(data, data.objects.MEX_adm1);
 
     // Setup the scale and translate
@@ -44,7 +44,7 @@
     projection.scale(s).translate(t);
 
     var map = svg.append('g').attr('class', 'boundary');
-    var mexico = map.selectAll('path').data(states.features);
+    mexico = map.selectAll('path').data(states.features);
 
     //Enter
     mexico.enter()
