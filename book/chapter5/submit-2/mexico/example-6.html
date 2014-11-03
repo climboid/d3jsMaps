@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
-.boundary {
+ .boundary {
   fill: none;
-  stroke: #ccc;
+  stroke: #888;
   stroke-linejoin: round;
-}
-svg {
- border-style: solid;
- border-width: 1px;
- border-color: #ccc;
-}
-text{
+ }
+ svg {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+ }
+ text{
   font-family: Helvetica;
   font-weight: 300;
   font-size: 12px;
-}
-circle{
-  fill:red;
-}
-
+ }
+ circle{
+  fill:blue;
+ }
 </style>
 <body>
  <div id="map"></div>
@@ -29,66 +28,44 @@ circle{
  <script>
   var height = 600;
   var width = 900;
-  var mexico = void 0;
   var projection = d3.geo.mercator();
-  var range = 100;
-  var colors = ['#deebf7', '#9ecae1', '#3182bd'];
+  var mexico = void 0;
 
   // Special d3 helper that converts geo coordinates to paths
   // based on a projection
   var path = d3.geo.path().projection(projection);
+
   var svg = d3.select("#map")
       .append("svg")
       .attr("width", width)
       .attr("height", height);
 
-  var geoID = function(d) {
-    return "c" + d.properties.ID_1;
-  };
-
-  var randomColor = function(features) {
-    var data = d3.map();
-    for (var i = features.length - 1; i >= 0; i--) {
-      data.set(
-        geoID(features[i]),
-        colors[Math.floor((Math.random() * 3))]
-      );
-    };
-    return data;
-  };
-
-  d3.json('geo-data.json', function(country) {
-    var b, s, t;
-    var countryTopo = topojson.feature(country, country.objects.MEX_adm1);
-    var data = randomColor(countryTopo.features);
+  d3.json('geo-data.json', function(data) {
+    var states = topojson.feature(data, data.objects.MEX_adm1);
 
     // Setup the scale and translate
+    var b, s, t;
     projection.scale(1).translate([0, 0]);
-    b = path.bounds(countryTopo);
-    s = .9 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
-    t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+    var b = path.bounds(states);
+    var s = .9 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
+    var t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
     projection.scale(s).translate(t);
 
-    var features = topojson.feature(country, country.objects.MEX_adm1).features;
+    var map = svg.append('g').attr('class', 'boundary');
+    mexico = map.selectAll('path').data(states.features);
 
-    mexico = svg.append('g')
-        .attr('class', 'boundary')
-        .selectAll('path')
-        .data(features);
-
+    //Enter
     mexico.enter()
-      .append('path')
-      .attr('d', path)
-      .attr('id', geoID)
-      .style('fill', colors[0]);
+       .append('path')
+       .attr('d', path);
 
-    setInterval(function(){
-      data = randomColor(countryTopo.features);
-      mexico.transition().duration(500)
-        .style('fill', function(d) {return data.get(geoID(d));})
-        .style('fill-opacity', 0.5);
-    },2000);
+    //Update
+    var color = d3.scale.linear().domain([0,33]).range(['red', 'yellow']);
+    mexico
+      .style('fill', function(d,i) {return color(i)})
+      .style('fill-opacity', 0.2)
 
+    //Exit
     mexico.exit().remove();
 
     d3.csv('cities.csv', function(cities) {
@@ -109,7 +86,6 @@ circle{
           .attr('dy', 3)
           .text(function(d) {return d.name});
     });
-
   });
  </script>
 </body>
