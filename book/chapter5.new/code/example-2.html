@@ -38,7 +38,7 @@
   var width = 900;
   var projection = d3.geo.mercator();
   var mexico = void 0;
-  var db = d3.map()
+  var db = d3.map();
   var sparkline = d3.charts.sparkline().height(50).width(150);
 
   var hover = function(d) {
@@ -48,7 +48,7 @@
     div.innerHTML = d.properties.NAME_1;
 
     var id = geoID(d);
-    d3.select("#tooltip").datum(db.get(id)).call(sparkline.draw)
+    d3.select("#tooltip").datum(db.get(id)).call(sparkline.draw);
   };
 
   var geoID = function(d) {
