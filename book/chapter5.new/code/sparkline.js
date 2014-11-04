@@ -50,7 +50,7 @@ d3.charts.sparkline = function () {
         .append('circle')
         .attr('r', 2)
         .attr('fill', 'white')
-        .attr('fill-opacity', 0)
+        .attr('fill-opacity', 1)
         .attr('stroke', my.color())
         .attr('class', 'dot')
     dot.transition().duration(1000)
