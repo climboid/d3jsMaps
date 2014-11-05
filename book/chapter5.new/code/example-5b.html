@@ -20,7 +20,7 @@
  <script>
   var height = 600;
   var width = 900;
-  var projection = d3.geo.orthographic().clipAngle(45);
+  var projection = d3.geo.orthographic().clipAngle(90);
   var path = d3.geo.path().projection(projection);
   var i = 0;
 
@@ -57,7 +57,7 @@
         i = i+0.2;
         // move i around in the array to get a feel for yaw, pitch and roll
         // see diagram
-        projection.rotate([i,0,0])
+        projection.rotate([0,0,i])
         world.attr('d', path);
         mexico.attr('d', path).style('fill', 'lightyellow').style('stroke', 'orange');
 
