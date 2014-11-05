@@ -31,19 +31,13 @@
 
   // New function
   var zoomed = function () {
-    // console.log('translate', d3.event.translate);
-    // console.log('scale', d3.event.scale);
-
     map.attr("transform", "translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
   };
 
   // New function
   var zoom = d3.behavior.zoom()
-    .translate([0, 0])
-    .scale(1)
-    .scaleExtent([1, 8]) // where 1 is the start and 8 is how far to zoom, too zoom in more increase 8, too zoom out more decrease one by fractions till 0
-    .on("zoom", zoomed)
-    .size([width, height]);
+    .scaleExtent([.5, 8])
+    .on("zoom", zoomed);
 
   var path = d3.geo.path().projection(projection);
 

@@ -11,9 +11,23 @@
   border-width: 1px;
   border-color: #ccc;
  }
+ #tooltip{
+  position: absolute;
+  z-index: 2;
+  background: rgba(0,153,76,0.8);
+  width:130px;
+  height:20px;
+  color:white;
+  font-size: 14px;
+  padding:5px;
+  top:-150px;
+  left:-150px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
 </style>
 <body>
  <div id="map"></div>
+ <div id="tooltip"></div>
  <script src="http://d3js.org/d3.v3.min.js"></script>
  <script src="http://d3js.org/topojson.v1.min.js"></script>
 
@@ -21,6 +35,7 @@
   var height = 600;
   var width = 900;
   var projection = d3.geo.mercator();
+  var map = void 0;
   var mexico = void 0;
 
   // Special d3 helper that converts geo coordinates to paths
@@ -33,7 +48,6 @@
       .attr("height", height);
 
   d3.json('geo-data.json', function(data) {
-    console.log('mexico', data);
     var states = topojson.feature(data, data.objects.MEX_adm1);
 
     // Setup the scale and translate
@@ -44,7 +58,7 @@
     var t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
     projection.scale(s).translate(t);
 
-    var map = svg.append('g').attr('class', 'boundary');
+    map = svg.append('g').attr('class', 'boundary');
     mexico = map.selectAll('path').data(states.features);
 
     //Enter
