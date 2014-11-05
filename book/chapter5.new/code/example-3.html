@@ -11,6 +11,11 @@
   border-width: 1px;
   border-color: #ccc;
  }
+ /* New class for the overlay */
+ .overlay {
+  fill: none;
+  pointer-events: all;
+ }
 </style>
 <body>
  <div id="map"></div>
@@ -22,9 +27,24 @@
   var width = 900;
   var projection = d3.geo.mercator();
   var mexico = void 0;
+  var map = void 0; // Update global
 
-  // Special d3 helper that converts geo coordinates to paths
-  // based on a projection
+  // New function
+  var zoomed = function () {
+    // console.log('translate', d3.event.translate);
+    // console.log('scale', d3.event.scale);
+
+    map.attr("transform", "translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
+  };
+
+  // New function
+  var zoom = d3.behavior.zoom()
+    .translate([0, 0])
+    .scale(1)
+    .scaleExtent([1, 8]) // where 1 is the start and 8 is how far to zoom, too zoom in more increase 8, too zoom out more decrease one by fractions till 0
+    .on("zoom", zoomed)
+    .size([width, height]);
+
   var path = d3.geo.path().projection(projection);
 
   var svg = d3.select("#map")
@@ -33,10 +53,8 @@
       .attr("height", height);
 
   d3.json('geo-data.json', function(data) {
-    console.log('mexico', data);
     var states = topojson.feature(data, data.objects.MEX_adm1);
 
-    // Setup the scale and translate
     var b, s, t;
     projection.scale(1).translate([0, 0]);
     var b = path.bounds(states);
@@ -44,7 +62,7 @@
     var t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
     projection.scale(s).translate(t);
 
-    var map = svg.append('g').attr('class', 'boundary');
+    map = svg.append('g').attr('class', 'boundary');
     mexico = map.selectAll('path').data(states.features);
 
     //Enter
@@ -57,6 +75,13 @@
 
     //Exit
     mexico.exit().remove();
+
+    svg.append("rect")
+      .attr("class", "overlay")
+      .attr("width", width)
+      .attr("height", height)
+      .call(zoom);
+
   });
  </script>
 </body>
