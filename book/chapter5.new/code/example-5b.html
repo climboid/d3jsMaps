@@ -58,7 +58,7 @@
         // move i around in the array to get a feel for yaw, pitch and roll
         // see diagram
         projection.rotate([i,0,0])
-        world.attr('d', path).style('fill-opacity', .5).style('stroke-opacity', .5);
+        world.attr('d', path);
         mexico.attr('d', path).style('fill', 'lightyellow').style('stroke', 'orange');
 
     }, 20);
