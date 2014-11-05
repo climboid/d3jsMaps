@@ -47,20 +47,6 @@
   var db = d3.map();
   var sparkline = d3.charts.sparkline().height(50).width(138);
 
-  var hover = function(d) {
-    var div = document.getElementById('tooltip');
-    div.style.left = event.pageX +'px';
-    div.style.top = event.pageY + 'px';
-    div.innerHTML = d.properties.NAME_1;
-
-    var id = geoID(d);
-    d3.select("#tooltip").datum(db.get(id)).call(sparkline.draw);
-  };
-
-  var geoID = function(d) {
-    return "c" + d.properties.ID_1;
-  };
-
   var setDb = function(data) {
     data.forEach(function(d) {
       db.set(d.geoID, [
@@ -69,6 +55,20 @@
         {"x": 3, "y": +d.q3},
         {"x": 4, "y": +d.q4}]);
     });
+  };
+
+  var geoID = function(d) {
+    return "c" + d.properties.ID_1;
+  };
+
+  var hover = function(d) {
+    var div = document.getElementById('tooltip');
+    div.style.left = event.pageX +'px';
+    div.style.top = event.pageY + 'px';
+    div.innerHTML = d.properties.NAME_1;
+
+    var id = geoID(d);
+    d3.select("#tooltip").datum(db.get(id)).call(sparkline.draw);
   };
 
   var path = d3.geo.path().projection(projection);
