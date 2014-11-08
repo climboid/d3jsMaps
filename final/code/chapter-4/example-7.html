@@ -19,18 +19,18 @@
 
 </style>
 <body>
- <div id="map"></div>
- <script src="http://d3js.org/d3.v3.min.js"></script>
- <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <div id="map"></div>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
 
- <script>
+  <script>
+(function(){
+
   var height = 600;
   var width = 900;
   var projection = d3.geo.mercator();
   var mexico = void 0;
 
-  // Special d3 helper that converts geo coordinates to paths
-  // based on a projection
   var path = d3.geo.path().projection(projection);
 
   var svg = d3.select("#map")
@@ -41,7 +41,6 @@
   d3.json('geo-data.json', function(data) {
     var states = topojson.feature(data, data.objects.MEX_adm1);
 
-    // Setup the scale and translate
     var b, s, t;
     projection.scale(1).translate([0, 0]);
     var b = path.bounds(states);
@@ -52,18 +51,15 @@
     var map = svg.append('g').attr('class', 'boundary');
     mexico = map.selectAll('path').data(states.features);
 
-    //Enter
     mexico.enter()
        .append('path')
        .attr('d', path);
 
-    //Update
     var color = d3.scale.linear().domain([0,33]).range(['red', 'yellow']);
     mexico
       .style('fill', function(d,i) {return color(i)})
       .style('fill-opacity', 0.2)
 
-    //Exit
     mexico.exit().remove();
 
     d3.csv('cities.csv', function(cities) {
@@ -88,5 +84,6 @@
 
     });
   });
+})();
  </script>
 </body>
