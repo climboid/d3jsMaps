@@ -1,23 +1,30 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
- .boundary {
-  fill: #ccc;
-  stroke: #888;
-  stroke-linejoin: round;
- }
- svg {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #ccc;
- }
-</style>
-<body>
- <div id="map"></div>
- <script src="http://d3js.org/d3.v3.min.js"></script>
- <script src="http://d3js.org/topojson.v1.min.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mexico</title>
+  <style>
+    .boundary {
+      fill: #ccc;
+      stroke: #888;
+      stroke-linejoin: round;
+    }
+    svg {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #ccc;
+    }
+  </style>
+</head>
 
- <script>
+<body>
+  <div id="map"></div>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+
+  <script>
+(function(){
+
   var height = 600;
   var width = 900;
   var projection = d3.geo.orthographic().clipAngle(90);
@@ -64,5 +71,7 @@
     }, 20);
 
   });
- </script>
+
+})();
+  </script>
 </body>

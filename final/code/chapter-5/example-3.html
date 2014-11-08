@@ -1,28 +1,35 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
- .boundary {
-  fill: none;
-  stroke: #888;
-  stroke-linejoin: round;
- }
- svg {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #ccc;
- }
- /* New class for the overlay */
- .overlay {
-  fill: none;
-  pointer-events: all;
- }
-</style>
-<body>
- <div id="map"></div>
- <script src="http://d3js.org/d3.v3.min.js"></script>
- <script src="http://d3js.org/topojson.v1.min.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mexico</title>
+  <style>
+    .boundary {
+      fill: none;
+      stroke: #888;
+      stroke-linejoin: round;
+    }
+    svg {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #ccc;
+    }
+   /* New class for the overlay zoom */
+    .overlay {
+      fill: none;
+      pointer-events: all;
+    }
+  </style>
+</head>
 
- <script>
+<body>
+  <div id="map"></div>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+
+  <script>
+(function(){
+
   var height = 600;
   var width = 900;
   var projection = d3.geo.mercator();
@@ -59,15 +66,12 @@
     map = svg.append('g').attr('class', 'boundary');
     mexico = map.selectAll('path').data(states.features);
 
-    //Enter
     mexico.enter()
        .append('path')
        .attr('d', path);
 
-    //Update
     mexico.attr('fill', '#eee');
 
-    //Exit
     mexico.exit().remove();
 
     svg.append("rect")
@@ -77,5 +81,6 @@
       .call(zoom);
 
   });
+})();
  </script>
 </body>

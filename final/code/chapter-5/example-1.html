@@ -1,37 +1,44 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
- .boundary {
-  fill: none;
-  stroke: #888;
-  stroke-linejoin: round;
- }
- svg {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #ccc;
- }
- #tooltip{
-  position: absolute;
-  z-index: 2;
-  background: rgba(0,153,76,0.8);
-  width:130px;
-  height:20px;
-  color:white;
-  font-size: 14px;
-  padding:5px;
-  top:-150px;
-  left:-150px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
-</style>
-<body>
- <div id="map"></div>
- <div id="tooltip"></div>
- <script src="http://d3js.org/d3.v3.min.js"></script>
- <script src="http://d3js.org/topojson.v1.min.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mexico</title>
+  <style>
+    .boundary {
+      fill: none;
+      stroke: #888;
+      stroke-linejoin: round;
+    }
+    svg {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #ccc;
+    }
+    #tooltip{
+      position: absolute;
+      z-index: 2;
+      background: rgba(0,153,76,0.8);
+      width:130px;
+      height:20px;
+      color:white;
+      font-size: 14px;
+      padding:5px;
+      top:-150px;
+      left:-150px;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    }
+  </style>
+</head>
 
- <script>
+<body>
+  <div id="map"></div>
+  <div id="tooltip"></div>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+
+  <script>
+(function() {
+
   var height = 600;
   var width = 900;
   var projection = d3.geo.mercator();
@@ -46,8 +53,6 @@
     div.innerHTML = d.properties.NAME_1;
   };
 
-  // Special d3 helper that converts geo coordinates to paths
-  // based on a projection
   var path = d3.geo.path().projection(projection);
 
   var svg = d3.select("#map")
@@ -58,7 +63,6 @@
   d3.json('geo-data.json', function(data) {
     var states = topojson.feature(data, data.objects.MEX_adm1);
 
-    // Setup the scale and translate
     var b, s, t;
     projection.scale(1).translate([0, 0]);
     var b = path.bounds(states);
@@ -69,17 +73,16 @@
     map = svg.append('g').attr('class', 'boundary');
     mexico = map.selectAll('path').data(states.features);
 
-    //Enter
     mexico.enter()
        .append('path')
        .attr('d', path)
        .on("mouseover", hover);
 
-    //Update
     mexico.attr('fill', '#eee');
 
-    //Exit
     mexico.exit().remove();
   });
- </script>
+
+})();
+  </script>
 </body>

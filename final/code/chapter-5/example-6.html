@@ -1,28 +1,33 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
- .boundary {
-  fill: #ccc;
-  stroke: #888;
-  stroke-linejoin: round;
- }
- svg {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #ccc;
- }
-  /* New class for the overlay */
- .overlay {
-  fill: none;
-  pointer-events: all;
- }
-</style>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mexico</title>
+  <style>
+    .boundary {
+      fill: #ccc;
+      stroke: #888;
+      stroke-linejoin: round;
+    }
+    svg {
+      border-style: solid;
+      border-width: 1px;
+      border-color: #ccc;
+    }
+    .overlay {
+      fill: none;
+      pointer-events: all;
+    }
+  </style>
+</head>
 <body>
- <div id="map"></div>
- <script src="http://d3js.org/d3.v3.min.js"></script>
- <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <div id="map"></div>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
 
- <script>
+  <script>
+(function(){
+
   var height = 600;
   var width = 900;
   var projection = d3.geo.orthographic().clipAngle(90);
@@ -64,7 +69,6 @@
     var t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
     projection.scale(s).translate(t);
 
-    // put mexico in the center
     projection.rotate([90,0,0]);
 
     world.enter()
@@ -84,5 +88,7 @@
       .call(drag);
 
   });
+
+})();
  </script>
 </body>
