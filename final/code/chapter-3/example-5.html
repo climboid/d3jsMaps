@@ -3,12 +3,21 @@
 <head>
   <meta charset="utf-8">
   <title>A simple rectangle</title>
+  <style>
+    rect {
+      stroke-width: 1;
+      stroke:steelblue;
+      fill:#888;
+      fill-opacity: .5;
+    }
+  </style>
 </head>
 
 <body>
 
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script>
+(function() {
 
 var makeData = function(n){
   var arr = [];
@@ -64,6 +73,7 @@ setInterval(function(){
   rectangles(svg);
 },1000);
 
+})();
   </script>
 </body>
 </html>
