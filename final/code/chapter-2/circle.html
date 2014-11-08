@@ -8,19 +8,25 @@
     <title>SVG Practice - Circle</title>
     <style>
 
-    .box {
-      border-style:solid;
-      border-width:1px;
-      border-color:#ccc;
-    }
+      svg {
+        border-style:solid;
+        border-width:1px;
+        border-color:#ccc;
+      }
+
+      circle {
+        stroke-width: 5;
+        stroke:steelblue;
+        fill:#888;
+        fill-opacity: .5;
+      }
+
     </style>
 
   </head>
   <body>
-    <svg class="box" height="260" width="260">
-      <g stroke="blue">
-        <circle cx="62" cy="62" r="50" stroke-width="5"  fill="red" ></circle>
-      </g>
+    <svg height="125" width="125">
+      <circle cx="62" cy="62" r="50" stroke-width="5"  ></circle>
     </svg>
   </body>
 </html>

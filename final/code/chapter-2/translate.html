@@ -8,21 +8,26 @@
     <title>SVG Practice - Triangle</title>
     <style>
 
-    .box {
-      border-style:solid;
-      border-width:1px;
-      border-color:#ccc;
-    }
+      svg {
+        border-style:solid;
+        border-width:1px;
+        border-color:#ccc;
+      }
+      circle {
+        stroke-width: 1;
+        stroke:steelblue;
+        fill:#888;
+        fill-opacity: .5;
+      }
+
     </style>
 
   </head>
   <body>
-    <svg class="box" height="260" width="260">
+    <svg height="200" width="200">
       <g stroke="blue">
-        <circle cx="62" cy="62" r="50" stroke-width="5"  fill="red" opacity=".2"></circle>
-
-        <circle cx="62" cy="62" r="50" stroke-width="5"  fill="red"  transform="translate(50,50)"></circle>
-        <circle cx="112" cy="112" r="3" stroke-width="0"  fill="black"></circle>
+        <circle cx="62" cy="62" r="50" stroke-width="5" opacity=".2"></circle>
+        <circle cx="62" cy="62" r="50" stroke-width="5" transform="translate(50,50)"></circle>
       </g>
     </svg>
   </body>

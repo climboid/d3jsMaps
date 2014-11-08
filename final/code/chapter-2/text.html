@@ -8,37 +8,35 @@
     <title>SVG Practice - Text</title>
     <style>
 
-    svg{
-      display:inline-block;
-      margin:1em;
-    }
-    .box {
-      border-style:solid;
-      border-width:1px;
-      border-color:#ccc;
-    }
-    .myText{
-      font-size:22px;
-      font-family:Helvetica;
-      stroke-width:2;
-    }
+      svg{
+        display:inline-block;
+        margin:1em;
+        border-style:solid;
+        border-width:1px;
+        border-color:#ccc;
+      }
+      .myText{
+        font-size:22px;
+        font-family:Helvetica;
+        stroke-width:2;
+      }
     </style>
 
   </head>
   <body>
-    <svg class="box" height="260" width="125">
+    <svg  height="260" width="125">
       <g stroke="blue">
         <text x="10" y="40">Hello world!</text>
       </g>
     </svg>
 
-    <svg class="box" height="260" width="125">
+    <svg  height="260" width="125">
       <g stroke="blue">
         <text x="10" y="40" class="myText">Hello world!</text>
       </g>
     </svg>
 
-    <svg class="box" height="260" width="125">
+    <svg  height="260" width="125">
       <g stroke="blue">
         <text x="25" y="50" class="myText" transform="rotate(30,10,10)">Hello world!</text>
       </g>
