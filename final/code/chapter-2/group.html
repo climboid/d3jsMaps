@@ -8,28 +8,45 @@
     <title>SVG Practice - Triangle</title>
     <style>
 
-    .box {
+    svg {
       border-style:solid;
       border-width:1px;
       border-color:#ccc;
+    }
+
+    path {
+      stroke-width: 1;
+      stroke: steelblue;
+      fill:#888;
+      fill-opacity: .5;
+    }
+
+    line {
+      stroke: red;
+      stroke-width: 2;
+    }
+
+    circle {
+      fill: #888;
+      fill-opacity: .5;
+      stroke: steelblue;
     }
     </style>
 
   </head>
   <body>
-    <svg class="box" height="500" width="800">
+    <svg height="500" width="800">
       <g transform="translate(-200,-100), scale(2,2)">
-        <path d="M 120 120 L 220 220 C 200 70 480 290 320 120 Z " stroke="steelblue" fill="lightyellow" stroke-width="2"></path>
+        <path d="M 120 120 L 220 220 C 200 70 480 290 320 120 Z "></path>
 
-        <line x1="220"  y1="220" x2="200" y2="70"  stroke="red" stroke-width="2px"></line>
-        <circle cx="200" cy="70"   r="5" stroke="steelblue" fill="#ccc"></circle>
+        <line x1="220"  y1="220" x2="200" y2="70"></line>
+        <circle cx="200" cy="70"   r="5" ></circle>
 
-        <line x1="200"  y1="70"  x2="480" y2="290" stroke="red" stroke-width="2px"></line>
-        <circle cx="480" cy="290"  r="5" stroke="steelblue" fill="#ccc"></circle>
+        <line x1="200"  y1="70"  x2="480" y2="290"></line>
+        <circle cx="480" cy="290"  r="5" ></circle>
 
-        <line x1="480"  y1="290" x2="320" y2="120" stroke="red" stroke-width="2px"></line>
+        <line x1="480"  y1="290" x2="320" y2="120"></line>
       </g>
-      
     </svg>
   </body>
 </html>
