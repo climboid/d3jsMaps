@@ -1,7 +1,0 @@
-The TIS Bundle kit includes the following three docs:
-
-1) TIS Best Practices for Authors: This document is useful for the authors' reference and it will help the authors to identify the necessary information they need to include in the TIS template in the best possible ways catering to the needs of the development team. This will avoid the rate of TIS revisions as the expectations will be clear.
-
-2) TIS template: This is the overall skeleton of all the sections necessary to be filled by the author.
-
-3) Sample TIS doc: This is the best possible sample doc for the authors' reference.
