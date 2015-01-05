@@ -21,7 +21,6 @@
 <body>
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script>
-(function() {
 
   var makeData = function(n){
     var arr = [];
@@ -47,7 +46,7 @@
     rect.enter().append('rect')
       .attr('test', function(d,i) {
         // Enter called 2 times only
-        console.log('enter placing inital rectangle: ', i)
+        console.log('enter placing initial rectangle: ', i)
     });
 
     // Update
@@ -72,7 +71,6 @@
     rectangles(svg);
   },1000);
 
-})();
   </script>
 </body>
 </html>

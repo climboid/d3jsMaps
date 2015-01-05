@@ -46,7 +46,7 @@
     var b, s, t;
     projection.scale(1).translate([0, 0]);
     var b = path.bounds(states);
-    var s = .9 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
+    var s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
     var t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
     projection.scale(s).translate(t);
 

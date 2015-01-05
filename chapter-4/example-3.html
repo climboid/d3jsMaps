@@ -49,10 +49,12 @@
     var map = svg.append('g').attr('class', 'boundary');
     mexico = map.selectAll('path').data(states.features);
 
+    // Enter
     mexico.enter()
        .append('path')
        .attr('d', path);
 
+    // Update
     var color = d3.scale.linear().domain([0,33]).range(['red', 'yellow']);
     mexico.attr('fill', function(d,i) {return color(i)});
 

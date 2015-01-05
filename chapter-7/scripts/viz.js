@@ -23,7 +23,7 @@ d3.charts.viz = function () {
       svg = my.setupSVG(this);
       chart = my.setupChart(svg);
 
-      // Creat the visualization
+      // Create the visualization
       my.chart(data);
     });
   };
