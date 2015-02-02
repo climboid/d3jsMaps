@@ -1,0 +1,44 @@
+<div class="pure-g">
+  <div class="pure-u-1">
+    <h1>Maps in D3.js</h1>
+  </div>
+</div>
+<div class="pure-g">
+    <div class="pure-u-1 pure-u-md-1-2">
+      <form class="pure-form pure-form-stacked">
+        <fieldset>
+          <legend>Choose a country, then a map type and click on Generate Map</legend>
+
+          <input id="cName" type="text" placeholder="Country Name">
+
+          <label for="country-outline" class="pure-radio">
+              <input id="country-outline" type="radio" name="mapKind" ng-model="typeOfMap" value="adm0"> Country Outline
+          </label>
+          <label for="country-states" class="pure-radio">
+              <input id="country-states" type="radio" name="mapKind" ng-model="typeOfMap" value="adm1"> Country and States
+          </label>
+          <label for="country-states-cities" class="pure-radio">
+              <input id="country-states-cities" type="radio" name="mapKind" ng-model="typeOfMap" value="adm2"> Country, States and Cities Outline
+          </label>
+          <label for="country-states-cities-towns" class="pure-radio">
+              <input id="country-states-cities-towns" type="radio" name="mapKind" ng-model="typeOfMap" value="adm3"> Country, States, Citites and Towns Outline
+          </label>
+          <label for="inland-water" class="pure-radio">
+              <input id="inland-water" type="radio" name="mapKind" ng-model="water_lines_dcw"> Inland Water lines
+          </label>
+          <label for="water-areas" class="pure-radio">
+              <input id="water-areas" type="radio" name="mapKind" ng-model="water_areas_dcw"> Water areas
+          </label>
+          <label for="roads" class="pure-radio">
+              <input id="roads" type="radio" name="mapKind" ng-model="roads"> Roads
+          </label>
+          <label for="railroads" class="pure-radio">
+              <input id="railroads" type="radio" name="mapKind" ng-model="rails"> Railroads
+          </label>
+
+          <button type="submit" class="pure-button pure-button-primary" ng-click="fetchMap()">Generate Map</button>
+        </fieldset>
+      </form>
+    </div>
+    <div class="pure-u-1 pure-u-md-1-2"></div>
+</div>
