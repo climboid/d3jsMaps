@@ -1,0 +1,37 @@
+<form class="pure-form pure-form-stacked" ng-controller="AutoSuggestCtrl">
+  <fieldset>
+    <legend>Choose a country, then a map type and click on Generate Map</legend>
+
+    <input id="cName" type="text" placeholder="Country Name" ng-model="cName">
+		<ul>
+		  <li ng-repeat="item in suggestList" ng-bind="item.value" ng-click="selSuggestedValue(item)"></li>
+		</ul>
+
+    <label for="country-outline" class="pure-radio">
+        <input id="country-outline" type="radio" name="mapKind" ng-model="typeOfMap" value="adm0"> Country Outline
+    </label>
+    <label for="country-states" class="pure-radio">
+        <input id="country-states" type="radio" name="mapKind" ng-model="typeOfMap" value="adm1"> Country and States
+    </label>
+    <label for="country-states-cities" class="pure-radio">
+        <input id="country-states-cities" type="radio" name="mapKind" ng-model="typeOfMap" value="adm2"> Country, States and Cities Outline
+    </label>
+    <label for="country-states-cities-towns" class="pure-radio">
+        <input id="country-states-cities-towns" type="radio" name="mapKind" ng-model="typeOfMap" value="adm3"> Country, States, Citites and Towns Outline
+    </label>
+    <label for="inland-water" class="pure-radio">
+        <input id="inland-water" type="radio" name="mapKind"  ng-model="typeOfMap" value="water_lines_dcw"> Inland Water lines
+    </label>
+    <label for="water-areas" class="pure-radio">
+        <input id="water-areas" type="radio" name="mapKind" ng-model="typeOfMap" value="water_areas_dcw"> Water areas
+    </label>
+    <label for="roads" class="pure-radio">
+        <input id="roads" type="radio" name="mapKind" ng-model="typeOfMap" value="roads"> Roads
+    </label>
+    <label for="railroads" class="pure-radio">
+        <input id="railroads" type="radio" name="mapKind" ng-model="typeOfMap" value="rails"> Railroads
+    </label>
+
+    <button type="submit" class="pure-button pure-button-primary" ng-click="fetchMap()">Generate Map</button>
+  </fieldset>
+</form>

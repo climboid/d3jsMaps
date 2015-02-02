@@ -3,8 +3,8 @@ var http = require('http');
 module.exports = function(router){
 
   
-  router.get('/api/countries/:country_id', function(req, res) {
-    console.log(req.params.country_id)
+  router.get('/api/countries/:country_name', function(req, res) {
+    console.log('params', req.params)
      var options = {
       host: 'd3automaps-topojson.s3.amazonaws.com',
       path: '/ABW_adm0.json'
