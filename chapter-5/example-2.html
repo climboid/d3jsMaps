@@ -69,8 +69,8 @@
 
   var hover = function(d) {
     var div = document.getElementById('tooltip');
-    div.style.left = event.pageX +'px';
-    div.style.top = event.pageY + 'px';
+    div.style.left = d3.event.pageX +'px';
+    div.style.top = d3.event.pageY + 'px';
     div.innerHTML = d.properties.NAME_1;
 
     var id = geoID(d);
