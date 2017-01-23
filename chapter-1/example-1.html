@@ -23,16 +23,17 @@
 
   </head>
   <body>
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+    <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
 
     <script>
       var width = 900,
           height = 600;
 
-      var projection = d3.geo.mercator();
+      var projection = d3.geoMercator();
 
-      var path = d3.geo.path()
+      var path = d3.geoPath()
                   .projection(projection);
 
       var svg = d3.select("body").append("svg")
