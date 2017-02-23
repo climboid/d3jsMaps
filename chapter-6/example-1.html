@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mexico</title>
+  <title>Spain</title>
   <style>
     .boundary {
       fill: none;
@@ -19,18 +19,18 @@
 
 <body>
   <div id="map"></div>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="../lib/d3.v4.min.js"></script>
 
   <script>
 (function(){
 
   var height = 600;
   var width = 900;
-  var projection = d3.geo.mercator();
+  var projection = d3.geoMercator();
   var map = void 0;
   var spain = void 0;
 
-  var path = d3.geo.path().projection(projection);
+  var path = d3.geoPath().projection(projection);
 
   var svg = d3.select("#map")
       .append("svg")

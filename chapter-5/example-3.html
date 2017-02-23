@@ -24,15 +24,17 @@
 
 <body>
   <div id="map"></div>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <!-- <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script> -->
+  <script src="../lib/d3.v4.min.js"></script>
+  <script src="../lib/topojson.v1.min.js"></script>
 
   <script>
 (function(){
 
   var height = 600;
   var width = 900;
-  var projection = d3.geo.mercator();
+  var projection = d3.geoMercator();
   var mexico = void 0;
   var map = void 0; // Update global
 
@@ -42,11 +44,11 @@
   };
 
   // New function
-  var zoom = d3.behavior.zoom()
+  var zoom = d3.behavior.zoom() // todo change behavior.zoom() to its equivalent in d3v4
     .scaleExtent([1, 8])
     .on("zoom", zoomed);
 
-  var path = d3.geo.path().projection(projection);
+  var path = d3.geoPath().projection(projection);
 
   var svg = d3.select("#map")
       .append("svg")

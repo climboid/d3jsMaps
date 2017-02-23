@@ -14,9 +14,9 @@ d3.charts.sparkline = function () {
       lines = [];
 
   // Declare d3 variables that will need through out (Globals)
-  var y = d3.scale.linear(),
-      x = d3.scale.linear(),
-      line = d3.svg.line(),
+  var y = d3.scaleLinear(),
+      x = d3.scaleLinear(),
+      line = d3.svg.line(), // todo change svg.line() to its equivalent in d3
       chart = void 0,
       svg = void 0;
 
