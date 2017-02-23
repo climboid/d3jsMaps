@@ -20,18 +20,21 @@
 </style>
 <body>
   <div id="map"></div>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <!-- <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script> -->
+
+  <script src="../lib/d3.v4.min.js"></script>
+  <script src="../lib/topojson.v1.min.js"></script>
 
   <script>
 (function(){
 
   var height = 600;
   var width = 900;
-  var projection = d3.geo.mercator();
+  var projection = d3.geoMercator();
   var mexico = void 0;
 
-  var path = d3.geo.path().projection(projection);
+  var path = d3.geoPath().projection(projection);
 
   var svg = d3.select("#map")
       .append("svg")
@@ -51,21 +54,20 @@
     var map = svg.append('g').attr('class', 'boundary');
     mexico = map.selectAll('path').data(states.features);
 
+    var color = d3.scaleLinear().domain([0,33]).range(['red', 'yellow']);
+
     mexico.enter()
        .append('path')
-       .attr('d', path);
-
-    var color = d3.scale.linear().domain([0,33]).range(['red', 'yellow']);
-    mexico
-      .style('fill', function(d,i) {return color(i)})
-      .style('fill-opacity', 0.2)
+       .attr('d', path)
+       .style('fill', function(d,i) {return color(i)})
+       .style('fill-opacity', 0.2)
 
     mexico.exit().remove();
 
     d3.csv('cities.csv', function(cities) {
       var cityPoints = svg.selectAll('circle').data(cities);
       var cityText = svg.selectAll('text').data(cities);
-      var radius = d3.scale.linear().domain([0,100]).range([5,30]);
+      var radius = d3.scaleLinear().domain([0,100]).range([5,30]);
 
       cityPoints.enter()
           .append('circle')
