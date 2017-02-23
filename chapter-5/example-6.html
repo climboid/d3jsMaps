@@ -41,6 +41,7 @@
 
   // New function
   var dragging = function(d) {
+    // todo : for some reason it's not rotating the globe
     var c = projection.rotate();
     projection.rotate([c[0] + d3.event.dx/2, c[1], c[2]])
 
@@ -51,10 +52,7 @@
 
   // New function
 
-  // todo : d3.behavior.drat() isn't working
-  // not sure if its still part of the library or needs to be included
-  // separately
-  var drag = d3.behavior.drag()
+  var drag = d3.drag()
     .on("drag", dragging);
 
   var svg = d3.select("#map")
