@@ -18,8 +18,11 @@
 </head>
 <body>
   <div id="map"></div>
-  <script src="http://d3js.org/d3.v4.min.js"></script>
-  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <!-- <script src="http://d3js.org/d3.v4.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script> -->
+
+  <script src="../lib/d3.v4.min.js"></script>
+  <script src="../lib/topojson.v1.min.js"></script>
 
   <script>
     (function(){
@@ -49,19 +52,16 @@
         var map = svg.append('g').attr('class', 'boundary');
         mexico = map.selectAll('path').data(states.features);
 
+        var color = d3.scaleLinear().domain([0,33]).range(['red', 'yellow']);
+        
+
         // Enter
         mexico.enter()
            .append('path')
-           .attr('d', path);
-
-
-        var color = d3.scaleLinear().domain([10,100]).range(['red', 'yellow']);
-        // Update
-        // Todo....
-        // Discrepancies with d3v4 how we're handling the mexico object via .attr()
-        mexico.attr('fill', function(d,i) {
-          return color(i);
-        });
+           .attr('d', path)
+           .attr('fill', function(d,i){
+            return color(i);
+           });
 
         mexico.exit().remove();
       });

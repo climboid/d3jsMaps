@@ -18,8 +18,11 @@
 </head>
 <body>
   <div id="map"></div>
-  <script src="http://d3js.org/d3.v4.min.js"></script>
-  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <!-- <script src="http://d3js.org/d3.v4.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script> -->
+
+  <script src="../lib/d3.v4.min.js"></script>
+  <script src="../lib/topojson.v1.min.js"></script>
 
   <script>
     (function(){
@@ -34,7 +37,7 @@
       };
 
       var click = function(d) {
-        mexico.attr('fill-opacity', 0.2); // Another update!
+        d3.selectAll('path').attr('fill-opacity',0.2)
         d3.select('#' + geoID(d)).attr('fill-opacity', 1);
       };
 
@@ -57,15 +60,17 @@
 
         var map = svg.append('g').attr('class', 'boundary');
         mexico = map.selectAll('path').data(states.features);
+        var color = d3.scaleLinear().domain([0,33]).range(['red', 'yellow']);
 
         mexico.enter()
            .append('path')
            .attr('d', path)
            .attr('id', geoID)
-           .on("click", click);
+           .on("click", click)
+           .attr('fill', function(d,i) {
+            return color(i);
+           })
 
-        var color = d3.scale.linear().domain([0,33]).range(['red', 'yellow']);
-        mexico.attr('fill', function(d,i) {return color(i)});
 
         mexico.exit().remove();
       });
