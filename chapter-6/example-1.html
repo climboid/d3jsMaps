@@ -22,37 +22,37 @@
   <script src="../lib/d3.v4.min.js"></script>
 
   <script>
-(function(){
+    (function(){
 
-  var height = 600;
-  var width = 900;
-  var projection = d3.geoMercator();
-  var map = void 0;
-  var spain = void 0;
+      var height = 600;
+      var width = 900;
+      var projection = d3.geoMercator();
+      var map = void 0;
+      var spain = void 0;
 
-  var path = d3.geoPath().projection(projection);
+      var path = d3.geoPath().projection(projection);
 
-  var svg = d3.select("#map")
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height);
+      var svg = d3.select("#map")
+          .append("svg")
+          .attr("width", width)
+          .attr("height", height);
 
-  d3.json('geojson/spain-geo.json', function(data) {
-    var b, s, t;
-    projection.scale(1).translate([0, 0]);
-    var b = path.bounds(data);
-    var s = .9 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
-    var t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
-    projection.scale(s).translate(t);
+      d3.json('geojson/spain-geo.json', function(data) {
+        var b, s, t;
+        projection.scale(1).translate([0, 0]);
+        var b = path.bounds(data);
+        var s = .9 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
+        var t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+        projection.scale(s).translate(t);
 
-    map = svg.append('g').attr('class', 'boundary');
-    spain = map.selectAll('path').data(data.features);
+        map = svg.append('g').attr('class', 'boundary');
+        spain = map.selectAll('path').data(data.features);
 
-    spain.enter()
-       .append('path')
-       .attr('d', path);
-  });
+        spain.enter()
+           .append('path')
+           .attr('d', path);
+      });
 
-})();
+    })();
  </script>
 </body>

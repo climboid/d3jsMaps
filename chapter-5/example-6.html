@@ -43,7 +43,7 @@
   var dragging = function(d) {
     // todo : for some reason it's not rotating the globe
     var c = projection.rotate();
-    projection.rotate([c[0] + d3.event.dx/2, c[1], c[2]])
+    projection.rotate([c[0] + d3.event.x/2, c[1], c[2]])
 
     world.attr('d', path);
     mexico.attr('d', path)
