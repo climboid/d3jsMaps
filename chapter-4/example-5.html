@@ -61,11 +61,8 @@
     });
 
     setInterval(function(){
-      // tood fix transition()
-      // for some reason its not kicking in
-      mexico.transition().duration(500)
+      map.selectAll('path').transition().duration(500)
           .attr('fill', function(d) {
-            console.log('changing the fill')
             return color(Math.floor((Math.random() * 32) + 1));
           });
     },2000);

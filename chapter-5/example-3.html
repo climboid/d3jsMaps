@@ -40,11 +40,11 @@
 
   // New function
   var zoomed = function () {
-    map.attr("transform", "translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
+    map.attr("transform", "translate("+ d3.event.transform.x + "," + d3.event.transform.y +")scale(" + d3.event.transform.k + ")");
   };
 
   // New function
-  var zoom = d3.behavior.zoom() // todo change behavior.zoom() to its equivalent in d3v4
+  var zoom = d3.zoom() // todo change behavior.zoom() to its equivalent in d3v4
     .scaleExtent([1, 8])
     .on("zoom", zoomed);
 

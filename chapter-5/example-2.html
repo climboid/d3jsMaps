@@ -76,6 +76,7 @@
     div.innerHTML = d.properties.NAME_1;
 
     var id = geoID(d);
+    console.log('datum', db.get(id));
     d3.select("#tooltip").datum(db.get(id)).call(sparkline.draw);
   };
 
