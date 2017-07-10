@@ -12,8 +12,8 @@ d3.charts.viz = function () {
       chart = void 0;
 
   // Declare D3 functions, also global
-  var x = d3.scale.linear(),
-      y = d3.scale.ordinal();
+  var x = d3.scaleLinear(),
+      y = d3.scaleOrdinal();
 
   // main interface to the vizualization code
   my.draw = function(selection) {
