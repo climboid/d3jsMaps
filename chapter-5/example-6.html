@@ -35,6 +35,7 @@
   var width = 900;
   var projection = d3.geoOrthographic().clipAngle(90);
   var path = d3.geoPath().projection(projection);
+  var map = void 0;
   var world = void 0;
   var mexico = void 0;
   var i = 0;
@@ -44,10 +45,7 @@
     // todo : for some reason it's not rotating the globe
     var c = projection.rotate();
     projection.rotate([c[0] + d3.event.x/2, c[1], c[2]])
-
-    world.attr('d', path);
-    mexico.attr('d', path)
-        .style('fill', 'lightyellow').style('stroke', 'orange');
+    map.selectAll('path').attr('d', path);
   };
 
   // New function
@@ -64,7 +62,7 @@
     var countries = topojson.feature(data, data.objects.countries);
     var m = countries.features[102];
 
-    var map = svg.append('g').attr('class', 'boundary');
+    map = svg.append('g').attr('class', 'boundary');
     world = map.selectAll('path').data(countries.features);
     mexico = map.selectAll('.mexico').data([m]);
 
