@@ -42,21 +42,12 @@
 
   // New function
   var dragging = function(d) {
-    // todo : for some reason it's not rotating the globe
     var c = projection.rotate();
-    console.log('d3.event.x', d3.event.x);
-    console.log(c)
-    projection.rotate([c[0] + d3.event.x/2, c[1], c[2]])
+    projection.rotate([c[0] + d3.event.dx/2, c[1], c[2]])
     map.selectAll('path').attr('d', path);
-
-    // world.attr('d', path);
-    // mexico.attr('d', path)
-        // .style('fill', 'lightyellow').style('stroke', 'orange');
-
   };
 
   // New function
-
   var drag = d3.drag()
     .on("drag", dragging);
 
