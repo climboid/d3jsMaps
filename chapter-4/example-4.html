@@ -37,6 +37,7 @@
       };
 
       var click = function(d) {
+        console.log('d',d);
         d3.selectAll('path').attr('fill-opacity',0.2)
         d3.select('#' + geoID(d)).attr('fill-opacity', 1);
       };
@@ -49,6 +50,7 @@
           .attr("height", height);
 
       d3.json('geo-data.json', function(data) {
+
         var states = topojson.feature(data, data.objects.MEX_adm1);
 
         var b, s, t;
@@ -70,6 +72,8 @@
            .attr('fill', function(d,i) {
             return color(i);
            })
+
+        click(states.features[3]);
 
 
         mexico.exit().remove();
