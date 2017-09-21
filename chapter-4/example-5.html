@@ -18,18 +18,20 @@
 </head>
 <body>
   <div id="map"></div>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <!-- <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script> -->
+  <script src="../lib/d3.v4.min.js"></script>
+  <script src="../lib/topojson.v1.min.js"></script>
 
   <script>
 (function(){
 
   var height = 600;
   var width = 900;
-  var projection = d3.geo.mercator();
+  var projection = d3.geoMercator();
   var mexico = void 0;
 
-  var path = d3.geo.path().projection(projection);
+  var path = d3.geoPath().projection(projection);
 
   var svg = d3.select("#map")
       .append("svg")
@@ -49,16 +51,18 @@
     var map = svg.append('g').attr('class', 'boundary');
     mexico = map.selectAll('path').data(states.features);
 
+    var color = d3.scaleLinear().domain([0,33]).range(['red', 'yellow']);
+
     mexico.enter()
        .append('path')
-       .attr('d', path);
-
-    var color = d3.scale.linear().domain([0,33]).range(['red', 'yellow']);
-    mexico.attr('fill', function(d,i) {return color(i)});
+       .attr('d', path)
+       .attr('fill', function(d,i) {
+        return color(i)
+    });
 
     setInterval(function(){
-      mexico.transition().duration(500)
-          .style('fill', function(d) {
+      map.selectAll('path').transition().duration(500)
+          .attr('fill', function(d) {
             return color(Math.floor((Math.random() * 32) + 1));
           });
     },2000);

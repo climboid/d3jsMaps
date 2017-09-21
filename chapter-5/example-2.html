@@ -5,7 +5,7 @@
   <title>Mexico</title>
   <style>
     .boundary {
-      fill: none;
+      fill: #ddd;
       stroke: #888;
       stroke-linejoin: round;
     }
@@ -38,8 +38,10 @@
 <body>
   <div id="map"></div>
   <div id="tooltip"></div>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <!-- <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script> -->
+  <script src="../lib/d3.v4.min.js"></script>
+  <script src="../lib/topojson.v1.min.js"></script>
   <script src="base.js"></script>
   <script src="sparkline.js"></script>
 
@@ -48,7 +50,7 @@
 
   var height = 600;
   var width = 900;
-  var projection = d3.geo.mercator();
+  var projection = d3.geoMercator();
   var mexico = void 0;
   var db = d3.map();
   var sparkline = d3.charts.sparkline().height(50).width(138);
@@ -74,10 +76,11 @@
     div.innerHTML = d.properties.NAME_1;
 
     var id = geoID(d);
+    console.log('datum', db.get(id));
     d3.select("#tooltip").datum(db.get(id)).call(sparkline.draw);
   };
 
-  var path = d3.geo.path().projection(projection);
+  var path = d3.geoPath().projection(projection);
 
   var svg = d3.select("#map")
       .append("svg")

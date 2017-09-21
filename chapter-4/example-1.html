@@ -5,7 +5,7 @@
   <title>Mexico</title>
   <style>
   .boundary {
-    fill: none;
+    fill: #ddd;
     stroke: #888;
     stroke-linejoin: round;
   }
@@ -18,53 +18,55 @@
 </head>
 <body>
   <div id="map"></div>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="../lib/d3.v4.min.js"></script>
+  <script src="../lib/topojson.v1.min.js"></script>
 
   <script>
-(function() {
+    (function() {
 
-  var height = 600;
-  var width = 900;
-  var projection = d3.geo.mercator();
-  var mexico = void 0;
+      var height = 600,
+          width = 900,
+          projection = d3.geoMercator(),
+          mexico = void 0;
 
-  // Special d3 helper that converts geo coordinates to paths
-  // based on a projection
-  var path = d3.geo.path().projection(projection);
+      // Special d3 helper that converts geo coordinates to paths
+      // based on a projection
+      var path = d3.geoPath().projection(projection);
 
-  var svg = d3.select("#map")
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height);
+      var svg = d3.select("#map")
+          .append("svg")
+          .attr("width", width)
+          .attr("height", height);
 
-  d3.json('geo-data.json', function(data) {
-    console.log('mexico', data);
-    var states = topojson.feature(data, data.objects.MEX_adm1);
+      d3.json('geo-data.json', function(error, data) {
+        if(error) return;
 
-    // Setup the scale and translate
-    var b, s, t;
-    projection.scale(1).translate([0, 0]);
-    var b = path.bounds(states);
-    var s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
-    var t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
-    projection.scale(s).translate(t);
+        console.log('mexico', data);
+        var states = topojson.feature(data, data.objects.MEX_adm1);
 
-    var map = svg.append('g').attr('class', 'boundary');
-    mexico = map.selectAll('path').data(states.features);
+        // Setup the scale and translate
+        var b, s, t;
+        projection.scale(1).translate([0, 0]);
+        var b = path.bounds(states);
+        var s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
+        var t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+        projection.scale(s).translate(t);
 
-    //Enter
-    mexico.enter()
-       .append('path')
-       .attr('d', path);
+        var map = svg.append('g').attr('class', 'boundary');
+        mexico = map.selectAll('path').data(states.features);
 
-    //Update
-    mexico.attr('fill', '#eee');
+        //Enter
+        mexico.enter()
+           .append('path')
+           .attr('d', path);
 
-    //Exit
-    mexico.exit().remove();
-  });
+        //Update
+        mexico.attr('fill', '#eee');
 
-})();
+        //Exit
+        mexico.exit().remove();
+      });
+
+    })();
   </script>
 </body>

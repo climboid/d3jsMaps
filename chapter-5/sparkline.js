@@ -14,12 +14,14 @@ d3.charts.sparkline = function () {
       lines = [];
 
   // Declare d3 variables that will need through out (Globals)
-  var y = d3.scale.linear(),
-      x = d3.scale.linear(),
-      line = d3.svg.line(),
+  var y = d3.scaleLinear(),
+      x = d3.scaleLinear(),
+      line = d3.line(), 
       chart = void 0,
       svg = void 0;
 
+  
+  // todo seems like the lines are not updating
   my.setup = function(data) {
     lines = data.map(function(d) { return { x: d[my.xAxis()], y: d[my.yAxis()] }; } );
   };
@@ -60,7 +62,9 @@ d3.charts.sparkline = function () {
   };
 
   my.draw = function(selection) {
+    console.log('calling draw', selection)
     selection.each(function(data) {
+      console.log('data', data)
       my.setup(data);
       svg = my.setupSVG(this, my.width(), my.height());
       chart = my.setupChart(svg, margin);
