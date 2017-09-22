@@ -13,7 +13,7 @@ d3.charts.viz = function () {
 
   // Declare D3 functions, also global
   var x = d3.scaleLinear(),
-      y = d3.scaleOrdinal();
+      y = d3.scaleBand();
 
   // main interface to the vizualization code
   my.draw = function(selection) {
@@ -35,7 +35,9 @@ d3.charts.viz = function () {
     x.domain([0, my.profitMax(chartData)])
         .range([0,my.w()]);
     y.domain(my.categories(chartData))
-        .rangeRoundBands([0, my.h()], 0.2);
+        .range([0, my.h()])
+        .padding(0.2)
+        .round(true);
 
     var boxes = chart.selectAll('.box').data(chartData);
 
@@ -49,7 +51,8 @@ d3.charts.viz = function () {
         .attr('x', 0)
         .attr('y', function(d) { return y(d.category) })
         .attr('width', function(d) {  return x(d.profit) })
-        .attr('height', y.rangeBand())
+        .attr('height', y.bandwidth());
+
 
     // Exit
     boxes.exit().remove();
