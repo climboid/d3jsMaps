@@ -1,14 +1,24 @@
 {
-  "name": "d3viz",
-  "version": "0.0.1",
-  "dependencies": {},
-  "devDependencies": {
-    "karma": "~0.12.16",
-    "karma-chrome-launcher": "~0.1.4",
-    "karma-jasmine": "~0.1.5",
-    "http-server": "~0.7.1"
+  "name": "chapter-7",
+  "version": "1.0.0",
+  "description": "Example Test",
+  "main": "karma.conf.js",
+  "dependencies": {
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0"
   },
-  "engines": {
-    "node": ">=0.10.0"
-  }
+  "devDependencies": {
+    "http-server": "^0.10.0",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "author": "",
+  "license": "ISC"
 }

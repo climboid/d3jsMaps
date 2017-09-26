@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'vendor/d3.min.js',
+      'vendor/d3.v4.min.js',
       'scripts/**/*.js',
       'scripts/*.js',
       'spec/**/*.js'
