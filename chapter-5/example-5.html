@@ -63,17 +63,10 @@
         .attr('d', path)
         .style('fill', 'lightyellow').style('stroke', 'orange');
 
-    setInterval(function() {
-        i = i+0.2;
-        // move i around in the array to get a feel for yaw, pitch and roll
-        // see diagram
-        
-        // todo : projection.rotate() isn't working in d3v4
-        projection.rotate([i,0,0])
-        world.attr('d', path);
-        mexico.attr('d', path).style('fill', 'lightyellow').style('stroke', 'orange');
-
-    }, 20);
+    d3.timer(function(elapsed) {
+      projection.rotate([0.02 * elapsed - 120, 0, 0]);
+      map.selectAll('path').attr('d', path);
+    });
 
   });
 
