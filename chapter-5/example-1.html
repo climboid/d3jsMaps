@@ -49,10 +49,10 @@
   var mexico = void 0;
 
   var hover = function(d) {
-    console.log('d', d, 'event', event);
+    console.log('d', d, 'event', d3.event);
     var div = document.getElementById('tooltip');
-    div.style.left = event.pageX +'px';
-    div.style.top = event.pageY + 'px';
+    div.style.left = d3.event.pageX +'px';
+    div.style.top = d3.event.pageY + 'px';
     div.innerHTML = d.properties.NAME_1;
   };
 
