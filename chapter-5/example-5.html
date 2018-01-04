@@ -19,7 +19,7 @@
 
 <body>
   <div id="map"></div>
-  <!-- <script src="http://d3js.org/d3.v3.min.js"></script>
+  <!-- <script src="http://d3js.org/d3.v4.min.js"></script>
   <script src="http://d3js.org/topojson.v1.min.js"></script> -->
 
   <script src="../lib/d3.v4.min.js"></script>
@@ -32,7 +32,6 @@
   var width = 900;
   var projection = d3.geoOrthographic().clipAngle(90);
   var path = d3.geoPath().projection(projection);
-  var i = 0;
 
   var svg = d3.select("#map")
       .append("svg")
@@ -45,7 +44,7 @@
 
     var map = svg.append('g').attr('class', 'boundary');
     var world = map.selectAll('path').data(countries.features);
-    var mexico = map.selectAll('.mexico').data([mexico]);
+    mexico = map.selectAll('.mexico').data([mexico]);
 
     projection.scale(1).translate([0, 0]);
     var b = path.bounds(countries);
@@ -64,7 +63,7 @@
         .style('fill', 'lightyellow').style('stroke', 'orange');
 
     d3.timer(function(elapsed) {
-      projection.rotate([0.02 * elapsed - 120, 0, 0]);
+      projection.rotate([0.02 * elapsed, 0, 0]);
       map.selectAll('path').attr('d', path);
     });
 
