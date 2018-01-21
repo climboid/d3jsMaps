@@ -38,7 +38,7 @@
       .attr("width", width)
       .attr("height", height);
 
-  d3.json('topojson/spain-topo.json', function(data) {
+  d3.json('topojson/spain-topo-very-simple.json', function(data) {
     var country = topojson.feature(data, data.objects.ESP_adm0);
 
     var b, s, t;
