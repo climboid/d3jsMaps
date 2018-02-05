@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>8 Canvas drawing - example 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="//d3js.org/d3.v5.js"></script>
+<style type="text/css">
+	
+</style>
+</head>
+<body>
+
+<canvas id="main-canvas" width="600" height="400"></canvas>
+
+<script>
+	
+var canvas = d3.select('#main-canvas').node();
+var context = canvas.getContext('2d');
+
+context.fillStyle = 'royalblue';
+context.fillRect(50, 150, 200, 100);
+
+</script>
+
+</body>
+</html>

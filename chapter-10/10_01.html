@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>10 Canvas interact - example 1</title>
+<meta charset="utf-8">
+  
+<script src="//d3js.org/d3.v5.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+
+<style type="text/css">
+
+  body {
+    font-family: 'Avenir', 'sans-serif';
+  }
+
+  #canvas-container {
+    position: relative;
+  }
+  
+  #canvas-globe {
+    border:  1px solid #ccc;
+  }  
+  
+</style>
+
+</head>
+
+<body>
+
+<div id="canvas-container"></div>
+
+<script>
+
+
+/* Set up global variables */
+/* ======================= */
+
+var width = 960,
+    height = 600,
+    projectionScale = height / 2.1,
+    translation = [width / 2, height / 2];
+
+
+/* Set up canvas, context, projection and path */
+/* ========================================== */
+
+/* Main canvas */
+/* ----------- */
+
+// Main canvas and contexxt
+var canvas = d3.select('#canvas-container').append('canvas')
+    .attr('id', 'canvas-globe')
+    .attr('width', width)
+    .attr('height', height);
+
+var context = canvas.node().getContext('2d');
+
+
+/* Buffer canvas */
+/* ------------- */
+
+var bufferCanvas = document.createElement('canvas');
+var bufferContext = bufferCanvas.getContext('2d');
+
+bufferContext.canvas.width = width;
+bufferContext.canvas.height = height;
+
+
+/* Geo tools */
+/* --------- */
+
+// Main projection and path functions
+var projection = d3.geoOrthographic()
+    .scale(projectionScale) 
+    .translate(translation)
+    .clipAngle(90);
+
+var bufferPath = d3.geoPath()
+    .projection(projection)
+    .context(bufferContext);
+
+// Visual helpers and utilities
+var sphere = { type: 'Sphere' },
+    grid = d3.geoGraticule()(); // d3.geoGraticule() returns a function to draw a graticule. That function returns the grid.
+
+
+
+/* Drawing functions */
+/* ================= */
+
+function drawScene(countries) {
+  
+  // Clear
+  bufferContext.clearRect(0, 0, bufferCanvas.width, bufferCanvas.height);
+
+  // Sphere fill
+  bufferContext.beginPath(); 
+  bufferPath(sphere);
+  bufferContext.fillStyle = '#D9EAEF';
+  bufferContext.fill();
+
+  // Grid
+  bufferContext.beginPath();
+  bufferPath(grid);
+  bufferContext.lineWidth = 0.5;
+  bufferContext.strokeStyle = '#BDDAE3';
+  bufferContext.stroke();
+
+  // Country fill - uniform
+  bufferContext.beginPath();
+  bufferPath(countries);
+  bufferContext.fillStyle = '#FFFAFA';
+  bufferContext.fill();
+
+  // Country stroke - each country
+  bufferContext.beginPath();
+  bufferPath(countries);
+  bufferContext.lineWidth = 0.5;
+  bufferContext.strokeStyle = '#D2D3CE';
+  bufferContext.stroke();
+
+
+} // drawScene()
+
+
+function renderScene(world){
+
+  // Draw scene
+  drawScene(world);
+
+  // Clear the canvas
+  context.clearRect(0, 0, width, height);
+  
+  // Render scene
+  context.drawImage(bufferCanvas, 0, 0, bufferCanvas.width, bufferCanvas.height);
+
+} // renderScene()
+
+
+/* Main drawing function */
+/* ===================== */
+
+function ready(world) {
+
+  /* Data preparation */
+  /* ---------------- */
+
+  // The world
+  var countries = topojson.feature(world, world.objects.ne_110m_admin_0_countries); // Convert TopoJSON to GeoJSON array of countries
+
+  // Reduce properties - keep only country admin name
+  countries.features = countries.features.map(function(el) {
+
+    return { 
+      geometry: el.geometry,
+      type: el.type,
+      properties: { 
+        admin: el.properties.admin,
+        adm0_a3: el.properties.adm0_a3,
+        pop_est: el.properties.pop_est
+      }
+    };
+
+  });
+
+  console.log(countries);
+
+  renderScene(countries);
+
+} // ready()
+
+
+/* Data load and init */
+/* ================== */
+
+d3.json('data/world-110.json').then(ready);
+
+
+</script>
+
+</html>

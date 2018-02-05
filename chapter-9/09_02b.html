@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>9 Canvas mapping - example 2b</title>
+<meta charset="utf-8">
+
+<script src="//d3js.org/d3.v5.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="//d3js.org/d3-array.v1.min.js"></script>
+<script src="//d3js.org/d3-geo.v1.min.js"></script>
+<script src="//d3js.org/d3-geo-projection.v2.min.js"></script>
+
+<style type="text/css">
+
+  body {
+    font-family: 'Avenir', 'sans-serif';
+  }
+
+  #canvas-map {
+    position: relative;
+  }
+  #canvas-world, #canvas-plane {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  div#controls {
+    position: relative;
+  }
+  div.flight-select {
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 0 1em;
+  }
+  button {
+    display: inline-block;
+    width: 6em;
+    margin: 0;
+    padding: .5em;
+    outline: none;
+    color: #555;
+    background-color: #f7f7f7;
+    border: 1px dotted #f0f0f0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #f0f0f0!important;
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<div id="canvas-map"></div>
+
+<div id="controls">
+  <div class="flight-select" id="button-header">Pick number of Canvas flights:</div>
+  <button class="flight-select" data-flights="100">100</button>
+  <button class="flight-select" data-flights="1000">1,000</button>
+  <button class="flight-select" data-flights="5000">5,000</button>
+  <button class="flight-select" data-flights="10000">10,000</button>
+  <button class="flight-select" data-flights="15000">15,000</button>
+  <button class="flight-select" data-flights="20000">20,000</button>
+  <button class="flight-select" data-flights="25000">25,000</button>
+  <button class="flight-select" data-flights="30000">30,000</button>
+</div>
+
+<script>
+  
+
+/* Set up global variables */
+/* ======================= */
+
+var width = 1000,
+    height = 600,
+    countries,
+    airportMap,
+    requestID;
+
+
+/* Set up canvas and context */
+/* ========================= */
+
+// Canvas for world and airports
+var canvasWorld = d3.select('#canvas-map').append('canvas')
+  .attr('id', 'canvas-world')
+  .attr('width', width)
+  .attr('height', height);
+
+var contextWorld = canvasWorld.node().getContext('2d');
+
+// Canvas for planes
+var canvasPlane = d3.select('#canvas-map').append('canvas')
+  .attr('id', 'canvas-plane')
+  .attr('width', width)
+  .attr('height', height);
+
+var contextPlane = canvasPlane.node().getContext('2d');
+
+
+/* Set up projection and path generator */
+/* ==================================== */
+
+var projection = d3.geoRobinson()
+    .scale(180)
+    .translate([width / 2, height / 2]);
+
+var pathSVG = d3.geoPath()
+    .projection(projection);
+
+var pathCanvas = d3.geoPath()
+    .projection(projection)
+    .pointRadius(1)
+    .context(contextWorld);
+
+
+/* Set up functions to draw scene */
+/* ============================== */
+
+function drawMap(world) {
+
+  countries.features.forEach(function(el, i) {
+
+    contextWorld.beginPath();
+    pathCanvas(el);
+    contextWorld.fillStyle = '#ccc';
+    contextWorld.fill();
+
+    contextWorld.beginPath();
+    pathCanvas(el);
+    contextWorld.strokeStyle = '#fff';
+    contextWorld.lineWidth = 1;
+    contextWorld.stroke();
+
+  }); 
+
+} // drawMap()
+
+
+function drawAirports(airports) {
+
+  airports.forEach(function(el,i) {
+
+    contextWorld.beginPath();
+    pathCanvas(el);
+    contextWorld.fillStyle = '#fff';
+    contextWorld.fill();
+
+  });
+
+} // drawAirports()
+
+
+function createPlaneImage() {
+
+  // Create the image
+  var planeImg = document.createElement('canvas');
+  planeImg.width = planeImg.height = 2;
+  var contextPlaneImg = planeImg.getContext('2d');
+
+  contextPlaneImg.beginPath();
+  contextPlaneImg.fillStyle = 'tomato';
+  contextPlaneImg.arc(planeImg.width/2, planeImg.height/2, 1, 0, 2*Math.PI);
+  contextPlaneImg.fill();
+
+  return planeImg;
+  
+} // createPlaneImage() !New
+
+
+/* Set up visual with loaded data */
+/* ============================== */
+
+function ready(routes, airports) {
+
+  /* Draw scene */
+  /* ---------- */
+
+  // Set airports' geo coordinates
+  var airportLocation = [];
+  airports.forEach(function(el) {
+    var obj = {};
+    obj.type = 'Feature';
+    obj.id = el.iata;
+    obj.geometry = {
+      type: 'Point',
+      coordinates: [+el.long, +el.lat]
+    };
+    obj.properties = {};
+    airportLocation.push(obj);
+  });
+
+  // Create airport map for lookup
+  airportMap = d3.map(airportLocation, function(d) { return d.id; });
+
+  // Redraw map and airports
+  contextWorld.clearRect(0, 0, width, height);
+  drawMap(countries);
+  drawAirports(airportLocation);
+
+
+  /* Define planes and their methods */
+  /* ------------------------------- */
+
+  // Get planes and routes
+  var planes = {
+    items: [],
+    icon: createPlaneImage(), // this gets called only once !New
+    getPlane: function(planeRoute) {
+
+      // Get origin and destination from plane's route object
+      var origin = planeRoute[0], destination = planeRoute[1];
+
+      var obj = {};
+      
+      obj.startX = projection(airportMap.get(origin).geometry.coordinates)[0];
+      obj.startY = projection(airportMap.get(origin).geometry.coordinates)[1];
+      
+      obj.x = projection(airportMap.get(origin).geometry.coordinates)[0];
+      obj.y = projection(airportMap.get(origin).geometry.coordinates)[1];
+
+      obj.route = null;
+      obj.wayPoints = [];
+
+      obj.currentIndex = 0;
+      obj.od = [origin, destination];
+
+      return obj;
+
+    },
+    getPath: function(planeRoute) {
+  
+      // Get origin and destination from plane's route object
+      var origin = planeRoute[0], destination = planeRoute[1];
+
+      var pathElement = document.createElementNS(d3.namespaces.svg, 'path');
+      
+      var route = d3.select(pathElement)
+          .datum({
+            type: 'LineString', 
+            coordinates: [
+              airportMap.get(origin).geometry.coordinates, 
+              airportMap.get(destination).geometry.coordinates
+            ]
+          })
+          .attr('d', pathSVG);
+
+      return route.node();
+
+    },
+    getWayPoints: function(plane) {
+
+      var arr = [];
+      var points = Math.floor(plane.route.getTotalLength() * 2.5); // the multiplicator affects speed, quantity and precision of points
+      
+      d3.range(points).forEach(function(el, i) {
+
+        var DOMPoints = plane.route.getPointAtLength(i/2.5);
+
+        arr.push({ x: DOMPoints.x, y: DOMPoints.y });
+
+      });
+
+      return arr;
+
+    },
+    clearPlanes: function(ctx) {
+
+      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+    },
+    updatePlane: function(plane) {
+
+      plane.currentIndex++;
+      if (plane.currentIndex >= plane.wayPoints.length) {
+        plane.currentIndex = 0;
+        plane.x = plane.startX;
+        plane.y = plane.startY;
+      } else {
+        plane.x = plane.wayPoints[plane.currentIndex].x;
+        plane.y = plane.wayPoints[plane.currentIndex].y;
+      }
+
+    },
+    drawPlaneImage: function(ctx, x, y) { // optimsing drawPlane() !New
+
+      ctx.drawImage(this.icon, x, y);
+    
+    }
+
+  }; // planes object
+
+
+  /* Animate planes on routes */
+  /* ------------------------ */
+
+  // Animation function
+  function animate() {
+
+    // Clear the canvas
+    planes.clearPlanes(contextPlane);
+
+    planes.items.forEach(function(el) {
+      planes.updatePlane(el); // Update each plane's position
+      planes.drawPlaneImage(contextPlane, el.x, el.y); // Draw the plane !New
+    });
+
+    // Restart animation
+    requestID = requestAnimationFrame(animate);
+
+  } // animate()
+
+  // Recode route data
+  var routeFromTo = [];
+  routes.forEach(function(el) {
+    var arr = [el.source_airport, el.destination_airport];
+    routeFromTo.push(arr);
+  });
+
+  // Calculate plane positions and their routes 
+  routeFromTo.forEach(function(el, i) {
+
+    var plane = planes.getPlane(el); // calculate current and future position of plane
+    plane.route = planes.getPath(el); // calculate route as path of current plane
+    plane.wayPoints = planes.getWayPoints(plane); // calculate way points on route
+    planes.items.push(plane);
+
+  });
+  
+  // Kick off animation
+  requestAnimationFrame(animate);
+
+} // ready()
+
+
+/* Load data and handle user input */
+/* =============================== */
+
+d3.json('data/countries.topo.json').then(function(world) {
+
+  // Position controls below the absolute positioned canvases (absolute as they need to overlap)
+  d3.select('div#controls').style('top', height + 'px');
+
+  // Recode topojson to GeoJson Features and save as global
+  countries = topojson.feature(world, world.objects.countries); // GeoJSON;
+  
+  // Initial draw of the world
+  drawMap(countries);
+
+
+  // Button listener
+  d3.selectAll('button.flight-select').on('mousedown', handleFlights);
+
+  // Click handler
+  function handleFlights() {
+
+    // Change button colour
+    d3.selectAll('button').style('background-color', '#f7f7f7');
+    d3.select(this).style('background-color', '#ddd');
+
+    // Stop the current animation
+    if (requestID) cancelAnimationFrame(requestID);
+
+    // Get the number of flights per clicked button
+    var flights = this.dataset.flights;
+        
+    // Load data as per button clicked
+    var routes = d3.csv('data/routes_' + flights + '.csv').then(function(routes) { return routes; });
+    var airports = d3.csv('data/airports_' + flights + '.csv').then(function(airports) { return airports; });
+
+    Promise.all([routes, airports]).then(function(response) {
+
+      var routesResolved = response[0];
+      var airportsResolved = response[1];
+
+      ready(routesResolved, airportsResolved);
+
+    });
+
+  } // handleFlights()
+
+}); // d3.json()
+
+
+
+
+/* Performance stats */
+/* ================= */
+
+(function(){
+  var script=document.createElement('script');
+  script.onload=function(){
+    var stats=new Stats();
+    document.body.appendChild(stats.dom);
+    requestAnimationFrame(function loop(){
+      stats.update();
+      requestAnimationFrame(loop);
+    });
+  };
+  script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';
+  document.head.appendChild(script);
+})();
+
+
+</script>
+
+</html>

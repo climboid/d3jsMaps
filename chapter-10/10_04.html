@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>10 Canvas interact - example 4</title>
+<meta charset="utf-8">
+
+<script src="//d3js.org/d3.v5.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="//d3js.org/d3-color.v1.min.js"></script> <!-- recommended -->
+<script src="//d3js.org/d3-interpolate.v1.min.js"></script> <!-- recommended -->
+<script src="//d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<style type="text/css">
+
+  body {
+    font-family: 'Avenir', 'sans-serif';
+  }
+
+  #canvas-container {
+    position: relative;
+  }
+
+  #canvas-globe, #canvas-hidden {
+    border:  1px solid #ccc;
+  }
+
+
+  #tooltip {
+    position: absolute;
+    display: inline-block;
+    color: #555;
+    font-size: 11px;
+    text-align: left;
+    background: #fafafa;
+    box-shadow: 2px 2px 5px rgba(0, 0, 20, 0.25);
+    pointer-events: none;
+    line-height: 200%;
+    max-width: 250px;
+
+    opacity: 0;
+  }
+
+  #tip-header {
+    padding: 15px 10px;
+    border-bottom: 1px solid #ccc;
+    color: #666;
+    font-weight: bold;
+    font-size: 12px; 
+  }
+  #tip-header h1 {
+    margin: 0 0 10px;
+
+  }
+  #tip-header div {
+    margin: 0;
+    line-height: 120%;
+  }
+
+  #tip-body {
+    padding: 10px 10px;
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<div id="canvas-container"></div>
+
+<div id="tooltip">
+  <div id="tip-header">
+    <h1></h1>
+    <div></div>
+  </div>
+  <div id="tip-body">
+    <svg id="tip-visual"></svg>
+  </div>
+</div>
+
+<script>
+
+
+/* Set up global variables */
+/* ======================= */
+
+var width = 960,
+    height = 600,
+    projectionScale = origProjectionScale = height / 2.1,
+    translation = [width / 2, height / 2],
+    projectionScaleChange,
+    prevTransformScale = 1,
+    rotation,
+    colorToCountry = [],
+    selected = false;
+
+var formatNum = d3.format(',.0f');
+var formatPer = d3.format(',.0%');
+function stripString(string) { return string.replace(/[^a-z0-9]/gi,"").toLowerCase(); }
+
+
+
+/* Set up canvas, context, projection and path */
+/* ========================================== */
+
+/* Main canvas */
+/* ----------- */
+
+// Main canvas and contexxt
+var canvas = d3.select('#canvas-container').append('canvas')
+    .attr('id', 'canvas-globe')
+    .attr('width', width)
+    .attr('height', height);
+
+var context = canvas.node().getContext('2d');
+
+
+/* Hidden canvas */
+/* ------------- */
+
+// Hidden canvas and contexxt
+var hiddenCanvas = d3.select('#canvas-container').append('canvas')
+    .attr('id', 'canvas-hidden')
+    .attr('width', width)
+    .attr('height', height);
+
+var hiddenContext = hiddenCanvas.node().getContext('2d');
+
+
+/* Buffer canvas */
+/* ------------- */
+
+var bufferCanvas = document.createElement('canvas');
+var bufferContext = bufferCanvas.getContext('2d');
+
+bufferContext.canvas.width = width;
+bufferContext.canvas.height = height;
+
+
+/* Geo tools */
+/* --------- */
+
+// Main projection and path functions
+var projection = d3.geoOrthographic()
+    .scale(projectionScale) 
+    .translate(translation)
+    .clipAngle(90);
+
+// Hidden projection and path functions
+var hiddenProjection = d3.geoEquirectangular()
+    .translate([width / 2, height / 2])
+    .scale(width / 7);
+
+// Path generators
+var bufferPath = d3.geoPath()
+    .projection(projection)
+    .context(bufferContext);
+
+var hiddenPath = d3.geoPath()
+    .projection(hiddenProjection)
+    .context(hiddenContext);
+
+// Visual helpers and utilities
+var sphere = { type: 'Sphere' },
+    grid = d3.geoGraticule()(); // d3.geoGraticule() returns a function to draw a graticule. That function returns the grid.
+
+
+/* Color scale */
+/* ----------- */
+
+var colorScale = d3.scaleSequential(d3.interpolateYlGn).domain([0,1]);
+
+
+/* Drawing functions */
+/* ================= */
+
+function drawScene(countries, countryIndex) {
+
+  // Clear
+  bufferContext.clearRect(0, 0, bufferCanvas.width, bufferCanvas.height);
+
+  // Sphere fill
+  bufferContext.beginPath(); 
+  bufferPath(sphere);
+  bufferContext.fillStyle = 'aliceblue';
+  bufferContext.fill();
+
+  // Grid
+  bufferContext.beginPath();
+  bufferPath(grid);
+  bufferContext.lineWidth = 0.5;
+  bufferContext.strokeStyle = '#D9EAEF';
+  bufferContext.stroke();
+
+  // Country fill - individual
+  countries.features.forEach(function(el) {
+
+    bufferContext.beginPath();
+    bufferPath(el);
+    bufferContext.fillStyle = el.properties.forest_color;
+    bufferContext.fill();
+
+  });
+
+  // Country stroke - each country
+  bufferContext.beginPath();
+  bufferPath(countries);
+  bufferContext.lineWidth = 0.5;
+  bufferContext.strokeStyle = '#fff';
+  bufferContext.stroke();
+
+  // Country stroke - hovered country
+  if (countryIndex >= 0) {
+
+    bufferContext.beginPath();
+    bufferContext.setLineDash([4,2]);
+    bufferPath(countries.features[countryIndex]);
+    bufferContext.lineWidth = 1;
+    bufferContext.strokeStyle = 'darkgreen';
+    bufferContext.stroke();
+    bufferContext.setLineDash([]);
+
+  }
+
+} // drawScene()
+
+
+function renderScene(world, countryIndex){
+
+  // Draw scene
+  drawScene(world, countryIndex);
+
+  // Clear the canvas
+  context.clearRect(0, 0, width, height);
+
+  // Render scene
+  context.drawImage(bufferCanvas, 0, 0, bufferCanvas.width, bufferCanvas.height);
+
+} // renderScene()
+
+
+function drawHiddenCanvas(world) {
+
+  var countries = world.features;
+  countries.forEach(function(el, i) {
+
+    colorToCountry[i] = countries[i].properties;
+
+    hiddenContext.beginPath();
+    hiddenPath(el);
+    hiddenContext.fillStyle = 'rgb(' + i + ',0,0)'; // Each hidden country gets a color with the pattern rgb(<country index>, 0, 0).
+    hiddenContext.fill();
+
+  });
+
+} // drawHiddenCanvas()
+
+
+
+/* Main drawing function */
+/* ===================== */
+
+function ready(world, forests) {
+
+  /* Data preparation */
+  /* ---------------- */
+
+  // The world
+  var countries = topojson.feature(world, world.objects.ne_110m_admin_0_countries); // Convert TopoJSON to GeoJSON array of countries
+
+  // Reduce properties - keep only country admin name
+  countries.features = countries.features.map(function(el) {
+
+    return { 
+      geometry: el.geometry,
+      type: el.type,
+      properties: { 
+        admin: el.properties.admin,
+        adm0_a3: el.properties.adm0_a3,
+        pop_est: el.properties.pop_est
+      }
+    };
+
+  });
+
+  // Sort for quicker search
+  countries.features.sort(function(a, b) {
+    return d3.ascending(a.properties.admin, b.properties.admin);
+  });
+
+  console.log('countries', countries);
+  console.log('forests', forests);
+
+  insertForestDataBinary(); // ~ 1 ms
+  // insertForestDataLinear(); // ~ 5 ms
+  
+  function insertForestDataLinear() {
+
+    forests.forEach(function(el) {
+
+      countries.features.forEach(function(elem) {
+
+        if (el.country === elem.properties.admin) {
+          elem.properties.forest_area = +el.area;
+          elem.properties.forest_percent = +el.percent;
+        }
+
+      }); // loop through GeoJSON countries
+
+    }); // loop through forests array of country objects
+
+  } // insertForestDataLinear()
+
+  function insertForestDataBinary() {
+
+    // 1. Create the row accessing bisector for the column 'properties.admin' (= the country name)
+    var bisectName = d3.bisector(function(d) { return d.properties.admin; }).right;
+
+    // 2. Iterate though each forest object
+    for (var i = 0; i < forests.length; i++) {
+
+      // 3. Get the index of the found element
+      var indexBisect = bisectName(countries.features, forests[i].country); // index where the object should be inserted to
+      var indexMatch = indexBisect - 1; // index of the matched element
+
+      // 4. Add the relevant information
+      countries.features[indexMatch].properties.forest_area = +forests[i].area;
+      countries.features[indexMatch].properties.forest_percent = +forests[i].percent;
+      countries.features[indexMatch].properties.forest_color = colorScale(+forests[i].percent);
+
+    } // loop through forests array of country objects
+
+  } // insertForestDataBinary()
+
+
+  /* Initial Draw */
+  /* ------------ */
+
+  // Draw the world
+  requestAnimationFrame(function() {
+    renderScene(countries, selected);
+    drawHiddenCanvas(countries);
+  });
+
+
+  /* Interactivity */
+  /* ============= */
+
+  // The deltaMove module offers a fallback for calculating delta x and y as Safari and IE 
+  // don't expose d3.event.sourceEvent.movementX and .y which we need for the globe rotation
+  var deltaMove = (function() {
+
+    var prevX = 0,
+        prevY = 0;
+
+    function getDeltas(event) {
+
+      var movementX = prevX ? event.screenX - prevX : 0;
+      var movementY = prevY ? event.screenY - prevY : 0;
+
+      prevX = event.screenX;
+      prevY = event.screenY;
+
+      return {
+        x: movementX,
+        y: movementY
+      }
+
+    }
+
+    function resetDeltas() {
+      prevX = 0;
+      prevY = 0;
+    }
+
+    return {
+      coords: getDeltas,
+      reset: resetDeltas
+    }
+
+  })();
+
+
+
+  /* Zoom and pan */
+  /* ------------ */
+
+  var zoom = d3.zoom()
+    .scaleExtent([0.5, 4])
+    .on("zoom", zoomed)
+    .on('end', deltaMove.reset);
+
+  canvas.call(zoom);
+
+  function zoomed() {
+
+    // Get the shift in x and y coordinates
+
+    // Cross-browser solution:
+    var delta = deltaMove.coords(d3.event.sourceEvent);
+
+    // get the deltas
+    var dx = delta.x;
+    var dy = delta.y;
+
+    // // Fine for Chrome, Firefox:
+    // var dx = d3.event.sourceEvent.movementX;
+    // var dy = d3.event.sourceEvent.movementY;
+
+
+    // This will return either 'mousemove' or 'wheel'
+    var event = d3.event.sourceEvent.type;
+
+    if (event === 'wheel') { // if the user zooms in using the mousewheel (or equivalent)
+
+      // Change the scale according to the user interaction
+      var transformScale = d3.event.transform.k;
+      projectionScaleChange = (transformScale - prevTransformScale) * origProjectionScale;
+      projectionScale = projectionScale + projectionScaleChange;
+      projection.scale(projectionScale);
+      prevTransformScale = transformScale;
+
+    } else if (event === 'mousemove') { // if the user pans
+
+      // Change the rotation according to the user interaction
+      var r = projection.rotate();
+      rotation = [r[0] + dx * 0.4, r[1] - dy * 0.5, r[2]];
+      projection.rotate(rotation);
+
+    } else { // fallback
+
+      console.warn('invalid mouse event in zoomed()');
+    
+    }
+
+    // Rerender the globe
+    requestAnimationFrame(function() {
+      renderScene(countries, selected);
+    });
+  
+    hideTooltip();
+
+  } // zoomed()
+
+
+
+  /* Tooltip visual */
+  /* ============== */
+
+  var svg, yScale;
+  buildTooltip(forests);
+
+  /* Mouseover countries */
+  /* ------------------- */
+
+  canvas.on('mousemove', highlightPicking);
+
+
+  function highlightPicking() {
+
+    var pos = d3.mouse(this); // get the mouse pixel positions
+    var longlat = projection.invert(pos); // invert them to longlat positions (with the main projection)
+    var hiddenPos = hiddenProjection(longlat); // convert them to pixel positions on hidden canvas
+
+    var pickedColor = hiddenContext.getImageData(hiddenPos[0], hiddenPos[1], 1, 1).data; // get the pixel color at mouse hover
+
+    var inGlobe = 
+      Math.abs(pos[0] - projection(projection.invert(pos))[0]) < 0.5 && 
+      Math.abs(pos[1] - projection(projection.invert(pos))[1]) < 0.5; // checking if the mouse is within the globe bounds 
+    
+    selected = inGlobe && pickedColor[3] === 255 ? pickedColor[0] : false; // checking for inGlobe (above) and antialiasing
+
+    requestAnimationFrame(function() {
+      renderScene(countries, selected);
+    });
+
+    var country = countries.features[selected];
+    if (selected !== false) showTooltip(pos, country); // build tooltip
+    if (selected === false) hideTooltip(); // remove tooltip
+
+  } // highlightPicking()
+
+
+  function buildTooltip(data) {
+
+    /* Data preperation */
+    /* ---------------- */
+
+    var forestsByPercent = data
+      .slice()
+      .sort(function(a, b) {
+        return d3.descending(+a.percent, +b.percent);
+      })
+      .map(function(el) {
+        return {
+          country: el.country,
+          percent: +el.percent,
+          color: colorScale(+el.percent)
+        };
+      });
+
+    var countryList = forestsByPercent.map(function(el) { 
+      return el.country; 
+    });
+
+
+    /* Build the bar chart */
+    /* ------------------- */
+
+    var tipWidth = 200,
+        tipHeight = 200;
+
+    var xScale = d3.scaleLinear().domain([0, 1]).range([0, tipWidth]);
+    yScale = d3.scaleBand().domain(countryList).rangeRound([0, tipHeight]);
+
+    svg = d3.select('svg#tip-visual').attr('width', tipWidth).attr('height', tipHeight);
+
+    svg.selectAll('.bar')
+        .data(forestsByPercent)
+      .enter().append('rect')
+        .attr('class', 'bar')
+        .attr('id', function(d) { return stripString(d.country); })
+        .attr('x', xScale(0))
+        .attr('y', function(d) { return yScale(d.country); })
+        .attr('width', function(d) { return xScale(d.percent); })
+        .attr('height', yScale.bandwidth())
+        .attr('fill', function(d) { return d.color; });
+
+  } // buildTooltip()
+
+  var countryQueue = [undefined, undefined]; // initialise queue array to check for new build
+
+  function showTooltip(mouse, element) {
+
+    // Get country data
+    var countryProps = element.properties;
+
+    // Create queue to check when to build new tooltip
+    countryQueue.unshift(countryProps.admin);
+    countryQueue.pop();
+
+    // Build and move tooltip accordingly
+    if (countryQueue[0] !== countryQueue[1]) {
+
+
+      // Build tooltip header
+      var headHtml = 
+        'Forest cover: ' + formatPer(countryProps.forest_percent) + '' +
+        '<br>Forested area: ' + formatNum(countryProps.forest_area) + ' km<sup>2</sup>';
+
+      d3.select('#tip-header h1').html(countryProps.admin);
+      d3.select('#tip-header div').html(headHtml);
+
+      // Highlight bar in tip-visual
+      // In the book we only color the specific bar red for simplicity. Here we also increase its height to make it stand out better.
+      // In order to do this we also needed to move the yScale to higher scope (just before we call buildTooltip() above).
+      svg.selectAll('.bar')
+        .attr('fill', function(d) { return d.color; })
+        .attr('height', yScale.bandwidth());
+      d3.select('#' + stripString(countryProps.admin))
+        .attr('fill', 'orange')
+        .attr('height', yScale.bandwidth()*3)
+        .raise();
+
+      // Show and move tooltip
+      d3.select('#tooltip')
+        .style('left', (mouse[0] + 20) + 'px')
+        .style('top', (mouse[1] + 20) + 'px')
+        .transition().duration(100)
+        .style('opacity', 0.98);
+
+    } else {
+
+      // Move tooltip
+      d3.select('#tooltip')
+        .style('left', (mouse[0] + 20) + 'px')
+        .style('top', (mouse[1] + 20) + 'px');
+
+    } // check when new tooltip need to be build and moved vs when tooltip just needs to be moved
+
+  } // showTooltip()
+
+  function hideTooltip() {
+
+    countryQueue.unshift(undefined);
+    countryQueue.pop();
+
+    d3.select('#tooltip')
+      .transition().duration(100)
+      .style('opacity', 0);
+
+  } // hideTooltip()
+
+
+} // ready()
+
+
+/* Data load and init */
+/* ================== */
+
+
+var worldData = d3.json('data/world-110.json').then(function(world) { return world; })
+var forestData = d3.csv('data/forests.csv').then(function(forests) { return forests; })
+
+Promise.all([worldData, forestData]).then(function(response) {
+
+  var worldResolved = response[0];
+  var forestsResolved = response[1];
+
+  ready(worldResolved, forestsResolved);
+
+});
+
+
+</script>
+
+</html>

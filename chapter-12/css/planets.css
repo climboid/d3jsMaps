@@ -1,0 +1,82 @@
+body {
+	font-family: Avenir, sans-serif;
+	font-size: 0.8rem;
+	margin: 0;
+}
+
+#headline {
+	text-align: center;
+	color: #999;
+}
+
+#pink {
+	border-bottom: 2px solid deeppink;
+	padding-bottom: 0.25rem;
+}
+
+circle {
+	fill: #fff;
+	stroke: deeppink;
+	stroke-width: 4px;
+}
+
+line {
+	stroke: #ccc;
+	stroke-width: 0.5px;	
+}
+
+.label {
+	fill: #777;
+}
+
+#note {
+	fill: #aaa;
+	font-size: 0.7rem;
+}
+
+a:link {
+	text-decoration: none;
+}
+a, a:visited {
+	color: #999;
+}
+a:hover {
+	color: deeppink;
+}
+a:active {
+	color: #999;	
+}
+
+
+#tooltip {
+  position: absolute;
+  display: inline-block;
+  color: #555;
+  font-size: 11px;
+  text-align: left;
+  background: #fafafa;
+  box-shadow: 2px 2px 5px rgba(0, 0, 20, 0.25);
+  pointer-events: none;
+  line-height: 200%;
+  max-width: 250px;
+
+  opacity: 0;
+}
+
+#tip-header {
+  padding: 10px;
+  border-bottom: 1px solid pink;
+  color: #666;
+  font-weight: bold;
+  font-size: 0.9rem; 
+}
+
+#small {
+  font-weight: normal;
+  font-size: 0.7rem;
+}
+
+#tip-body {
+  padding: 10px;
+  font-size: 0.7rem;
+}

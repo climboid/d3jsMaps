@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>8 Canvas drawing - example 4a</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="//d3js.org/d3.v5.js"></script>
+<style type="text/css">
+
+	canvas { border:  1px solid #ccc; }
+
+	button {
+		display: inline-block;
+		position:  absolute;
+		width: 6em;
+		margin: 0;
+		padding: .5em;
+		outline: none;
+		color: #555;
+		background-color: #f7f7f7;
+		border: 1px dotted #f0f0f0;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background-color: rgba(173, 206, 255, .7);
+	}
+
+	button#enter { top: 20px; left: 625px; }
+	button#update { top: 140px; left: 625px; }
+	button#exit { top: 260px; left: 625px; }
+
+</style>
+</head>
+<body>
+
+<canvas id="main-canvas" width="600" height="400"></canvas>
+<button id="enter"><strong>Enter</strong><br> forms a cloud</button>
+<button id="update"><strong>Update</strong><br>makes it rain</button>
+<button id="exit"><strong>Exit</strong><br> makes grass</button>
+
+<script>
+
+
+/* Setting up canvas and context */ 
+/* ============================= */ 
+
+var canvas = d3.select('#main-canvas').node();
+var context = canvas.getContext('2d');
+
+
+
+/* Drawing the background */
+/* ====================== */
+
+function drawScene() {
+
+	context.save();
+	
+	// The house
+	context.fillStyle = 'royalblue';
+	context.fillRect(50, 150, 200, 100);
+
+	// The door
+	context.fillStyle = 'rgba(255, 255, 255, 0.9)';
+	context.fillRect(60, 190, 40, 60);
+
+	// The window
+	context.save();
+
+	context.translate(140, 190);
+	context.fillRect(0, 0, 60, 30);
+
+	context.restore();
+
+	// The roof
+	context.beginPath();
+	context.moveTo(50, 150);
+	context.lineTo(250, 150);
+	context.lineTo(50+200/2, 100);
+	context.closePath();
+	context.fillStyle = '#A52A2A';
+	context.fill();
+
+	// The tree
+	context.beginPath();
+	context.lineWidth = 10;
+	context.strokeStyle = 'brown'
+	context.moveTo(300, 250);
+	context.lineTo(300, 125);
+	context.stroke();
+
+	context.beginPath();
+	context.fillStyle = 'green';
+	context.arc(300, 150, 25, 0, Math.PI * 2);
+	context.fill();
+
+	context.restore();
+
+} // drawScene()
+
+
+function drawRainScene() {
+
+	// cloud
+	// point cloud roughly from 60,10 to 540, 70
+	context.beginPath();
+	context.moveTo(65, 65);
+	context.lineTo(535, 65);
+	context.bezierCurveTo(560, 5, 441, 5, 441, 40);
+	context.bezierCurveTo(441, 0, 347, 0, 347, 40);
+	context.bezierCurveTo(347, 5, 253, 5, 253, 40);
+	context.bezierCurveTo(253, 10, 159, 10, 159, 40);
+	context.bezierCurveTo(159, 15, 40, 15, 65, 65);
+	context.closePath();
+	context.fillStyle = '#f7f7f7';
+	context.fill();
+	
+	// Rain path
+	// cloud shape from 65, 65 to 535, 65
+	// puddle shape from 30, 250 to 560, 270
+	context.beginPath();
+	context.moveTo(65, 70);
+	context.lineTo(535, 70);
+	context.lineTo(530, 255);
+	context.lineTo(45, 253);
+	context. closePath();
+	context.fillStyle = '#ffffff';
+	context.fill();
+
+	// Puddle
+	context.beginPath();
+	context.moveTo(529.52,256.19);
+	context.bezierCurveTo(532.01,260.53,513.31,265.85,516.94,272.4);
+	context.bezierCurveTo(521.06,279.82,547.94,278.27,553.81,286.4);
+	context.bezierCurveTo(557.57,291.58,552.04,299.53,542.08,303.045);
+	context.bezierCurveTo(520.38,310.726,493.13,291.9,444.8,292.045);
+	context.bezierCurveTo(410.16,292.184,409.0,301.976,364.45,307.383);
+	context.bezierCurveTo(302.314,314.91,237.732,304.003,237.0,296.383);
+	context.bezierCurveTo(236.582,290.383,276.83,287.115,275.633,282.75);
+	context.bezierCurveTo(273.71,275.856,167.702,276.425,166.71,281.485);
+	context.bezierCurveTo(166.073,284.753,209.81,287.045,209.44,291.124);
+	context.bezierCurveTo(208.85,297.744,92.88,304.52,83.76,291.124);
+	context.bezierCurveTo(78.85,283.90,106.86,273.726,100.52,268.77);
+	context.bezierCurveTo(94.66,264.20,68.52,271.16,39.35,264.83);
+	context.bezierCurveTo(32.35,263.314,26.7303,261.36,25.118,258.26);
+	context.bezierCurveTo(23.78,255.71,34.735,251.362,43.54,250.814);
+	context.bezierCurveTo(56.446,250.982,453.02,250.753,458.2,250.883);
+	context.bezierCurveTo(506.06,249.68,525,248.36,529.52,256.19);
+	context.closePath();
+	context.fillStyle = "#ffffff";
+	context.fill();
+
+} // drawRainScene()
+
+
+
+/* Produce rain data */
+/* ================= */
+
+function getDrop(index) {
+
+	var x = Math.random() * (canvas.width * 0.9) + (canvas.width * 0.05);
+
+	var obj = {};
+	obj.index = index;
+	obj.xCloud = x;
+	obj.yCloud = Math.random() * 55 + 10;
+	obj.xPuddle = x;
+	obj.yPuddle = Math.random() * 60 + 253;
+	obj.radiusCloud = 1;
+	obj.radiusPuddle = 2;
+	obj.radiusGrass = 8;
+
+	return obj;
+
+} // getDrop()
+
+
+function getRainData(length, data) {
+
+	d3.range(length).forEach(function(el) {
+		
+		var drop = getDrop(el);
+		data.push(drop);
+
+	});
+
+	return data;
+
+} // getRainData()
+
+
+
+/* Enter Exit Update and Draw the rain */
+/* =================================== */
+
+// Create in-memory base for elements
+var customBase = document.createElement('custom')
+var custom = d3.select(customBase);
+
+function databind(data) {
+
+	var join = custom.selectAll('custom.drop')
+			.data(data, function(d) { return d.index; });
+
+	var enter = join
+		.enter().append('custom')
+			.attr('class', 'drop')
+			.attr('cx', function(d) { return d.xCloud; })
+			.attr('cy', function(d) { return d.yCloud; })
+			.attr('r', function(d) { return d.radiusCloud; })
+			.attr('fillStyle', 'rgba(0, 0, 255, 0')
+		.transition().delay(function(d, i) { return i * 2; })
+			.attr('fillStyle', 'rgba(0, 0, 255, 0.2');
+
+	var update = join
+		.transition()
+			.duration(function() { return Math.random() * 1000 + 900; })
+			.delay(function(d,i) { return (i / data.length) * dur; })
+			.ease(d3.easeLinear)
+			.attr('cx', function(d) { return d.xPuddle; })
+			.attr('cy', function(d) { return d.yPuddle; })
+			.attr('r', function(d) { return d.radiusPuddle; })
+			.attr('fillStyle', '#0000ff');
+
+	var exit = join
+		.exit().transition()
+			.duration(dur)
+			.delay(function(d,i) { return i ; })
+			.attr('r', function(d) { return d.radiusGrass; })
+			.attr('fillStyle', '#01A611');
+
+} // databind()
+
+
+function draw(ctx) {
+
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	drawRainScene();
+
+	drawScene();
+
+	var elements = custom.selectAll('custom.drop');
+
+	elements.each(function(d, i) {
+
+		var node = d3.select(this);
+		
+		ctx.save();
+
+		ctx.beginPath();
+		ctx.globalCompositeOperation = 'source-atop'
+		ctx.fillStyle = node.attr('fillStyle');
+		ctx.arc(node.attr('cx'), node.attr('cy'), node.attr('r'), 0, 2 * Math.PI);
+		ctx.fill();
+		
+		ctx.restore();
+
+	});
+
+} // draw()
+
+
+/* Draw the initial scene */
+/* ====================== */
+
+drawRainScene();
+drawScene();
+
+
+/* Animate */
+/* ======= */
+
+var max = 2500;
+var raindrops = [];
+var rainData = getRainData(max, raindrops);
+var dur = 2000;
+
+function rainAnimation(data) {
+
+	databind(data);
+
+	var t = d3.timer(function(elapsed) {
+		draw(context);
+		if (elapsed > dur * 2) t.stop();
+	});
+
+} // rainAnimation()
+
+
+
+/* Interact */
+/* ======== */
+	
+d3.select('button#enter').on('mousedown', enterRain);
+d3.select('button#update').on('mousedown', updateRain);
+d3.select('button#exit').on('mousedown', exitRain);
+
+function enterRain() {
+	rainAnimation(rainData);
+};
+
+function updateRain() {
+	rainAnimation(rainData);
+};
+
+function exitRain() {	
+	rainAnimation([]);
+};
+
+
+</script>
+
+</body>
+</html>

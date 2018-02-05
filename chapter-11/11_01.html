@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>11 Hexbin maps - example 1</title>
+<meta charset="utf-8">
+
+<script src="//d3js.org/d3.v5.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="//d3js.org/d3-color.v1.min.js"></script>
+<script src="//d3js.org/d3-interpolate.v1.min.js"></script>
+<script src="//d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="//d3js.org/d3-hexbin.v0.2.min.js"></script>
+
+<style type="text/css">
+
+body {
+	font-family: Avenir, sans-serif;
+}
+
+#vis svg {
+	border: 1px solid #ccc;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div id="vis"></div>
+
+
+<script>
+
+
+/* Globals and SVG */
+/* =============== */
+
+var projection;
+
+
+var margin = { top: 30, right: 30, bottom: 30, left: 30 },
+		width = 900 - margin.left - margin.right,
+		height = 600 - margin.top - margin.bottom;
+
+var svg = d3.select('#vis')
+	.append('svg')
+		.attr('width', width + margin.left + margin.top)
+		.attr('height', height + margin.top + margin.bottom)
+	.append('g')
+		.attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
+
+
+
+/* Functions */
+/* ========= */
+
+function drawGeo(data) {
+
+	projection = d3.geoAlbers() // note: global
+	  .scale(1000).translate([width/2, height/2]);
+
+	var geoPath = d3.geoPath()
+		.projection(projection);
+
+	svg
+		.append('path')
+		.datum(data)
+		.attr('d', geoPath)
+		.attr('fill', '#ccc');
+
+} // drawGeo()
+
+function prepData(topo) {
+
+	var geo = topojson.feature(topo, topo.objects.us);
+
+	return geo;
+
+} // prepData()
+
+
+
+/* Load and build steps */
+/* ==================== */
+
+function ready(us) {
+
+	var us = prepData(us);
+
+	console.log(us);
+
+	drawGeo(us);
+
+
+} // ready()
+
+// Load data sources
+d3.json('data/us.json').then(ready);
+	
+
+</script>
+
+</html>

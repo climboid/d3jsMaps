@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>8 Canvas drawing - example 3</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="//d3js.org/d3.v5.js"></script>
+<style type="text/css">
+
+	canvas { border: 1px solid #ccc; }
+
+</style>
+</head>
+<body>
+
+<canvas id="main-canvas" width="600" height="400"></canvas>
+
+<script>
+
+/* Setting up canvas and context */ 
+/* ============================= */ 
+
+var canvas = d3.select('#main-canvas').node();
+var context = canvas.getContext('2d');
+
+
+/* Helper functions */ 
+/* ================ */ 
+
+function circle(ctx, x, y, r, color) {
+
+	ctx.beginPath();
+	ctx.fillStyle = color;
+	ctx.arc(x, y, r, 0, 2 * Math.PI);
+	ctx.fill();
+
+} // circle() 
+
+
+/* Drawing the background */
+/* ====================== */
+
+function drawScene() {
+
+	context.save();
+	
+	// The house
+	context.fillStyle = 'royalblue';
+	context.fillRect(50, 150, 200, 100);
+
+	// The door
+	context.fillStyle = 'rgba(255, 255, 255, 0.9)';
+	context.fillRect(60, 190, 40, 60);
+
+	// The window
+	context.save();
+
+	context.translate(140, 190);
+	context.fillRect(0, 0, 60, 30);
+
+	context.restore();
+
+	// The roof
+	context.beginPath();
+	context.moveTo(50, 150);
+	context.lineTo(250, 150);
+	context.lineTo(50+200/2, 100);
+	context.closePath();
+	context.fillStyle = '#A52A2A';
+	context.fill();
+
+	// The tree
+	context.beginPath();
+	context.lineWidth = 10;
+	context.strokeStyle = 'brown'
+	context.moveTo(300, 250);
+	context.lineTo(300, 125);
+	context.stroke();
+
+	context.beginPath();
+	context.fillStyle = 'green';
+	context.arc(300, 150, 25, 0, Math.PI * 2);
+	context.fill();
+
+	context.restore();
+
+} // drawScene()
+
+
+/* Letting it rain */
+/* =============== */
+
+var rain = {
+	items: [],
+	maxDrops: 200,
+	getDrop: function() {
+
+		var obj = {};
+		obj.xStart = Math.floor(Math.random() * canvas.width);
+		obj.yStart = Math.floor(Math.random() * -canvas.height);
+		obj.x = null;
+		obj.y = null;
+		obj.speed = Math.round(Math.random() * 2) + 5;
+		
+		return obj;
+
+	},
+	updateDrop: function(drop) {
+		drop.x = drop.x === null ? drop.xStart : drop.x;
+		drop.y = drop.y === null ? drop.yStart : drop.y + drop.speed;
+		drop.y = drop.y > canvas.height ? drop.yStart : drop.y;
+	}
+
+} // rain
+
+
+function update() {
+
+	if (!rain.items.length) { // initialisation
+
+		d3.range(rain.maxDrops).forEach(function(el) {
+
+			var drop = rain.getDrop(el); // create a drop
+			rain.updateDrop(drop); // update drops' position
+			rain.items.push(drop); // add to drop array
+
+		});
+
+	} else { // from 2nd update forward
+
+		rain.items.forEach(function(el) {
+
+				rain.updateDrop(el); // update drops' position
+
+		});
+
+	} // initialisation vs repeat update conditional
+
+} // update()
+
+
+function animate() {
+	
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	
+	drawScene();
+
+	rain.items.forEach(function(el) {
+
+		circle(context, el.x, el.y, 1.5, 'blue');
+
+	});
+
+} // animate()
+
+
+d3.interval(function() {
+
+	update();
+	animate();
+
+}, 10); // making it rain
+
+
+
+</script>
+
+</body>
+</html>

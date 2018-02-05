@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>10 Canvas interact - example 3</title>
+<meta charset="utf-8">
+
+<script src="//d3js.org/d3.v5.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+
+<style type="text/css">
+
+  body {
+    font-family: 'Avenir', 'sans-serif';
+  }
+
+  #canvas-container {
+    position: relative;
+  }
+  
+  #canvas-globe, #canvas-hidden {
+    border:  1px solid #ccc;
+  }  
+  
+</style>
+
+</head>
+
+<body>
+
+<div id="canvas-container"></div>
+
+<script>
+
+
+/* Set up global variables */
+/* ======================= */
+
+var width = 960,
+    height = 600,
+    projectionScale = origProjectionScale = height / 2.1,
+    translation = [width / 2, height / 2],
+    projectionScaleChange,
+    prevTransformScale = 1,
+    rotation,
+    colorToCountry = [],
+    selected = false; // this will hold the couuntry index the user hovers over
+
+
+
+/* Set up canvas, context, projection and path */
+/* ========================================== */
+
+/* Main canvas */
+/* ----------- */
+
+// Main canvas and contexxt
+var canvas = d3.select('#canvas-container').append('canvas')
+    .attr('id', 'canvas-globe')
+    .attr('width', width)
+    .attr('height', height);
+
+var context = canvas.node().getContext('2d');
+
+
+/* Hidden canvas */
+/* ------------- */
+
+// Hidden canvas and contexxt
+var hiddenCanvas = d3.select('#canvas-container').append('canvas')
+    .attr('id', 'canvas-hidden')
+    .attr('width', width)
+    .attr('height', height);
+
+var hiddenContext = hiddenCanvas.node().getContext('2d');
+
+
+/* Buffer canvas */
+/* ------------- */
+
+var bufferCanvas = document.createElement('canvas');
+var bufferContext = bufferCanvas.getContext('2d');
+
+bufferContext.canvas.width = width;
+bufferContext.canvas.height = height;
+
+
+/* Geo tools */
+/* --------- */
+
+// Main projection and path functions
+var projection = d3.geoOrthographic()
+    .scale(projectionScale) 
+    .translate(translation)
+    .clipAngle(90);
+
+// Hidden projection and path functions
+var hiddenProjection = d3.geoEquirectangular()
+    .translate([width / 2, height / 2])
+    .scale(width / 7);
+
+// Path generators
+var bufferPath = d3.geoPath()
+    .projection(projection)
+    .context(bufferContext);
+
+var hiddenPath = d3.geoPath()
+    .projection(hiddenProjection)
+    .context(hiddenContext);
+
+// Visual helpers and utilities
+var sphere = { type: 'Sphere' },
+    grid = d3.geoGraticule()(); // d3.geoGraticule() returns a function to draw a graticule. That function returns the grid.
+
+
+
+
+/* Drawing functions */
+/* ================= */
+
+function drawScene(countries, countryIndex) {
+  
+  // Clear
+  bufferContext.clearRect(0, 0, bufferCanvas.width, bufferCanvas.height);
+
+  // Sphere fill
+  bufferContext.beginPath(); 
+  bufferPath(sphere);
+  bufferContext.fillStyle = '#D9EAEF';
+  bufferContext.fill();
+
+  // Grid
+  bufferContext.beginPath();
+  bufferPath(grid);
+  bufferContext.lineWidth = 0.5;
+  bufferContext.strokeStyle = '#BDDAE3';
+  bufferContext.stroke();
+
+  // Country fill - uniform
+  bufferContext.beginPath();
+  bufferPath(countries);
+  bufferContext.fillStyle = '#FFFAFA';
+  bufferContext.fill();
+
+  // Country stroke - each country
+  bufferContext.beginPath();
+  bufferPath(countries);
+  bufferContext.lineWidth = 0.5;
+  bufferContext.strokeStyle = '#D2D3CE';
+  bufferContext.stroke();
+
+  // Country stroke - hovered country
+  if (countryIndex >= 0) {
+
+    bufferContext.beginPath();
+    bufferContext.setLineDash([4,2]);
+    bufferPath(countries.features[countryIndex]);
+    bufferContext.lineWidth = 1;
+    bufferContext.strokeStyle = '#777';
+    bufferContext.stroke();
+    bufferContext.setLineDash([]);
+  
+  }
+
+} // drawScene()
+
+
+function renderScene(world, countryIndex){
+
+  // Draw scene
+  drawScene(world, countryIndex);
+
+  // Clear the canvas
+  context.clearRect(0, 0, width, height);
+  
+  // Render scene
+  context.drawImage(bufferCanvas, 0, 0, bufferCanvas.width, bufferCanvas.height);
+
+} // renderScene()
+
+
+function drawHiddenCanvas(world) {
+
+  hiddenContext.clearRect(0,0,width,height);
+
+  var countries = world.features;
+  countries.forEach(function(el, i) {
+
+    colorToCountry[i] = countries[i].properties;
+
+    hiddenContext.beginPath();
+    hiddenPath(el);
+    hiddenContext.fillStyle = 'rgb(' + i + ',0,0)'; // Each hidden country gets a color with the pattern rgb(<country index>, 0, 0).
+    hiddenContext.fill();
+
+  });
+
+} // drawHiddenCanvas()
+
+
+
+/* Main drawing function */
+/* ===================== */
+
+function ready(world) {
+
+  /* Data preparation */
+  /* ---------------- */
+
+  // The world
+  var countries = topojson.feature(world, world.objects.ne_110m_admin_0_countries); // Convert TopoJSON to GeoJSON array of countries
+
+  // Reduce properties - keep only country admin name
+  countries.features = countries.features.map(function(el) {
+
+    return { 
+      geometry: el.geometry,
+      type: el.type,
+      properties: { 
+        admin: el.properties.admin,
+        adm0_a3: el.properties.adm0_a3,
+        pop_est: el.properties.pop_est
+      }
+    };
+
+  });
+
+  // Sort for quicker search
+  countries.features.sort(function(a, b) {
+    return d3.ascending(a.properties.admin, b.properties.admin);
+  }); 
+
+
+  console.log(countries);
+
+  /* Initial Draw */
+  /* ------------ */
+
+  // Draw the world
+  requestAnimationFrame(function() {
+    renderScene(countries, selected);
+    drawHiddenCanvas(countries);
+  });
+  
+
+  /* Interactivity */
+  /* ============= */
+
+  // The deltaMove module offers a fallback for calculating delta x and y as Safari and IE 
+  // don't expose d3.event.sourceEvent.movementX and .y which we need for the globe rotation
+  var deltaMove = (function() {
+
+    var prevX = 0,
+        prevY = 0;
+
+    function getDeltas(event) {
+
+      var movementX = prevX ? event.screenX - prevX : 0;
+      var movementY = prevY ? event.screenY - prevY : 0;
+
+      prevX = event.screenX;
+      prevY = event.screenY;
+
+      return {
+        x: movementX,
+        y: movementY
+      }
+
+    }
+
+    function resetDeltas() {
+      prevX = 0;
+      prevY = 0;
+    }
+
+    return {
+      coords: getDeltas,
+      reset: resetDeltas
+    }
+
+  })();
+
+
+  /* Zoom and pan */
+  /* ------------ */
+
+  var zoom = d3.zoom()
+    .scaleExtent([0.5, 4])
+    .on("zoom", zoomed)
+    .on('end', deltaMove.reset);
+
+  canvas.call(zoom);
+
+  function zoomed() {
+
+    // Get the shift in x and y coordinates
+
+    // Cross-browser solution:
+    var delta = deltaMove.coords(d3.event.sourceEvent);
+
+    // get the deltas
+    var dx = delta.x;
+    var dy = delta.y;
+
+    // // Fine for Chrome, Firefox:
+    // var dx = d3.event.sourceEvent.movementX;
+    // var dy = d3.event.sourceEvent.movementY;
+
+
+    // This will return either 'mousemove' or 'wheel'
+    var event = d3.event.sourceEvent.type;
+        
+    if (event === 'wheel') { // if the user zooms in using the mousewheel (or equivalent)
+
+      // Change the scale according to the user interaction
+      var transformScale = d3.event.transform.k;
+      projectionScaleChange = (transformScale - prevTransformScale) * origProjectionScale;
+      projectionScale = projectionScale + projectionScaleChange;
+      projection.scale(projectionScale);
+      prevTransformScale = transformScale;
+
+    } else if (event === 'mousemove') { // if the user pans
+
+      // Change the rotation according to the user interaction
+      var r = projection.rotate();
+      rotation = [r[0] + dx * 0.4, r[1] - dy * 0.5, r[2]];
+      projection.rotate(rotation);
+
+    } else { // fallback
+
+      console.warn('invalid mouse event in zoomed()');
+    
+    }
+
+    // Rerender the globe
+    requestAnimationFrame(function() {
+      renderScene(countries, selected);
+    });
+  
+  } // zoomed()
+
+
+  /* Mouseover countries */
+  /* ------------------- */
+  
+  canvas.on('mousemove', highlightPicking);
+
+
+
+  function highlightPicking() {
+
+    var pos = d3.mouse(this); // get the mouse pixel positions
+    var longlat = projection.invert(pos); // invert them to longlat positions (with the main projection)
+    var hiddenPos = hiddenProjection(longlat); // convert them to pixel positions on hidden canvas
+
+    var pickedColor = hiddenContext.getImageData(hiddenPos[0], hiddenPos[1], 1, 1).data; // get the pixel color at mouse hover
+
+
+    var inGlobe = 
+      Math.abs(pos[0] - projection(projection.invert(pos))[0]) < 0.5 && 
+      Math.abs(pos[1] - projection(projection.invert(pos))[1]) < 0.5; // checking if the mouse is within the globe bounds 
+    
+    selected = inGlobe && pickedColor[3] === 255 ? pickedColor[0] : false; // checking for inGlobe (above) and antialiasing
+
+    requestAnimationFrame(function() {
+      renderScene(countries, selected);
+    });
+
+  } // highlightPicking()
+
+
+} // ready()
+
+
+/* Data load and init */
+/* ================== */
+
+d3.json('data/world-110.json').then(ready);
+
+
+</script>
+
+</html>

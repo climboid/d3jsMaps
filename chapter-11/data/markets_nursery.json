@@ -1,0 +1,3246 @@
+[
+  {
+    "FMID": 1004414,
+    "MarketName": "3rd & Curry St. Farmers Market",
+    "city": "Carson City",
+    "County": "Carson City",
+    "State": "Nevada",
+    "lat": 39.1626,
+    "lng": -119.7678,
+    "Website": "http://www.carsonfarmersmarket.com"
+  },
+  {
+    "FMID": 1001961,
+    "MarketName": "8th Avenue City Farmers Market",
+    "city": "Cedar Rapids",
+    "County": "Linn",
+    "State": "Iowa",
+    "lat": 41.9728,
+    "lng": -91.6627
+  },
+  {
+    "FMID": 1004598,
+    "MarketName": "Abbotsford Farmers Market",
+    "city": "Abbotsford",
+    "County": "Clark",
+    "State": "Wisconsin",
+    "lat": 44.9457,
+    "lng": -90.3071
+  },
+  {
+    "FMID": 1003469,
+    "MarketName": "Acton-Boxborough Farmers Market",
+    "city": "Acton",
+    "County": "Middlesex",
+    "State": "Massachusetts",
+    "lat": 42.4752,
+    "lng": -71.4741,
+    "Website": "http://www.ABFarmersMarket.org"
+  },
+  {
+    "FMID": 1002984,
+    "MarketName": "Atchison Farmers Market",
+    "city": "Atchison",
+    "County": "Atchison",
+    "State": "Kansas",
+    "lat": 39.5608,
+    "lng": -95.1197,
+    "Website": "http://www.atchisonfarmersmarket.com"
+  },
+  {
+    "FMID": 1000297,
+    "MarketName": "Athens Locally Grown",
+    "city": "Athens",
+    "County": "Clarke",
+    "State": "Georgia",
+    "lat": 33.9563,
+    "lng": -83.3838,
+    "Website": "http://www.athens.locallygrown.net"
+  },
+  {
+    "FMID": 1000750,
+    "MarketName": "Athol Farmers Market",
+    "city": "Athol",
+    "County": "Worcester",
+    "State": "Massachusetts",
+    "lat": 42.5893,
+    "lng": -72.2158,
+    "Website": "http://www.townofathol.org"
+  },
+  {
+    "FMID": 1005235,
+    "MarketName": "B2B (Back to Basics) Farmers' Market",
+    "city": "Anderson",
+    "County": "McDonald",
+    "State": "Missouri",
+    "lat": 36.6396,
+    "lng": -94.4266
+  },
+  {
+    "FMID": 1005228,
+    "MarketName": "Bagnell Dam Farmers' Market",
+    "city": "Lake Ozark",
+    "County": "Camden",
+    "State": "Missouri",
+    "lat": 38.1973,
+    "lng": -92.6417
+  },
+  {
+    "FMID": 1000790,
+    "MarketName": "Baltimore Farmers' Market",
+    "city": "Baltimore",
+    "County": "Baltimore City",
+    "State": "Maryland",
+    "lat": 39.2929,
+    "lng": -76.6215,
+    "Website": "http://www.promotionandarts.org"
+  },
+  {
+    "FMID": 1005439,
+    "MarketName": "Batavia Farmers Market",
+    "city": "Batavia",
+    "County": "Kane",
+    "State": "Illinois",
+    "lat": 41.8492,
+    "lng": -88.3104,
+    "Website": "http://www.downtownbatavia.com"
+  },
+  {
+    "FMID": 1003956,
+    "MarketName": "Belvidere Farmer's Market",
+    "city": "Belvidere",
+    "County": "Boone",
+    "State": "Illinois",
+    "lat": 42.272,
+    "lng": -88.8619,
+    "Website": "http://www.belviderefarmersmarket.com"
+  },
+  {
+    "FMID": 1004320,
+    "MarketName": "Berkshire Area Farmers Market",
+    "city": "Lanesboro",
+    "County": "Berkshire",
+    "State": "Massachusetts",
+    "lat": 42.49,
+    "lng": -73.207
+  },
+  {
+    "FMID": 1001622,
+    "MarketName": "Berkshire Harmony Downtown Pittsfield Farmers Markets, Music, and Creative Arts Fair",
+    "city": "Pittsfield",
+    "County": "Berkshire",
+    "State": "Massachusetts",
+    "lat": 42.4482,
+    "lng": -73.2535,
+    "Website": "http://www.berkshireharmony.com"
+  },
+  {
+    "FMID": 1003666,
+    "MarketName": "Bethel Farmers Market",
+    "city": "Bethel",
+    "County": "Oxford",
+    "State": "Maine",
+    "lat": 44.412,
+    "lng": -70.7941,
+    "Website": "http://www.bethelfarmersmarket.com"
+  },
+  {
+    "FMID": 1005222,
+    "MarketName": "Better Lives Today Farmers' Market",
+    "city": "Richland",
+    "County": "Pulaski",
+    "State": "Missouri",
+    "lat": 37.857,
+    "lng": -92.4043,
+    "Website": "http://www.betterlivestoday.org"
+  },
+  {
+    "FMID": 1005730,
+    "MarketName": "Big Sky Farmers Market",
+    "city": "Big Sky",
+    "County": "Gallatin",
+    "State": "Montana",
+    "lat": 45.2598,
+    "lng": -111.3103,
+    "Website": "http://www.bigskytowncenter.com"
+  },
+  {
+    "FMID": 1003954,
+    "MarketName": "Bitterroot Valley Growers Market",
+    "city": "Florence",
+    "County": "Ravalli",
+    "State": "Montana",
+    "lat": 46.6313,
+    "lng": -114.0762
+  },
+  {
+    "FMID": 1001781,
+    "MarketName": "Black EagleFarmers' Market",
+    "city": "Black Eagle",
+    "County": "Cascade",
+    "State": "Montana",
+    "lat": 47.5265,
+    "lng": -111.2743
+  },
+  {
+    "FMID": 1001851,
+    "MarketName": "Blanchard Farmers' Market",
+    "city": "Blanchard",
+    "County": "McClain",
+    "State": "Oklahoma",
+    "lat": 35.138,
+    "lng": -97.6593
+  },
+  {
+    "FMID": 1005232,
+    "MarketName": "Bloomfield Farmers' Market",
+    "city": "Bloomfield",
+    "County": "Stoddard",
+    "State": "Missouri",
+    "lat": 36.8807,
+    "lng": -89.9298
+  },
+  {
+    "FMID": 1005708,
+    "MarketName": "Blountville Farmer's Market",
+    "city": "Blountville",
+    "County": "Sullivan",
+    "State": "Tennessee",
+    "lat": 36.534,
+    "lng": -82.3201
+  },
+  {
+    "FMID": 1005223,
+    "MarketName": "Blue Springs Farmers Market",
+    "city": "Blue Springs",
+    "County": "Lafayette",
+    "State": "Missouri",
+    "lat": 39.0184,
+    "lng": -94.2778,
+    "Website": "http://www.bluespringsfarmersmarket.com"
+  },
+  {
+    "FMID": 1005231,
+    "MarketName": "Bollinger County Farmers' Market",
+    "city": "Marble Hill",
+    "County": "Bollinger",
+    "State": "Missouri",
+    "lat": 37.302,
+    "lng": -89.9797
+  },
+  {
+    "FMID": 1003353,
+    "MarketName": "Boulder County Farmers' Market - Longmont & Boulder",
+    "city": "Longmont",
+    "County": "Boulder",
+    "State": "Colorado",
+    "lat": 40.1535,
+    "lng": -105.1287,
+    "Website": "http://www.boulderfarmers.org"
+  },
+  {
+    "FMID": 1006980,
+    "MarketName": "Bourbon Farmers' Market",
+    "city": "Bourbon",
+    "County": "Crawford",
+    "State": "Missouri",
+    "lat": 38.1545,
+    "lng": -91.2462
+  },
+  {
+    "FMID": 1006911,
+    "MarketName": "Bowling Green Farmers' and Artists' Market",
+    "city": "Bowling Green",
+    "County": "Pike",
+    "State": "Missouri",
+    "lat": 39.3421,
+    "lng": -91.1948
+  },
+  {
+    "FMID": 1006913,
+    "MarketName": "Bradford Farmers Market",
+    "city": "Bradford",
+    "County": "Merrimack",
+    "State": "New Hampshire",
+    "lat": 43.2689,
+    "lng": -71.9554
+  },
+  {
+    "FMID": 1003465,
+    "MarketName": "Brandermill Green Market",
+    "city": "Midlothian",
+    "County": "Chesterfield",
+    "State": "Virginia",
+    "lat": 37.4231,
+    "lng": -77.6366,
+    "Website": "http://www.brandermill.com"
+  },
+  {
+    "FMID": 1006926,
+    "MarketName": "Branson Farmers' Market",
+    "city": "Branson",
+    "County": "Taney",
+    "State": "Missouri",
+    "lat": 36.6432,
+    "lng": -93.2183
+  },
+  {
+    "FMID": 1007649,
+    "MarketName": "Bringing Home Grown to U 1",
+    "city": "St. Louis",
+    "County": "St. Louis",
+    "State": "Missouri",
+    "lat": 38.636,
+    "lng": -90.2443
+  },
+  {
+    "FMID": 1007650,
+    "MarketName": "Bringing Homegrown to U 2",
+    "city": "St. Louis",
+    "County": "St. Louis",
+    "State": "Missouri",
+    "lat": 38.636,
+    "lng": -90.2443
+  },
+  {
+    "FMID": 1006915,
+    "MarketName": "Brookfield Farmers' Market",
+    "city": "Brookfield",
+    "County": "Linn",
+    "State": "Missouri",
+    "lat": 39.7845,
+    "lng": -93.0735
+  },
+  {
+    "FMID": 1006993,
+    "MarketName": "Buffalo Farmers' Market",
+    "city": "Buffalo",
+    "County": "Dallas",
+    "State": "Missouri",
+    "lat": 37.6425,
+    "lng": -93.0898
+  },
+  {
+    "FMID": 1004727,
+    "MarketName": "Bushwick Farmers' Market",
+    "city": "Brooklyn",
+    "County": "Kings",
+    "State": "New York",
+    "lat": 40.6854,
+    "lng": -73.9149,
+    "Website": "http://www.EcoStationNY.org"
+  },
+  {
+    "FMID": 1007741,
+    "MarketName": "C Street Market",
+    "city": "Springfield",
+    "County": "Greene",
+    "State": "Missouri",
+    "lat": 37.2297,
+    "lng": -93.2901,
+    "Website": "http://www.itsalldowntown.com/c-streetmarket"
+  },
+  {
+    "FMID": 1007348,
+    "MarketName": "California Avenue Farmers' Market",
+    "city": "Palo Alto",
+    "County": "Santa Clara",
+    "State": "California",
+    "lat": 37.4142,
+    "lng": -122.1253,
+    "Website": "http://www.urbanvillageonline.com"
+  },
+  {
+    "FMID": 1001631,
+    "MarketName": "Cambria Farmers Market",
+    "city": "Cambria",
+    "County": "Columbia",
+    "State": "Wisconsin",
+    "lat": 43.5432,
+    "lng": -89.1032
+  },
+  {
+    "FMID": 1007349,
+    "MarketName": "Cambrian Park Farmers' Makret",
+    "city": "San Jose",
+    "County": "Santa Clara",
+    "State": "California",
+    "lat": 37.2618,
+    "lng": -121.9314,
+    "Website": "http://www.urbanvillageonline.com"
+  },
+  {
+    "FMID": 1000398,
+    "MarketName": "Cambridge Farmers Market",
+    "city": "Cambridge",
+    "County": "Washington",
+    "State": "New York",
+    "lat": 43.0279,
+    "lng": -73.3796
+  },
+  {
+    "FMID": 1007356,
+    "MarketName": "Campbell Farmers' Market",
+    "city": "Campbell",
+    "County": "Santa Clara",
+    "State": "California",
+    "lat": 37.2871,
+    "lng": -121.944,
+    "Website": "http://www.urbanvillageonline.com/"
+  },
+  {
+    "FMID": 1002058,
+    "MarketName": "Canandaigua Farmers Market",
+    "city": "Canandaigua",
+    "County": "Ontario",
+    "State": "New York",
+    "lat": 42.8854,
+    "lng": -77.2785,
+    "Website": "http://www.canandaiguafarmersmarket.com"
+  },
+  {
+    "FMID": 1001397,
+    "MarketName": "Canton Farmers Market",
+    "city": "Canton",
+    "County": "Cherokee",
+    "State": "Georgia",
+    "lat": 34.2369,
+    "lng": -84.4909,
+    "Website": "http://www.cantonhdl.com"
+  },
+  {
+    "FMID": 1005102,
+    "MarketName": "Canton Farmers' Market",
+    "city": "Canton",
+    "County": "Stark",
+    "State": "Ohio",
+    "lat": 40.7961,
+    "lng": -81.4036,
+    "Website": "http://www.cantonfarmersmarket.com"
+  },
+  {
+    "FMID": 1005325,
+    "MarketName": "Cape Ann Farmers Market",
+    "city": "Gloucester",
+    "County": "Essex",
+    "State": "Massachusetts",
+    "lat": 42.6126,
+    "lng": -70.6658,
+    "Website": "http://www.capeannfarmersmarket.org"
+  },
+  {
+    "FMID": 1005326,
+    "MarketName": "Cape Ann Farmers Market",
+    "city": "Gloucester",
+    "County": "Essex",
+    "State": "Massachusetts",
+    "lat": 42.6057,
+    "lng": -70.6775,
+    "Website": "http://www.capeannfarmersmarket.org"
+  },
+  {
+    "FMID": 1003478,
+    "MarketName": "Caribou Farmers Market",
+    "city": "Caribou",
+    "County": "Aroostook",
+    "State": "Maine",
+    "lat": 46.8706,
+    "lng": -68.0006,
+    "Website": "http://www.cariboumaine.net"
+  },
+  {
+    "FMID": 1006968,
+    "MarketName": "Carondelet Farmers' Market",
+    "city": "St. Louis",
+    "County": "St. Louis",
+    "State": "Missouri",
+    "lat": 38.5467,
+    "lng": -90.2591
+  },
+  {
+    "FMID": 1007651,
+    "MarketName": "Carthage Farmers' Market",
+    "city": "Carthage",
+    "County": "Jasper",
+    "State": "Missouri",
+    "lat": 37.1677,
+    "lng": -94.3135
+  },
+  {
+    "FMID": 1007668,
+    "MarketName": "Cass County Farmers' Market",
+    "city": "Adrian",
+    "County": "Bates",
+    "State": "Missouri",
+    "lat": 38.6591,
+    "lng": -94.3725,
+    "Website": "http://www.cassfarmers.com"
+  },
+  {
+    "FMID": 1007358,
+    "MarketName": "Castro Valley Farmers' Market",
+    "city": "Castro Valley",
+    "County": "Alameda",
+    "State": "California",
+    "lat": 37.6926,
+    "lng": -122.0739,
+    "Website": "http://www.urbanvillage@earthlink.net"
+  },
+  {
+    "FMID": 1002643,
+    "MarketName": "Catonsville Sunday Farmers Market",
+    "city": "Catonsville",
+    "County": "Baltimore",
+    "State": "Maryland",
+    "lat": 39.2723,
+    "lng": -76.7329
+  },
+  {
+    "FMID": 1001831,
+    "MarketName": "Central Valley Farmers Market",
+    "city": "Merced",
+    "County": "Merced",
+    "State": "California",
+    "lat": 37.2906,
+    "lng": -120.4805
+  },
+  {
+    "FMID": 1007672,
+    "MarketName": "Chandler Hill Farmers Market (Defiance)",
+    "city": "Defiance",
+    "County": "St. Charles",
+    "State": "Missouri",
+    "lat": 38.6341,
+    "lng": -90.8018,
+    "Website": "http://www.chandlerhillvineyards.com"
+  },
+  {
+    "FMID": 1005148,
+    "MarketName": "Charlestown Farmers Market",
+    "city": "Lake Charles",
+    "County": "Calcasieu",
+    "State": "Louisiana",
+    "lat": 30.2264,
+    "lng": -93.2177,
+    "Website": "http://www.charlestownfarmersmarket.com"
+  },
+  {
+    "FMID": 1005149,
+    "MarketName": "Charlestown Farmers Market",
+    "city": "Lake Charles",
+    "County": "Calcasieu",
+    "State": "Louisiana",
+    "lat": 30.1722,
+    "lng": -93.2504,
+    "Website": "http://www.charlestownfarmersmarket.com"
+  },
+  {
+    "FMID": 1000247,
+    "MarketName": "Chenango County Farmers Market",
+    "city": "Norwich",
+    "County": "Chenango",
+    "State": "New York",
+    "lat": 42.5315,
+    "lng": -75.5228
+  },
+  {
+    "FMID": 1003022,
+    "MarketName": "Chesterfield Farmers Market",
+    "city": "Richmond",
+    "County": "Chesterfield",
+    "State": "Virginia",
+    "lat": 37.5076,
+    "lng": -77.6093,
+    "Website": "http://www.chesterfieldfarmersmarket.blogspot.com"
+  },
+  {
+    "FMID": 1007752,
+    "MarketName": "Chilhowee Main Street Farmers' Market",
+    "city": "Chilhowee",
+    "County": "Johnson",
+    "State": "Missouri",
+    "lat": 38.5889,
+    "lng": -93.8555,
+    "Website": "http://www.mainstreetfarmersmarket.webs.com"
+  },
+  {
+    "FMID": 1001680,
+    "MarketName": "City of Grayling Farm Market",
+    "city": "Grayling",
+    "County": "Crawford",
+    "State": "Michigan",
+    "lat": 44.6658,
+    "lng": -84.7093,
+    "Website": "http://www.cityofgrayling.org"
+  },
+  {
+    "FMID": 1001681,
+    "MarketName": "City of Grayling Farm Market",
+    "city": "Grayling",
+    "County": "Crawford",
+    "State": "Michigan",
+    "lat": 44.6624,
+    "lng": -84.7159,
+    "Website": "http://www.cityofgrayling.org"
+  },
+  {
+    "FMID": 1004160,
+    "MarketName": "City of Walled Lake Farmers Market",
+    "city": "Walled Lake",
+    "County": "Oakland",
+    "State": "Michigan",
+    "lat": 42.5396,
+    "lng": -83.4662
+  },
+  {
+    "FMID": 1004216,
+    "MarketName": "Claremont Farmers and Artisans Market",
+    "city": "Claremont",
+    "County": "Sullivan",
+    "State": "New Hampshire",
+    "lat": 43.3716,
+    "lng": -72.3368
+  },
+  {
+    "FMID": 1004851,
+    "MarketName": "Clarksburg Town Center Farmers' Market",
+    "city": "CLARKSBURG",
+    "County": "Montgomery",
+    "State": "Maryland",
+    "lat": 39.2422,
+    "lng": -77.2785,
+    "Website": "http://WWW.CLARKSBURGFARMERSMARKET.COM"
+  },
+  {
+    "FMID": 1006670,
+    "MarketName": "Cleveland Farmers Market",
+    "city": "Cleveland",
+    "County": "Bolivar",
+    "State": "Mississippi",
+    "lat": 33.7441,
+    "lng": -90.724,
+    "Website": "http://www.clevelandfarmersmarket.com"
+  },
+  {
+    "FMID": 1006671,
+    "MarketName": "Cleveland Farmers Market",
+    "city": "Cleveland",
+    "County": "Bolivar",
+    "State": "Mississippi",
+    "lat": 33.7427,
+    "lng": -90.7206,
+    "Website": "http://www.clevelandfarmersmarket.com"
+  },
+  {
+    "FMID": 1003017,
+    "MarketName": "Clinch River Farmers Market",
+    "city": "St. Paul",
+    "County": "Wise",
+    "State": "Virginia",
+    "lat": 36.9098,
+    "lng": -82.7071
+  },
+  {
+    "FMID": 1002594,
+    "MarketName": "COFFO Harvest Farmers' Market",
+    "city": "Florida City",
+    "County": "Miami-Dade",
+    "State": "Florida",
+    "lat": 25.4499,
+    "lng": -80.4823,
+    "Website": "http://www.coffo.inc@coffo.org"
+  },
+  {
+    "FMID": 1002595,
+    "MarketName": "COFFO Harvest Farmers' Market",
+    "city": "Homestead",
+    "County": "Miami-Dade",
+    "State": "Florida",
+    "lat": 25.4635,
+    "lng": -80.4834,
+    "Website": "http://www.coffo.inc@coffo.org"
+  },
+  {
+    "FMID": 1001896,
+    "MarketName": "Cohoes Farmers' Market",
+    "city": "Cohoes",
+    "County": "Albany",
+    "State": "New York",
+    "lat": 42.7716,
+    "lng": -73.7007,
+    "Website": "http://www.cohoesfarmersmarket.com"
+  },
+  {
+    "FMID": 1002053,
+    "MarketName": "College Park City Hall Farmers' Market",
+    "city": "College Park",
+    "County": "Prince George's",
+    "State": "Maryland",
+    "lat": 38.981,
+    "lng": -76.9374
+  },
+  {
+    "FMID": 1002054,
+    "MarketName": "College Park Farmer's Market",
+    "city": "College Park",
+    "County": "Prince George's",
+    "State": "Maryland",
+    "lat": 38.9758,
+    "lng": -76.9227
+  },
+  {
+    "FMID": 1002316,
+    "MarketName": "Colleton Farmers Market",
+    "city": "Walterboro",
+    "County": "Colleton",
+    "State": "South Carolina",
+    "lat": 32.9036,
+    "lng": -80.6609,
+    "Website": "http://www.colletonmuseum.com/farmersmarket.aspx"
+  },
+  {
+    "FMID": 1006811,
+    "MarketName": "Columbia-Pacific Farmer's Market",
+    "city": "Long Beach",
+    "County": "Pacific",
+    "State": "Washington",
+    "lat": 46.3501,
+    "lng": -124.054,
+    "Website": "http://www.longbeachwa.gov/farmersmarket/"
+  },
+  {
+    "FMID": 1004237,
+    "MarketName": "Comfort Area Farmers Market",
+    "city": "Comfort",
+    "County": "Kendall",
+    "State": "Texas",
+    "lat": 29.9676,
+    "lng": -98.913,
+    "Website": "http://www.comfortchamberofcommerce.com/"
+  },
+  {
+    "FMID": 1001329,
+    "MarketName": "Community Farmers Market of Boynton Beach",
+    "city": "Boynton Beach",
+    "County": "Palm Beach",
+    "State": "Florida",
+    "lat": 26.5284,
+    "lng": -80.058,
+    "Website": "http://www.communityfarmersmarketsofsouthflorida.com"
+  },
+  {
+    "FMID": 1001331,
+    "MarketName": "Community Farmers Market of Plantation",
+    "city": "Plantation",
+    "County": "Broward",
+    "State": "Florida",
+    "lat": 26.1459,
+    "lng": -80.3059
+  },
+  {
+    "FMID": 1000276,
+    "MarketName": "CONECUH COUNTY FARMERS MARKET",
+    "city": "EVERGREEN",
+    "County": "Conecuh",
+    "State": "Alabama",
+    "lat": 31.4331,
+    "lng": -86.9567
+  },
+  {
+    "FMID": 1000197,
+    "MarketName": "Cool Spring Farmers Market",
+    "city": "Wilmington",
+    "County": "New Castle",
+    "State": "Delaware",
+    "lat": 39.7494,
+    "lng": -75.5573,
+    "Website": "http://www.westendnh.org"
+  },
+  {
+    "FMID": 1005035,
+    "MarketName": "Crested Butte Farmers Market",
+    "city": "Crested Butte",
+    "County": "Gunnison",
+    "State": "Colorado",
+    "lat": 38.8698,
+    "lng": -106.9875,
+    "Website": "http://www.cbfarmersmarket.org"
+  },
+  {
+    "FMID": 1006861,
+    "MarketName": "Cuba, New Mexico Farmers Market",
+    "city": "Cuba",
+    "County": "Sandoval",
+    "State": "New Mexico",
+    "lat": 36.0222,
+    "lng": -106.9584
+  },
+  {
+    "FMID": 1005735,
+    "MarketName": "Decatur Farmer's Market",
+    "city": "Decatur",
+    "County": "Adams",
+    "State": "Indiana",
+    "lat": 40.8323,
+    "lng": -84.9201,
+    "Website": "http://www.decaturindianafarmersmarket.com/default.aspx"
+  },
+  {
+    "FMID": 1006190,
+    "MarketName": "Defiance County Farmers' Markets",
+    "city": "Defiance",
+    "County": "Defiance",
+    "State": "Ohio",
+    "lat": 41.3021,
+    "lng": -84.3619,
+    "Website": "http://www.defiance.osu.edu"
+  },
+  {
+    "FMID": 1006192,
+    "MarketName": "Defiance County Farmers' Markets",
+    "city": "Sherwood",
+    "County": "Defiance",
+    "State": "Ohio",
+    "lat": 41.2899,
+    "lng": -84.5531,
+    "Website": "http://www.defiance.osu.edu"
+  },
+  {
+    "FMID": 1004276,
+    "MarketName": "Downtown Buffalo Country Market",
+    "city": "Buffalo",
+    "County": "Erie",
+    "State": "New York",
+    "lat": 42.8842,
+    "lng": -78.8749,
+    "Website": "http://www.buffaloplace.com"
+  },
+  {
+    "FMID": 1000589,
+    "MarketName": "Downtown Clermont Farmer's Market",
+    "city": "Clermont",
+    "County": "Lake",
+    "State": "Florida",
+    "lat": 28.5549,
+    "lng": -81.7678,
+    "Website": "http://www.clermontdowntownpartnership.org"
+  },
+  {
+    "FMID": 1003282,
+    "MarketName": "Downtown Johnstown Farmer's Market",
+    "city": "Johnstown",
+    "County": "Cambria",
+    "State": "Pennsylvania",
+    "lat": 40.3256,
+    "lng": -78.9183,
+    "Website": "http://www.cityofjohnstownpa.net"
+  },
+  {
+    "FMID": 1004635,
+    "MarketName": "Downtown Melbourne Farmers Market",
+    "city": "Melbourne",
+    "County": "Brevard",
+    "State": "Florida",
+    "lat": 28.0792,
+    "lng": -80.6038,
+    "Website": "http://www.tcsfoods.com"
+  },
+  {
+    "FMID": 1004072,
+    "MarketName": "Downtown San Leandro Certified Farmers' Market",
+    "city": "San Leandro",
+    "County": "Alameda",
+    "State": "California",
+    "lat": 37.7223,
+    "lng": -122.1536
+  },
+  {
+    "FMID": 1000505,
+    "MarketName": "Downtown Tulsa Farmers Market",
+    "city": "Tulsa",
+    "County": "Tulsa",
+    "State": "Oklahoma",
+    "lat": 36.154,
+    "lng": -95.9904,
+    "Website": "http://www.localharvest.org"
+  },
+  {
+    "FMID": 1001512,
+    "MarketName": "Doyle Valley Farmers Market",
+    "city": "Peabody",
+    "County": "Marion",
+    "State": "Kansas",
+    "lat": 38.1642,
+    "lng": -97.1065
+  },
+  {
+    "FMID": 1005358,
+    "MarketName": "Dublin",
+    "city": "Dublin",
+    "County": "Alameda",
+    "State": "California",
+    "lat": 37.7105,
+    "lng": -121.8738,
+    "Website": "http://www.pcfma.com"
+  },
+  {
+    "FMID": 1002544,
+    "MarketName": "Dundas Farmers Market",
+    "city": "Dundas",
+    "County": "Rice",
+    "State": "Minnesota",
+    "lat": 44.4287,
+    "lng": -93.2076
+  },
+  {
+    "FMID": 1003212,
+    "MarketName": "Eagle River Farmers' Market",
+    "city": "Eagle River",
+    "County": "Vilas",
+    "State": "Wisconsin",
+    "lat": 45.9246,
+    "lng": -89.2579,
+    "Website": "http://www.eaglerivermainstreet.org/"
+  },
+  {
+    "FMID": 1003629,
+    "MarketName": "East End Market at Bown Crossing",
+    "city": "Boise",
+    "County": "Ada",
+    "State": "Idaho",
+    "lat": 43.5743,
+    "lng": -116.1549
+  },
+  {
+    "FMID": 1005475,
+    "MarketName": "Easthampton Farmers Market",
+    "city": "Easthampton",
+    "County": "Hampshire",
+    "State": "Massachusetts",
+    "lat": 42.2654,
+    "lng": -72.6696
+  },
+  {
+    "FMID": 1003711,
+    "MarketName": "Elk Grove Certified Farmers' Market",
+    "city": "Elk Grove",
+    "County": "Sacramento",
+    "State": "California",
+    "lat": 38.4237,
+    "lng": -121.405,
+    "Website": "http://www.marketlocations.com"
+  },
+  {
+    "FMID": 1004362,
+    "MarketName": "Ellenville Farmers Market",
+    "city": "Ellenville",
+    "County": "Ulster",
+    "State": "New York",
+    "lat": 41.7161,
+    "lng": -74.3941
+  },
+  {
+    "FMID": 1003827,
+    "MarketName": "Ellsworth Farmers Market",
+    "city": "Ellsworth",
+    "County": "Hancock",
+    "State": "Maine",
+    "lat": 44.5433,
+    "lng": -68.4185,
+    "Website": "http://www.elizabethfarmersmarket.com"
+  },
+  {
+    "FMID": 1000107,
+    "MarketName": "Ely Farmers Market",
+    "city": "Ely",
+    "County": "Linn",
+    "State": "Iowa",
+    "lat": 41.8716,
+    "lng": -91.585
+  },
+  {
+    "FMID": 1000108,
+    "MarketName": "Ely Farmers Market",
+    "city": "Ely",
+    "County": "Iowa",
+    "State": "Iowa",
+    "lat": 41.8734,
+    "lng": -91.5859,
+    "Website": "http://www.elyedge.org"
+  },
+  {
+    "FMID": 1002657,
+    "MarketName": "Emmaus Farmers' Market",
+    "city": "Emmaus",
+    "County": "Lehigh",
+    "State": "Pennsylvania",
+    "lat": 40.5366,
+    "lng": -75.4903,
+    "Website": "http://www.emmausmarket.com"
+  },
+  {
+    "FMID": 1004268,
+    "MarketName": "Emmett Farmers Market",
+    "city": "Emmett",
+    "County": "Gem",
+    "State": "Idaho",
+    "lat": 43.8763,
+    "lng": -116.5006,
+    "Website": "http://www.EmmettFarmersMarket.com"
+  },
+  {
+    "FMID": 1004226,
+    "MarketName": "Empire State Plaza Farmers Market",
+    "city": "Albany",
+    "County": "Albany",
+    "State": "New York",
+    "lat": 42.6514,
+    "lng": -73.7587,
+    "Website": "http://www.ogs.ny.gov"
+  },
+  {
+    "FMID": 1005377,
+    "MarketName": "Emporia Farmers Market",
+    "city": "Emporia",
+    "County": "Emporia",
+    "State": "Virginia",
+    "lat": 36.6888,
+    "lng": -77.5415
+  },
+  {
+    "FMID": 1004525,
+    "MarketName": "Erie Farmers' Market",
+    "city": "Erie",
+    "County": "Weld",
+    "State": "Colorado",
+    "lat": 40.0492,
+    "lng": -105.0474,
+    "Website": "http://www.naturespointmarkets.com"
+  },
+  {
+    "FMID": 1003124,
+    "MarketName": "Erwin Farmers Market",
+    "city": "Erwin",
+    "County": "Harnett",
+    "State": "North Carolina",
+    "lat": 35.324,
+    "lng": -78.6473,
+    "Website": "http://www.erwin-nc.org"
+  },
+  {
+    "FMID": 1002302,
+    "MarketName": "Escondido Certified Farmers' Market",
+    "city": "Escondido",
+    "County": "San Diego",
+    "State": "California",
+    "lat": 33.1231,
+    "lng": -117.079,
+    "Website": "http://www.downtownescondido.com"
+  },
+  {
+    "FMID": 1000494,
+    "MarketName": "Esther's Place",
+    "city": "Big Rock",
+    "County": "Kane",
+    "State": "Illinois",
+    "lat": 41.7642,
+    "lng": -88.5506,
+    "Website": "http://www.esthersplacefibes.com"
+  },
+  {
+    "FMID": 1004422,
+    "MarketName": "Excelsior Farmers' Market",
+    "city": "Excelsior",
+    "County": "Hennepin",
+    "State": "Minnesota",
+    "lat": 44.9011,
+    "lng": -93.5706,
+    "Website": "http://www.excelsiorfarmersmarket.com"
+  },
+  {
+    "FMID": 1000051,
+    "MarketName": "Fairhope Outdoor Farm Market",
+    "city": "Fairhope",
+    "County": "Baldwin",
+    "State": "Alabama",
+    "lat": 30.5244,
+    "lng": -87.902
+  },
+  {
+    "FMID": 1004024,
+    "MarketName": "Farmer's Market @ Woburn's Spence Farm",
+    "city": "Woburn",
+    "County": "Middlesex",
+    "State": "Massachusetts",
+    "lat": 42.4919,
+    "lng": -71.1593,
+    "Website": "http://www.woburnfarmersmarket.com"
+  },
+  {
+    "FMID": 1001778,
+    "MarketName": "Farmers Market On Main",
+    "city": "Marshalltown",
+    "County": "Marshall",
+    "State": "Iowa",
+    "lat": 42.049,
+    "lng": -92.9121
+  },
+  {
+    "FMID": 1001646,
+    "MarketName": "Farmers' Market at Forest Park aka The Farmers' Market at the X",
+    "city": "Springfield",
+    "County": "Hampden",
+    "State": "Massachusetts",
+    "lat": 42.0797,
+    "lng": -72.5589,
+    "Website": "http://www.farmersmarketatforestpark.com"
+  },
+  {
+    "FMID": 1004476,
+    "MarketName": "Farmers' Market at The Avenue ( White Marsh)",
+    "city": "Nottingham",
+    "County": "Baltimore",
+    "State": "Maryland",
+    "lat": 39.3705,
+    "lng": -76.4677,
+    "Website": "http://www.theavenueatwhitemarsh.com"
+  },
+  {
+    "FMID": 1005486,
+    "MarketName": "Farmers' Market in the Bluffs",
+    "city": "Larue",
+    "County": "Sauk",
+    "State": "Wisconsin",
+    "lat": 43.4603,
+    "lng": -89.8671,
+    "Website": "http://www.farmersmarketinthebluffs.wordpress.com"
+  },
+  {
+    "FMID": 1003000,
+    "MarketName": "Feed Mill's Farmer's Market",
+    "city": "Hayward",
+    "County": "Sawyer",
+    "State": "Wisconsin",
+    "lat": 46.012,
+    "lng": -91.4857
+  },
+  {
+    "FMID": 1000748,
+    "MarketName": "Fishers Farmers Market",
+    "city": "Fishers",
+    "County": "Hamilton",
+    "State": "Indiana",
+    "lat": 39.9575,
+    "lng": -86.0163,
+    "Website": "http://www.fishersfarmersmarket.com"
+  },
+  {
+    "FMID": 1006490,
+    "MarketName": "Fort Madison Farmers Market",
+    "city": "Fort Madison",
+    "County": "Lee",
+    "State": "Iowa",
+    "lat": 40.6324,
+    "lng": -91.3135,
+    "Website": "http://www.fortmadison.com"
+  },
+  {
+    "FMID": 1001487,
+    "MarketName": "Founders Market",
+    "city": "Rockford",
+    "County": "Winnebago",
+    "State": "Illinois",
+    "lat": 42.2636,
+    "lng": -89.1001
+  },
+  {
+    "FMID": 1003209,
+    "MarketName": "Fountain City Farmers Market",
+    "city": "Fountain City",
+    "County": "Buffalo",
+    "State": "Wisconsin",
+    "lat": 44.1223,
+    "lng": -91.7065
+  },
+  {
+    "FMID": 1000396,
+    "MarketName": "Four Seasons Market - Richardson",
+    "city": "Richardson",
+    "County": "Dallas",
+    "State": "Texas",
+    "lat": 32.9779,
+    "lng": -96.7431,
+    "Website": "http://www.fourseasonsmarkets.com"
+  },
+  {
+    "FMID": 1000249,
+    "MarketName": "Franklin Farmers' Market",
+    "city": "Franklin",
+    "County": "Delaware",
+    "State": "New York",
+    "lat": 42.3391,
+    "lng": -75.1677
+  },
+  {
+    "FMID": 1007386,
+    "MarketName": "Full Circle Farm Stand",
+    "city": "Sunnyvale",
+    "County": "Santa Clara",
+    "State": "California",
+    "lat": 37.3449,
+    "lng": -122.0061,
+    "Website": "http://www.fullcirclesunnyvale.org"
+  },
+  {
+    "FMID": 1001963,
+    "MarketName": "Garden Shop Nursery Farmers Market",
+    "city": "Reno",
+    "County": "Washoe",
+    "State": "Nevada",
+    "lat": 39.5113,
+    "lng": -119.8556,
+    "Website": "http://www.gardenshopnursery.com"
+  },
+  {
+    "FMID": 1002300,
+    "MarketName": "Geneva Farmers Market",
+    "city": "Geneva",
+    "County": "Ontario",
+    "State": "New York",
+    "lat": 42.869,
+    "lng": -76.9809,
+    "Website": "http://www.geneva.ny.usRecfarmersmarket"
+  },
+  {
+    "FMID": 1003690,
+    "MarketName": "Gilmer County Farmers Market",
+    "city": "Glenville",
+    "County": "Gilmer",
+    "State": "West Virginia",
+    "lat": 38.9412,
+    "lng": -80.8201
+  },
+  {
+    "FMID": 1005588,
+    "MarketName": "GLENCOE",
+    "city": "GLENCOE",
+    "County": "Etowah",
+    "State": "Alabama",
+    "lat": 33.9578,
+    "lng": -85.9347
+  },
+  {
+    "FMID": 1004321,
+    "MarketName": "Good Living Marketplace",
+    "city": "Hartsville",
+    "County": "Darlington",
+    "State": "South Carolina",
+    "lat": 34.3739,
+    "lng": -80.0714,
+    "Website": "http://www.hartsvilledowntown.org"
+  },
+  {
+    "FMID": 1005994,
+    "MarketName": "Grace Community Farmers Market",
+    "city": "Frederick",
+    "County": "Frederick",
+    "State": "Maryland",
+    "lat": 39.4237,
+    "lng": -77.4918
+  },
+  {
+    "FMID": 1001530,
+    "MarketName": "Grant County Farmers' Market",
+    "city": "Williamstown",
+    "County": "Grant",
+    "State": "Kentucky",
+    "lat": 38.6644,
+    "lng": -84.5778,
+    "Website": "http://www.kyagr.com/KDAPage.aspx?id=525"
+  },
+  {
+    "FMID": 1001531,
+    "MarketName": "Grant County Farmers' Market",
+    "city": "Crittenden",
+    "County": "Grant",
+    "State": "Kentucky",
+    "lat": 38.775,
+    "lng": -84.605,
+    "Website": "http://www.kyagr.com/KDAPage.aspx?id=525"
+  },
+  {
+    "FMID": 1007222,
+    "MarketName": "Granton Farmers Market",
+    "city": "Granton",
+    "County": "Clark",
+    "State": "Wisconsin",
+    "lat": 44.5803,
+    "lng": -90.4564
+  },
+  {
+    "FMID": 1003688,
+    "MarketName": "Grantsville Farmers Market",
+    "city": "Grantsville",
+    "County": "Calhoun",
+    "State": "West Virginia",
+    "lat": 38.92,
+    "lng": -81.0934
+  },
+  {
+    "FMID": 1005933,
+    "MarketName": "Graves County Mayfield Farmers' Market",
+    "city": "Mayfield",
+    "County": "Graves",
+    "State": "Kentucky",
+    "lat": 36.7416,
+    "lng": -88.6387
+  },
+  {
+    "FMID": 1005934,
+    "MarketName": "Graves County Mayfield Farmers' Market",
+    "city": "Mayfield",
+    "County": "Graves",
+    "State": "Kentucky",
+    "lat": 36.7414,
+    "lng": -88.6352
+  },
+  {
+    "FMID": 1000151,
+    "MarketName": "Gravette Farmers' Market",
+    "city": "Gravette",
+    "County": "Benton",
+    "State": "Arkansas",
+    "lat": 36.422,
+    "lng": -94.4451,
+    "Website": "http://www.cityofgravette-ar.gov/gravettefarmersmarket.html"
+  },
+  {
+    "FMID": 1007275,
+    "MarketName": "Great Frederick Farmers' Market",
+    "city": "Frederick",
+    "County": "Frederick",
+    "State": "Maryland",
+    "lat": 39.4105,
+    "lng": -77.3934,
+    "Website": "http://www.thegreatfrederickfair.com"
+  },
+  {
+    "FMID": 1004065,
+    "MarketName": "Greater Polk County Farmers Market",
+    "city": "Bolivar",
+    "County": "Polk",
+    "State": "Missouri",
+    "lat": 37.6053,
+    "lng": -93.4347
+  },
+  {
+    "FMID": 1006396,
+    "MarketName": "Green Harvest Organic Farmers Market",
+    "city": "East Falmouth",
+    "County": "Barnstable",
+    "State": "Massachusetts",
+    "lat": 41.6177,
+    "lng": -70.5333
+  },
+  {
+    "FMID": 1001192,
+    "MarketName": "Greensboro Farmers' Market",
+    "city": "Greensboro",
+    "County": "Orleans",
+    "State": "Vermont",
+    "lat": 44.5791,
+    "lng": -72.2955
+  },
+  {
+    "FMID": 1004644,
+    "MarketName": "Haddonfield Farmers Market",
+    "city": "Haddonfield",
+    "County": "Camden",
+    "State": "New Jersey",
+    "lat": 39.8977,
+    "lng": -75.0323,
+    "Website": "http://www.haddonfieldfarmersmarket.org/"
+  },
+  {
+    "FMID": 1005877,
+    "MarketName": "Hailey Farmers' Market",
+    "city": "Hailey",
+    "County": "Blaine",
+    "State": "Idaho",
+    "lat": 43.5209,
+    "lng": -114.3167,
+    "Website": "http://www.wrfarmersmarket.org"
+  },
+  {
+    "FMID": 1004225,
+    "MarketName": "Harriman State Campus Farmers Market",
+    "city": "Albany",
+    "County": "Albany",
+    "State": "New York",
+    "lat": 42.6783,
+    "lng": -73.8088,
+    "Website": "http://www.empirestateplaza.org"
+  },
+  {
+    "FMID": 1003845,
+    "MarketName": "Hartford Farmers Market",
+    "city": "Hartford",
+    "County": "Washington",
+    "State": "Wisconsin",
+    "lat": 43.3181,
+    "lng": -88.3812
+  },
+  {
+    "FMID": 1007230,
+    "MarketName": "Hayfield Farmer Market",
+    "city": "Hayfield",
+    "County": "Dodge",
+    "State": "Minnesota",
+    "lat": 43.8924,
+    "lng": -92.8461,
+    "Website": "http://www.hayfieldchamber.com"
+  },
+  {
+    "FMID": 1005529,
+    "MarketName": "Heber Valley Farmers Market and Concert in the Park",
+    "city": "Heber City",
+    "County": "Wasatch",
+    "State": "Utah",
+    "lat": 40.5043,
+    "lng": -111.4144,
+    "Website": "http://www.ci.heber.ut.us"
+  },
+  {
+    "FMID": 1001669,
+    "MarketName": "Hicksville Farmers Market",
+    "city": "Hicksville",
+    "County": "Nassau",
+    "State": "New York",
+    "lat": 40.7638,
+    "lng": -73.5252,
+    "Website": "http://www.ligreenmarket.org"
+  },
+  {
+    "FMID": 1002312,
+    "MarketName": "Highland Farmers Market",
+    "city": "Denver",
+    "County": "Denver",
+    "State": "Colorado",
+    "lat": 39.7585,
+    "lng": -105.0112,
+    "Website": "http://www.denverhighland.org"
+  },
+  {
+    "FMID": 1005076,
+    "MarketName": "Hinsdale Farmers Market",
+    "city": "Hinsdale",
+    "County": "DuPage",
+    "State": "Illinois",
+    "lat": 41.8037,
+    "lng": -87.9287,
+    "Website": "http://www.hinsdalechamber.com"
+  },
+  {
+    "FMID": 1000201,
+    "MarketName": "Holly Springs Farmers' Market",
+    "city": "Holly Springs",
+    "County": "Marshall",
+    "State": "Mississippi",
+    "lat": 34.7731,
+    "lng": -89.4486
+  },
+  {
+    "FMID": 1005663,
+    "MarketName": "Hot Springs Farmers Market",
+    "city": "Hot Springs",
+    "County": "Sanders",
+    "State": "Montana",
+    "lat": 47.6103,
+    "lng": -114.6688
+  },
+  {
+    "FMID": 1004857,
+    "MarketName": "Howard County Farmers Market - Miller Library Branch",
+    "city": "Ellicott City",
+    "County": "Howard",
+    "State": "Maryland",
+    "lat": 39.2726,
+    "lng": -76.8381,
+    "Website": "http://www.HowardCountyFarmersMarkets.com"
+  },
+  {
+    "FMID": 1005845,
+    "MarketName": "Howard County Farmers' Market  - Oakland Mills Village Center",
+    "city": "Columbia",
+    "County": "Howard",
+    "State": "Maryland",
+    "lat": 39.2107,
+    "lng": -76.8472
+  },
+  {
+    "FMID": 1005846,
+    "MarketName": "Howard County Farmers' Market - East Columbia Library Branch",
+    "city": "Columbia",
+    "County": "Howard",
+    "State": "Maryland",
+    "lat": 39.1904,
+    "lng": -76.8468
+  },
+  {
+    "FMID": 1005844,
+    "MarketName": "Howard County Farmers' Market at Howard County General Hospital",
+    "city": "Columbia",
+    "County": "Howard",
+    "State": "Maryland",
+    "lat": 39.2133,
+    "lng": -76.8858,
+    "Website": "http://www.HowardCountyFarmersMarkets.com"
+  },
+  {
+    "FMID": 1005843,
+    "MarketName": "Howard County Farmers' Market-Glenwood Library Branch",
+    "city": "Glenwood",
+    "County": "Howard",
+    "State": "Maryland",
+    "lat": 39.2998,
+    "lng": -77.0269,
+    "Website": "http://www.HowardCountyFarmersMarket.com"
+  },
+  {
+    "FMID": 1005290,
+    "MarketName": "Huntingburg Farmers Market",
+    "city": "Huntingburg",
+    "County": "Dubois",
+    "State": "Indiana",
+    "lat": 38.2986,
+    "lng": -86.9551,
+    "Website": "http://www.huntingburgchamberofcommerce.org"
+  },
+  {
+    "FMID": 1003663,
+    "MarketName": "Hyannis Mid-Cape Farmers Market",
+    "city": "Hyannis",
+    "County": "Barnstable",
+    "State": "Massachusetts",
+    "lat": 41.6514,
+    "lng": -70.2871,
+    "Website": "http://www.midcapefarmersmarket.com"
+  },
+  {
+    "FMID": 1006282,
+    "MarketName": "Hysham Farmers Market",
+    "city": "Hysham",
+    "County": "Treasure",
+    "State": "Montana",
+    "lat": 46.2932,
+    "lng": -107.2332
+  },
+  {
+    "FMID": 1007273,
+    "MarketName": "I-71 FARMERS MARKET at Rest Stop Signpost 224",
+    "city": "Brunswick",
+    "County": "Medina",
+    "State": "Ohio",
+    "lat": 41.2222,
+    "lng": -81.7925
+  },
+  {
+    "FMID": 1006556,
+    "MarketName": "Irvington Farmers' Market",
+    "city": "Fremont",
+    "County": "Alameda",
+    "State": "California",
+    "lat": 37.5329,
+    "lng": -121.9636,
+    "Website": "http://www.pcfma.com/irvington"
+  },
+  {
+    "FMID": 1006545,
+    "MarketName": "Jefferson County Truck Growers Association",
+    "city": "Birmingham",
+    "County": "Jefferson",
+    "State": "Alabama",
+    "lat": 33.5406,
+    "lng": -86.8363,
+    "Website": "http://www.alabamafarmersmarket.org"
+  },
+  {
+    "FMID": 1001179,
+    "MarketName": "Johnson County Farmers' Market",
+    "city": "Paintsville",
+    "County": "Johnson",
+    "State": "Kentucky",
+    "lat": 37.808,
+    "lng": -82.798,
+    "Website": "http://www.johnsonextension.com"
+  },
+  {
+    "FMID": 1006573,
+    "MarketName": "Kaiser Fremont CFM",
+    "city": "Fremont",
+    "County": "Alameda",
+    "State": "California",
+    "lat": 37.552,
+    "lng": -121.975,
+    "Website": "http://www.pcfma.com/market_home.php?market_id=33"
+  },
+  {
+    "FMID": 1002541,
+    "MarketName": "Kaiser Medical Center Panorama City FM",
+    "city": "Panorama City",
+    "County": "Los Angeles",
+    "State": "California",
+    "lat": 34.2207,
+    "lng": -118.4301,
+    "Website": "http://www.sfma.net"
+  },
+  {
+    "FMID": 1002099,
+    "MarketName": "Kennedy Park Farmers Market",
+    "city": "Fall River",
+    "County": "Bristol",
+    "State": "Massachusetts",
+    "lat": 41.6953,
+    "lng": -71.1712,
+    "Website": "http://www.shelbyzoey@comcast.net"
+  },
+  {
+    "FMID": 1001664,
+    "MarketName": "Kennedy Plaza Farmers Market",
+    "city": "Long Beach",
+    "County": "Nassau",
+    "State": "New York",
+    "lat": 40.5894,
+    "lng": -73.6659
+  },
+  {
+    "FMID": 1002985,
+    "MarketName": "Kenton Farmers' Market",
+    "city": "Kenton",
+    "County": "Hardin",
+    "State": "Ohio",
+    "lat": 40.6482,
+    "lng": -83.6097
+  },
+  {
+    "FMID": 1005876,
+    "MarketName": "Ketchum Farmers' Market",
+    "city": "Ketchum",
+    "County": "Blaine",
+    "State": "Idaho",
+    "lat": 43.6826,
+    "lng": -114.3637,
+    "Website": "http://www.wrfarmersmarket.org"
+  },
+  {
+    "FMID": 1004245,
+    "MarketName": "Kinderhook Farmers Market",
+    "city": "kinderhook",
+    "County": "Columbia",
+    "State": "New York",
+    "lat": 42.396,
+    "lng": -73.6998
+  },
+  {
+    "FMID": 1001665,
+    "MarketName": "Kings Park Farmers Market",
+    "city": "Kings Park",
+    "County": "Suffolk",
+    "State": "New York",
+    "lat": 40.8848,
+    "lng": -73.255,
+    "Website": "http://www.ligreenmarket.org"
+  },
+  {
+    "FMID": 1006071,
+    "MarketName": "La Plata Farmers' Market",
+    "city": "La Plata",
+    "County": "Charles",
+    "State": "Maryland",
+    "lat": 38.5302,
+    "lng": -76.9786
+  },
+  {
+    "FMID": 1004526,
+    "MarketName": "Lafayette Farmers' Market",
+    "city": "Lafayette",
+    "County": "Boulder",
+    "State": "Colorado",
+    "lat": 39.9872,
+    "lng": -105.094,
+    "Website": "http://www.naturespointmarkets.com"
+  },
+  {
+    "FMID": 1004234,
+    "MarketName": "Lafayette Jockey Lot Flea Market",
+    "city": "Lafayette",
+    "County": "Lafayette",
+    "State": "Louisiana",
+    "lat": 30.2845,
+    "lng": -92.023,
+    "Website": "http://www.lafayettejockeylot.com"
+  },
+  {
+    "FMID": 1006660,
+    "MarketName": "Lake Mary Farmers' Market",
+    "city": "Lake Mary",
+    "County": "Seminole",
+    "State": "Florida",
+    "lat": 28.757,
+    "lng": -81.3238,
+    "Website": "http://www.lakemaryfarmersmarket.com"
+  },
+  {
+    "FMID": 1005858,
+    "MarketName": "Lake Mills Farmers' Market",
+    "city": "Lake Mills",
+    "County": "Jefferson",
+    "State": "Wisconsin",
+    "lat": 43.074,
+    "lng": -88.908,
+    "Website": "http://www.lakemillsfarmersmarket.com"
+  },
+  {
+    "FMID": 1001696,
+    "MarketName": "Lake Placid Farmers Market",
+    "city": "Lake Placid",
+    "County": "Essex",
+    "State": "New York",
+    "lat": 44.2943,
+    "lng": -73.9981,
+    "Website": "http://www.lakeplacidfarmersmarket.com"
+  },
+  {
+    "FMID": 1004736,
+    "MarketName": "Lansing City Market",
+    "city": "Lansing",
+    "County": "Ingham",
+    "State": "Michigan",
+    "lat": 42.7358,
+    "lng": -84.5472,
+    "Website": "http://www.lansingcitymarket.com"
+  },
+  {
+    "FMID": 1000702,
+    "MarketName": "Lebanon Valley Farmers Market",
+    "city": "New Lebanon",
+    "County": "Columbia",
+    "State": "New York",
+    "lat": 42.4674,
+    "lng": -73.3908,
+    "Website": "http://www.LVFM.wordpress.com"
+  },
+  {
+    "FMID": 1006711,
+    "MarketName": "Leesburg Saturday Morning Market",
+    "city": "Leesburg",
+    "County": "Lake",
+    "State": "Florida",
+    "lat": 28.8113,
+    "lng": -81.8777,
+    "Website": "http://www.leesburgsaturdaymorningmarket.com"
+  },
+  {
+    "FMID": 1002971,
+    "MarketName": "Liberty County Farmers Market",
+    "city": "Chester",
+    "County": "Liberty",
+    "State": "Montana",
+    "lat": 48.5142,
+    "lng": -110.9592,
+    "Website": "http://www.libertycountycc.com"
+  },
+  {
+    "FMID": 1002972,
+    "MarketName": "Liberty County Farmers Market",
+    "city": "Chester",
+    "County": "Liberty",
+    "State": "Montana",
+    "lat": 48.5115,
+    "lng": -110.9691,
+    "Website": "http://www.libertycountycc.com"
+  },
+  {
+    "FMID": 1002458,
+    "MarketName": "Liberty Lake Farmers' Market",
+    "city": "Liberty Lake",
+    "County": "Spokane",
+    "State": "Washington",
+    "lat": 47.671,
+    "lng": -117.1033,
+    "Website": "http://www.llfarmersmarket.com"
+  },
+  {
+    "FMID": 1004319,
+    "MarketName": "Local Harvest Farmers Mkt at the Longmeadow Shops",
+    "city": "Longmeadow",
+    "County": "Hampden",
+    "State": "Massachusetts",
+    "lat": 42.0566,
+    "lng": -72.5569
+  },
+  {
+    "FMID": 1005450,
+    "MarketName": "Lovell Farmers Market",
+    "city": "Lovell",
+    "County": "Big Horn",
+    "State": "Wyoming",
+    "lat": 44.8372,
+    "lng": -108.3879,
+    "Website": "http://www.lovellinc.org/farmersmarket.html"
+  },
+  {
+    "FMID": 1004599,
+    "MarketName": "Loyal Farmers Market",
+    "city": "Loyal",
+    "County": "Clark",
+    "State": "Wisconsin",
+    "lat": 44.7348,
+    "lng": -90.4961
+  },
+  {
+    "FMID": 1001120,
+    "MarketName": "Madison County Farmers' Market",
+    "city": "Madison",
+    "County": "Madison",
+    "State": "Virginia",
+    "lat": 38.367,
+    "lng": -78.2621,
+    "Website": "http://www.themadisonfarmersmarket.com"
+  },
+  {
+    "FMID": 1000117,
+    "MarketName": "Madison Farm to Fork Farmers Market",
+    "city": "Ennis",
+    "County": "Madison",
+    "State": "Montana",
+    "lat": 45.3492,
+    "lng": -111.7311,
+    "Website": "http://www.madisonfarmtofork.com"
+  },
+  {
+    "FMID": 1002777,
+    "MarketName": "Main Street Calumet Market",
+    "city": "Calumet",
+    "County": "Houghton",
+    "State": "Michigan",
+    "lat": 47.2454,
+    "lng": -88.4525,
+    "Website": "http://www.mainstreetcalumet.org"
+  },
+  {
+    "FMID": 1002778,
+    "MarketName": "Main Street Calumet Market",
+    "city": "Calumet",
+    "County": "Houghton",
+    "State": "Michigan",
+    "lat": 47.2454,
+    "lng": -88.451,
+    "Website": "http://www.mainstreetcalumet.org"
+  },
+  {
+    "FMID": 1005103,
+    "MarketName": "Main Street Farmers Market",
+    "city": "Gaithersburg",
+    "County": "Montgomery",
+    "State": "Maryland",
+    "lat": 39.1217,
+    "lng": -77.2387,
+    "Website": "http://www.gaithersburgmd.gov/events"
+  },
+  {
+    "FMID": 1001258,
+    "MarketName": "Main Street MArket - Roselle, Il.",
+    "city": "roselle",
+    "County": "DuPage",
+    "State": "Illinois",
+    "lat": 41.9813,
+    "lng": -88.0713,
+    "Website": "http://www.mainstreetmarketroselle.com"
+  },
+  {
+    "FMID": 1006625,
+    "MarketName": "Main Street Square Farmers' Market",
+    "city": "Rapid City",
+    "County": "Pennington",
+    "State": "South Dakota",
+    "lat": 44.0812,
+    "lng": -103.2259,
+    "Website": "http://Www.MainStreetSquareRC.Com"
+  },
+  {
+    "FMID": 1005172,
+    "MarketName": "Main Street Woodbury Farmers Market",
+    "city": "Woodbury",
+    "County": "Gloucester",
+    "State": "New Jersey",
+    "lat": 39.8367,
+    "lng": -75.15,
+    "Website": "http://www.mainstreetwoodbury.org/ls/farmersmarket.html"
+  },
+  {
+    "FMID": 1004567,
+    "MarketName": "Malcolm X Boulevard Community Farmers Market",
+    "city": "Brooklyn",
+    "County": "Kings",
+    "State": "New York",
+    "lat": 40.68,
+    "lng": -73.9282
+  },
+  {
+    "FMID": 1001511,
+    "MarketName": "Marco Island Farmers Market",
+    "city": "City of Marco Island",
+    "County": "Collier",
+    "State": "Florida",
+    "lat": 25.9519,
+    "lng": -81.7261,
+    "Website": "http://www.cityofmarcoisland.com/index.aspx?page=161"
+  },
+  {
+    "FMID": 1001259,
+    "MarketName": "Marion Farmers' Market",
+    "city": "Marion",
+    "County": "Marion",
+    "State": "Ohio",
+    "lat": 40.5829,
+    "lng": -83.0701,
+    "Website": "http://www.marionfarmersmarket.com"
+  },
+  {
+    "FMID": 1005816,
+    "MarketName": "Market at the Parkway, Richland, WA",
+    "city": "Richland",
+    "County": "Benton",
+    "State": "Washington",
+    "lat": 46.2752,
+    "lng": -119.2742,
+    "Website": "http://www.marketattheparkway.com"
+  },
+  {
+    "FMID": 1001899,
+    "MarketName": "Mayes County Farmers Market",
+    "city": "Pryor",
+    "County": "Mayes",
+    "State": "Oklahoma",
+    "lat": 36.3093,
+    "lng": -95.3159,
+    "Website": "http://www.pryorchamber.com"
+  },
+  {
+    "FMID": 1004014,
+    "MarketName": "McMinnville Farmers Market",
+    "city": "McMinnville",
+    "County": "Yamhill",
+    "State": "Oregon",
+    "lat": 45.2136,
+    "lng": -123.197,
+    "Website": "http://www.downtownmcminnville.com/mcminnville-farmers'-market"
+  },
+  {
+    "FMID": 1006189,
+    "MarketName": "Mendocino Farmers Market",
+    "city": "Mendocino",
+    "County": "Mendocino",
+    "State": "California",
+    "lat": 39.3055,
+    "lng": -123.7974,
+    "Website": "http://www.mcfarm.org"
+  },
+  {
+    "FMID": 1004575,
+    "MarketName": "Mentor Farmers' Market",
+    "city": "Mentor",
+    "County": "Polk",
+    "State": "Minnesota",
+    "lat": 47.701,
+    "lng": -96.1419,
+    "Website": "http://www.localfoods.umn.edu/mfm"
+  },
+  {
+    "FMID": 1004044,
+    "MarketName": "Metro Health Farm Market",
+    "city": "Wyoming",
+    "County": "Kent",
+    "State": "Michigan",
+    "lat": 42.8582,
+    "lng": -85.7202,
+    "Website": "http://www.metrohealth.net/livehealthy/farm-market/"
+  },
+  {
+    "FMID": 1004825,
+    "MarketName": "Mettowee Valley Farmers' Market",
+    "city": "North Rupert",
+    "County": "Rutland",
+    "State": "Vermont",
+    "lat": 43.3058,
+    "lng": -73.1559,
+    "Website": "http://www.mettoweevalleyfarmersmarket.wordpress.com"
+  },
+  {
+    "FMID": 1000673,
+    "MarketName": "Milbridge Farmer's Market",
+    "city": "Milbridge",
+    "County": "Washington",
+    "State": "Maine",
+    "lat": 44.5421,
+    "lng": -67.89
+  },
+  {
+    "FMID": 1005169,
+    "MarketName": "Minneapolis Farmers Market - East Lyndale Avenue",
+    "city": "Minneapolis",
+    "County": "Hennepin",
+    "State": "Minnesota",
+    "lat": 44.9809,
+    "lng": -93.2867,
+    "Website": "http://www.mplsfarmersmarket.com"
+  },
+  {
+    "FMID": 1005170,
+    "MarketName": "Minneapolis Farmers Market - Nicollet Mall",
+    "city": "Minneapolis",
+    "County": "Hennepin",
+    "State": "Minnesota",
+    "lat": 44.9783,
+    "lng": -93.2711,
+    "Website": "http://www.mplsfarmersmarket.com"
+  },
+  {
+    "FMID": 1006043,
+    "MarketName": "Monroe Village Farmers' Market",
+    "city": "Rochester",
+    "County": "Monroe",
+    "State": "New York",
+    "lat": 43.1436,
+    "lng": -77.5885,
+    "Website": "http://www.monroevillagefarmersmarket.org"
+  },
+  {
+    "FMID": 1007355,
+    "MarketName": "Montclair Farmers' Market",
+    "city": "Oakland",
+    "County": "Alameda",
+    "State": "California",
+    "lat": 37.8262,
+    "lng": -122.2105,
+    "Website": "http://www.urbanvillageonline.com"
+  },
+  {
+    "FMID": 1000493,
+    "MarketName": "Montezuma Winery Farmers Market",
+    "city": "Seneca Falls",
+    "County": "Seneca",
+    "State": "New York",
+    "lat": 42.95,
+    "lng": -76.7673,
+    "Website": "http://www.montezumawinery.com"
+  },
+  {
+    "FMID": 1007337,
+    "MarketName": "Montgomery County Farmers' Market",
+    "city": "Mt. Sterling",
+    "County": "Montgomery",
+    "State": "Kentucky",
+    "lat": 38.0455,
+    "lng": -83.9553
+  },
+  {
+    "FMID": 1001703,
+    "MarketName": "Morganton Farmer's Market",
+    "city": "Morganton",
+    "County": "Burke",
+    "State": "North Carolina",
+    "lat": 35.7431,
+    "lng": -81.6816,
+    "Website": "http://www.downtownmorganton.com/index.php/farmers-markets"
+  },
+  {
+    "FMID": 1005044,
+    "MarketName": "Mount Joy Farmers Market",
+    "city": "Mount Joy",
+    "County": "Lancaster",
+    "State": "Pennsylvania",
+    "lat": 40.1094,
+    "lng": -76.4986,
+    "Website": "http://www.msmj.org"
+  },
+  {
+    "FMID": 1006701,
+    "MarketName": "Mountain Certified Market",
+    "city": "Shingletown",
+    "County": "Shasta",
+    "State": "California",
+    "lat": 40.491,
+    "lng": -121.8835,
+    "Website": "http://www.mountaingrowersassociation.webs.com/"
+  },
+  {
+    "FMID": 1003710,
+    "MarketName": "Natomas Certified Farmers' Market",
+    "city": "Sacramento",
+    "County": "Sacramento",
+    "State": "California",
+    "lat": 38.6391,
+    "lng": -121.4965,
+    "Website": "http://www.California-Grown.com"
+  },
+  {
+    "FMID": 1001667,
+    "MarketName": "Nesconset Farmer's Market",
+    "city": "Nesconset",
+    "County": "Nassau",
+    "State": "New York",
+    "lat": 40.8372,
+    "lng": -73.1569,
+    "Website": "http://www.ligreenmarket.org"
+  },
+  {
+    "FMID": 1003891,
+    "MarketName": "Nevada City Farmers Market",
+    "city": "Nevada City",
+    "County": "Nevada",
+    "State": "California",
+    "lat": 39.2625,
+    "lng": -121.0172,
+    "Website": "http://www.ncfarmersmarket.org"
+  },
+  {
+    "FMID": 1005476,
+    "MarketName": "New Boston Farmers' Market",
+    "city": "New Boston",
+    "County": "Hillsborough",
+    "State": "New Hampshire",
+    "lat": 42.9762,
+    "lng": -71.6915
+  },
+  {
+    "FMID": 1004238,
+    "MarketName": "New Brunswick Community Farmers Market",
+    "city": "New Brunswick",
+    "County": "Middlesex",
+    "State": "New Jersey",
+    "lat": 40.4802,
+    "lng": -74.4446,
+    "Website": "http://www.nbcfarmersmarket.com"
+  },
+  {
+    "FMID": 1004568,
+    "MarketName": "Newberry Farmers Market",
+    "city": "Newberry",
+    "County": "Luce",
+    "State": "Michigan",
+    "lat": 46.3464,
+    "lng": -85.5092
+  },
+  {
+    "FMID": 1004704,
+    "MarketName": "North Oakland Farmer's Market - Phat Beets Produce",
+    "city": "Oakland",
+    "County": "Alameda",
+    "State": "California",
+    "lat": 37.8438,
+    "lng": -122.2768,
+    "Website": "http://www.phatbeetsproduce.org"
+  },
+  {
+    "FMID": 1000176,
+    "MarketName": "North Raleigh Farmers' Market",
+    "city": "Raleigh",
+    "County": "Wake",
+    "State": "North Carolina",
+    "lat": 35.9068,
+    "lng": -78.5887,
+    "Website": "http://www.northraleighfarmersmarket.com"
+  },
+  {
+    "FMID": 1003741,
+    "MarketName": "North Union Farmers Market at Cleveland Clinic Beachwood",
+    "city": "Beachwood",
+    "County": "Cuyahoga",
+    "State": "Ohio",
+    "lat": 41.5005,
+    "lng": -81.4892,
+    "Website": "http://www.northunionfarmersmarket.org/markets/clinic_beachwood.html"
+  },
+  {
+    "FMID": 1002897,
+    "MarketName": "North Village Arts District Farmers and Artisans Market",
+    "city": "Columbia",
+    "County": "Boone",
+    "State": "Missouri",
+    "lat": 38.9531,
+    "lng": -92.3264,
+    "Website": "http://www.farmandart.com"
+  },
+  {
+    "FMID": 1000036,
+    "MarketName": "Northeast Farmers Market",
+    "city": "Columbia",
+    "County": "Richland",
+    "State": "South Carolina",
+    "lat": 34.1774,
+    "lng": -80.8965,
+    "Website": "http://www.Lakecarolina.com"
+  },
+  {
+    "FMID": 1004428,
+    "MarketName": "Northfield Farmers' Market",
+    "city": "Northfield",
+    "County": "Franklin",
+    "State": "Massachusetts",
+    "lat": 42.7034,
+    "lng": -72.4509
+  },
+  {
+    "FMID": 1006291,
+    "MarketName": "Northville Farmers Market",
+    "city": "Northville",
+    "County": "Wayne",
+    "State": "Michigan",
+    "lat": 42.427,
+    "lng": -83.4833,
+    "Website": "http://www.northville.org/events/farmersmarket"
+  },
+  {
+    "FMID": 1005379,
+    "MarketName": "Norwich Winter Farmers Market",
+    "city": "Norwich",
+    "County": "Windsor",
+    "State": "Vermont",
+    "lat": 43.7139,
+    "lng": -72.3079,
+    "Website": "http://www.norwichfarmersmarket.org"
+  },
+  {
+    "FMID": 1001215,
+    "MarketName": "Oakhurst Farm Farmers Market",
+    "city": "West Point",
+    "County": "Harris",
+    "State": "Georgia",
+    "lat": 32.8645,
+    "lng": -85.0358,
+    "Website": "http://www.oakhurstfarmersmarket.com"
+  },
+  {
+    "FMID": 1001389,
+    "MarketName": "Oklahoma Dept. of Agriculture, Food, and Forestry (ODAFF) Farmers' Market",
+    "city": "Oklahoma City",
+    "County": "Oklahoma",
+    "State": "Oklahoma",
+    "lat": 35.4976,
+    "lng": -97.5024
+  },
+  {
+    "FMID": 1002170,
+    "MarketName": "Olalla Valley Farmers Market",
+    "city": "Olalla",
+    "County": "Kitsap",
+    "State": "Washington",
+    "lat": 47.4303,
+    "lng": -122.5587
+  },
+  {
+    "FMID": 1002634,
+    "MarketName": "Old Greenwich Farmer's Market",
+    "city": "Old Greenwich",
+    "County": "Fairfield",
+    "State": "Connecticut",
+    "lat": 41.0315,
+    "lng": -73.5718,
+    "Website": "http://www.ogfarmersmarket.com"
+  },
+  {
+    "FMID": 1007350,
+    "MarketName": "Old Oakland Farmers' Market",
+    "city": "Oakland",
+    "County": "Alameda",
+    "State": "California",
+    "lat": 37.8009,
+    "lng": -122.2733,
+    "Website": "http://www.urbanvillageonline.com"
+  },
+  {
+    "FMID": 1000772,
+    "MarketName": "Olde Lafayette Village Farmers' Market",
+    "city": "Lafayette",
+    "County": "Sussex",
+    "State": "New Jersey",
+    "lat": 41.0961,
+    "lng": -74.6868,
+    "Website": "http://www.lafayettevillageshops.com"
+  },
+  {
+    "FMID": 1005421,
+    "MarketName": "Original Farmers' Market at Indianapolis City Market",
+    "city": "Indianapolis",
+    "County": "Marion",
+    "State": "Indiana",
+    "lat": 39.7688,
+    "lng": -86.1535,
+    "Website": "http://www.indycm.com"
+  },
+  {
+    "FMID": 1004994,
+    "MarketName": "Owen Farmers Market",
+    "city": "Owen",
+    "County": "Clark",
+    "State": "Wisconsin",
+    "lat": 44.9479,
+    "lng": -90.5632,
+    "Website": "http://www.clark-cty-wi.org"
+  },
+  {
+    "FMID": 1005054,
+    "MarketName": "Owings Mills Farmers' Market",
+    "city": "Owings Mills",
+    "County": "Baltimore",
+    "State": "Maryland",
+    "lat": 39.4459,
+    "lng": -76.7707,
+    "Website": "http://www.owingsmillsfarmersmarket.com"
+  },
+  {
+    "FMID": 1004872,
+    "MarketName": "Palmyra Farmers Market",
+    "city": "PALMYRA",
+    "County": "Wayne",
+    "State": "New York",
+    "lat": 43.0616,
+    "lng": -77.2307,
+    "Website": "http://www.palmyany.com"
+  },
+  {
+    "FMID": 1002516,
+    "MarketName": "Park Township Farmers Market",
+    "city": "Holland",
+    "County": "Ottawa",
+    "State": "Michigan",
+    "lat": 42.7933,
+    "lng": -86.1627,
+    "Website": "http://www.parktownship.org/2012/05/16/farmers-market/"
+  },
+  {
+    "FMID": 1007427,
+    "MarketName": "Pearl Farmers Market",
+    "city": "Tulsa",
+    "County": "Tulsa",
+    "State": "Oklahoma",
+    "lat": 36.1522,
+    "lng": -95.9756,
+    "Website": "http://www.pearlfarmersmarket.org"
+  },
+  {
+    "FMID": 1003224,
+    "MarketName": "Perry Downtown Farmer's Market",
+    "city": "Perry",
+    "County": "Taylor",
+    "State": "Florida",
+    "lat": 30.1141,
+    "lng": -83.5826
+  },
+  {
+    "FMID": 1000929,
+    "MarketName": "Pittsford Farmers Market",
+    "city": "Pittsford",
+    "County": "Monroe",
+    "State": "New York",
+    "lat": 43.1015,
+    "lng": -77.5357
+  },
+  {
+    "FMID": 1001653,
+    "MarketName": "Point Richmond CFM",
+    "city": "Point Richmond",
+    "County": "Contra Costa",
+    "State": "California",
+    "lat": 37.9263,
+    "lng": -122.3851,
+    "Website": "http://www.pcfma.com"
+  },
+  {
+    "FMID": 1004701,
+    "MarketName": "Polson Farmers Market",
+    "city": "Polson",
+    "County": "Lake",
+    "State": "Montana",
+    "lat": 47.6934,
+    "lng": -114.1642
+  },
+  {
+    "FMID": 1001523,
+    "MarketName": "Port Warwick Mid Week Farmers Market",
+    "city": "Newport News",
+    "County": "Newport News",
+    "State": "Virginia",
+    "lat": 37.0838,
+    "lng": -76.4875,
+    "Website": "http://www.pwfarmersmarket.org"
+  },
+  {
+    "FMID": 1001632,
+    "MarketName": "Portage WI Farmers Market",
+    "city": "Portage",
+    "County": "Columbia",
+    "State": "Wisconsin",
+    "lat": 43.5394,
+    "lng": -89.4614
+  },
+  {
+    "FMID": 1006320,
+    "MarketName": "Poultney Farmers Market",
+    "city": "Poultney",
+    "County": "Rutland",
+    "State": "Vermont",
+    "lat": 43.5178,
+    "lng": -73.2361,
+    "Website": "http://www.vtfarmersmarket.org"
+  },
+  {
+    "FMID": 1002923,
+    "MarketName": "Proctor Farmers' Market",
+    "city": "Tacoma",
+    "County": "Pierce",
+    "State": "Washington",
+    "lat": 47.2719,
+    "lng": -122.4896,
+    "Website": "http://www.proctorfarmersmarket.com"
+  },
+  {
+    "FMID": 1003402,
+    "MarketName": "Puyallup Farmers' Market",
+    "city": "Puyallup",
+    "County": "Pierce",
+    "State": "Washington",
+    "lat": 47.1906,
+    "lng": -122.2939,
+    "Website": "http://www.puyallupmainstreet.com/farmersmarket"
+  },
+  {
+    "FMID": 1007346,
+    "MarketName": "Reno County Farmers Market",
+    "city": "Hutchinson",
+    "County": "Reno",
+    "State": "Kansas",
+    "lat": 38.0545,
+    "lng": -97.9339,
+    "Website": "http://www.renocountyfarmersmarket.org"
+  },
+  {
+    "FMID": 1000732,
+    "MarketName": "Rice University Farmers Market",
+    "city": "Houston",
+    "County": "Harris",
+    "State": "Texas",
+    "lat": 29.7149,
+    "lng": -95.4103,
+    "Website": "http://www.farmersmarket.rice.edu"
+  },
+  {
+    "FMID": 1004577,
+    "MarketName": "River Vale Farmer's Market",
+    "city": "River Vale",
+    "County": "Bergen",
+    "State": "New Jersey",
+    "lat": 41.0082,
+    "lng": -74.0104,
+    "Website": "http://www.rivervaqlenj.org"
+  },
+  {
+    "FMID": 1002448,
+    "MarketName": "Rochester 4 Corners Farmers Market",
+    "city": "Rochester",
+    "County": "Strafford",
+    "State": "New Hampshire",
+    "lat": 43.2989,
+    "lng": -71.0299
+  },
+  {
+    "FMID": 1003969,
+    "MarketName": "Rogue Valley Growers & Crafters Market",
+    "city": "Ashland",
+    "County": "Jackson",
+    "State": "Oregon",
+    "lat": 42.1949,
+    "lng": -122.6905,
+    "Website": "http://www.rvgrowersmarket.com"
+  },
+  {
+    "FMID": 1003970,
+    "MarketName": "Rogue Valley Growers & Crafters Market",
+    "city": "Medford",
+    "County": "Jackson",
+    "State": "Oregon",
+    "lat": 42.3114,
+    "lng": -122.8579,
+    "Website": "http://www.rvgrowersmarket.com"
+  },
+  {
+    "FMID": 1002100,
+    "MarketName": "Ruggles Park Farmers Market",
+    "city": "Fall River",
+    "County": "Bristol",
+    "State": "Massachusetts",
+    "lat": 41.703,
+    "lng": -71.1459
+  },
+  {
+    "FMID": 1002129,
+    "MarketName": "Saco Farmers' & Artisans' Market",
+    "city": "Saco",
+    "County": "York",
+    "State": "Maine",
+    "lat": 43.5028,
+    "lng": -70.4481,
+    "Website": "http://www.sacofarmersmarket.com"
+  },
+  {
+    "FMID": 1003713,
+    "MarketName": "Sacramento Central Certified Farmers' Market",
+    "city": "Sacramento",
+    "County": "Sacramento",
+    "State": "California",
+    "lat": 38.5667,
+    "lng": -121.5023,
+    "Website": "http://www.marketlocations.com"
+  },
+  {
+    "FMID": 1000620,
+    "MarketName": "Salem Farmers Market",
+    "city": "Salem",
+    "County": "Salem",
+    "State": "New Jersey",
+    "lat": 39.5722,
+    "lng": -75.4681,
+    "Website": "http://www.salemcitynj.com"
+  },
+  {
+    "FMID": 1004183,
+    "MarketName": "Salem Public Market",
+    "city": "Salem",
+    "County": "Marion",
+    "State": "Oregon",
+    "lat": 44.9209,
+    "lng": -123.03,
+    "Website": "http://www.salempublicmarket.com"
+  },
+  {
+    "FMID": 1006596,
+    "MarketName": "San Bruno Farmers' Market",
+    "city": "San Bruno",
+    "County": "San Mateo",
+    "State": "California",
+    "lat": 37.6359,
+    "lng": -122.4188,
+    "Website": "http://www.pcfma.com/sanbruno"
+  },
+  {
+    "FMID": 1007353,
+    "MarketName": "Santa Clara Farmers' Market",
+    "city": "Santa Clara",
+    "County": "Santa Clara",
+    "State": "California",
+    "lat": 37.348,
+    "lng": -121.9464,
+    "Website": "http://www.urbanvillageonline.com"
+  },
+  {
+    "FMID": 1005281,
+    "MarketName": "Santa Cruz Farmers' Market",
+    "city": "Santa Cruz",
+    "County": "Santa Cruz",
+    "State": "California",
+    "lat": 36.9725,
+    "lng": -122.027,
+    "Website": "http://www.santacruzfarmersmarket.org"
+  },
+  {
+    "FMID": 1006078,
+    "MarketName": "Santa Fe Farmers' Market",
+    "city": "Santa Fe",
+    "County": "Santa Fe",
+    "State": "New Mexico",
+    "lat": 35.6821,
+    "lng": -105.9491,
+    "Website": "http://www.santafefarmersmarket.com"
+  },
+  {
+    "FMID": 1005625,
+    "MarketName": "Saratoga Springs Community Market",
+    "city": "Saratoga springs",
+    "County": "Utah",
+    "State": "Utah",
+    "lat": 40.3845,
+    "lng": -111.9094
+  },
+  {
+    "FMID": 1002724,
+    "MarketName": "Seminole Heights Sunday Morning Market",
+    "city": "Tampa",
+    "County": "Hillsborough",
+    "State": "Florida",
+    "lat": 27.9911,
+    "lng": -82.4553,
+    "Website": "http://www.tampabaymarkets.com"
+  },
+  {
+    "FMID": 1002725,
+    "MarketName": "Seminole Heights Sunday Morning Market",
+    "city": "Tampa",
+    "County": "Hillsborough",
+    "State": "Florida",
+    "lat": 27.9364,
+    "lng": -82.4754,
+    "Website": "http://www.tampabaymarkets.com"
+  },
+  {
+    "FMID": 1002726,
+    "MarketName": "Seminole Heights Sunday Morning Market",
+    "city": "Wesley Chapel",
+    "County": "Pasco",
+    "State": "Florida",
+    "lat": 28.1886,
+    "lng": -82.3472,
+    "Website": "http://www.tampabaymarkets.com"
+  },
+  {
+    "FMID": 1003435,
+    "MarketName": "Shawano Farmers Market",
+    "city": "Shawano",
+    "County": "Shawano",
+    "State": "Wisconsin",
+    "lat": 44.7812,
+    "lng": -88.6076,
+    "Website": "http://www.shawanofarmersmarket.org"
+  },
+  {
+    "FMID": 1003066,
+    "MarketName": "Sheboygan Farmers Market",
+    "city": "Sheboygan",
+    "County": "Sheboygan",
+    "State": "Wisconsin",
+    "lat": 43.7562,
+    "lng": -87.7133,
+    "Website": "http://www.sheboygancountyinterfaith.org"
+  },
+  {
+    "FMID": 1001952,
+    "MarketName": "Shelby County Farmer's Market",
+    "city": "Shelbina",
+    "County": "Shelby",
+    "State": "Missouri",
+    "lat": 39.7059,
+    "lng": -92.0377,
+    "Website": "http://www.shelbycountymo.com"
+  },
+  {
+    "FMID": 1000485,
+    "MarketName": "Shore Fresh Growers Farmers Markets",
+    "city": "Salisbury",
+    "County": "Wicomico",
+    "State": "Maryland",
+    "lat": 38.3649,
+    "lng": -75.5969
+  },
+  {
+    "FMID": 1005205,
+    "MarketName": "Smithfield Farmers Market",
+    "city": "Smithfield",
+    "County": "Johnston",
+    "State": "North Carolina",
+    "lat": 35.5105,
+    "lng": -78.3452,
+    "Website": "http://www.smithfield-nc.com/farmersmarket"
+  },
+  {
+    "FMID": 1002579,
+    "MarketName": "Solon Springs Family Fun Days Farmers' Market",
+    "city": "Solon Springs",
+    "County": "Douglas",
+    "State": "Wisconsin",
+    "lat": 46.3533,
+    "lng": -91.8224
+  },
+  {
+    "FMID": 1002758,
+    "MarketName": "South Carolina State Farmers Market",
+    "city": "West Columbia",
+    "County": "Lexington",
+    "State": "South Carolina",
+    "lat": 33.9027,
+    "lng": -81.0644
+  },
+  {
+    "FMID": 1007290,
+    "MarketName": "South Madison Farmers Market",
+    "city": "Madison",
+    "County": "Dane",
+    "State": "Wisconsin",
+    "lat": 43.05,
+    "lng": -89.394
+  },
+  {
+    "FMID": 1007291,
+    "MarketName": "South Madison Farmers Market",
+    "city": "Madison",
+    "County": "Dane",
+    "State": "Wisconsin",
+    "lat": 43.036,
+    "lng": -89.3792,
+    "Website": "http://www.southmadisonfarmersmarket.com"
+  },
+  {
+    "FMID": 1002313,
+    "MarketName": "South Pearl Street Farmers' Market",
+    "city": "Denver",
+    "County": "Denver",
+    "State": "Colorado",
+    "lat": 39.6885,
+    "lng": -104.9805,
+    "Website": "http://www.southpearlstreet.com"
+  },
+  {
+    "FMID": 1001174,
+    "MarketName": "South Perry Farmers' Market",
+    "city": "Spokane",
+    "County": "Spokane",
+    "State": "Washington",
+    "lat": 47.6466,
+    "lng": -117.39,
+    "Website": "http://www.thursdaymarket.org"
+  },
+  {
+    "FMID": 1005441,
+    "MarketName": "South Wedge Farmers Market",
+    "city": "Rochester",
+    "County": "Monroe",
+    "State": "New York",
+    "lat": 43.146,
+    "lng": -77.6024,
+    "Website": "http://www.swfarmersmarket.org"
+  },
+  {
+    "FMID": 1004318,
+    "MarketName": "Springville Farmers' Market",
+    "city": "Springville",
+    "County": "Linn",
+    "State": "Iowa",
+    "lat": 42.0607,
+    "lng": -91.4428,
+    "Website": "http://www.springville-sedc.org"
+  },
+  {
+    "FMID": 1000165,
+    "MarketName": "St. Bernard Seafood & Farmers' Market",
+    "city": "Arabi",
+    "County": "St. Bernard",
+    "State": "Louisiana",
+    "lat": 29.9511,
+    "lng": -90.006
+  },
+  {
+    "FMID": 1007264,
+    "MarketName": "St. Charles Farmers Market",
+    "city": "St. Charles",
+    "County": "Kane",
+    "State": "Illinois",
+    "lat": 41.9145,
+    "lng": -88.3098,
+    "Website": "http://www.bakermemorialchurch.org"
+  },
+  {
+    "FMID": 1003815,
+    "MarketName": "Stone Gardens Farmers' Market",
+    "city": "New Hampton",
+    "County": "Belknap",
+    "State": "New Hampshire",
+    "lat": 43.6548,
+    "lng": -71.5615
+  },
+  {
+    "FMID": 1005541,
+    "MarketName": "Strasburg Farmers Market",
+    "city": "Strasburg",
+    "County": "Lancaster",
+    "State": "Pennsylvania",
+    "lat": 39.9853,
+    "lng": -76.1916,
+    "Website": "http://www.strasburgfarmmarket.com"
+  },
+  {
+    "FMID": 1002322,
+    "MarketName": "Summit Farmers Market",
+    "city": "Summit",
+    "County": "Union",
+    "State": "New Jersey",
+    "lat": 40.719,
+    "lng": -74.3587,
+    "Website": "http://www.summitdowntown.org"
+  },
+  {
+    "FMID": 1007351,
+    "MarketName": "Sunnyvale Farmers' Market",
+    "city": "Sunnyvale",
+    "County": "Santa Clara",
+    "State": "California",
+    "lat": 37.3714,
+    "lng": -122.0072,
+    "Website": "http://www.urbanvillageonline.com"
+  },
+  {
+    "FMID": 1002647,
+    "MarketName": "Sunrise Station Certified Farmers' Market",
+    "city": "Rancho Cordova",
+    "County": "Sacramento",
+    "State": "California",
+    "lat": 38.6056,
+    "lng": -121.2694,
+    "Website": "http://www.marketlocations.com"
+  },
+  {
+    "FMID": 1007354,
+    "MarketName": "Temescal Farmers' Market",
+    "city": "Oakland",
+    "County": "Alameda",
+    "State": "California",
+    "lat": 37.8395,
+    "lng": -122.2604,
+    "Website": "http://www.urbanvillageonline.com"
+  },
+  {
+    "FMID": 1000016,
+    "MarketName": "Texarkana, Texas Farmers' Market",
+    "city": "Texarkana",
+    "County": "Bowie",
+    "State": "Texas",
+    "lat": 33.4215,
+    "lng": -94.0458,
+    "Website": "http://www.localharvest.org/texarkana-texas-farmers-market-M38382"
+  },
+  {
+    "FMID": 1000229,
+    "MarketName": "The Convivium",
+    "city": "Leo",
+    "County": "Allen",
+    "State": "Indiana",
+    "lat": 41.2292,
+    "lng": -85.0076
+  },
+  {
+    "FMID": 1003392,
+    "MarketName": "The Farmers Market at the Great Park",
+    "city": "Irvine",
+    "County": "Orange",
+    "State": "California",
+    "lat": 33.6652,
+    "lng": -117.7491,
+    "Website": "http://www.orange.cfbf.com/"
+  },
+  {
+    "FMID": 1000336,
+    "MarketName": "The Garden Patch",
+    "city": "Mansura",
+    "County": "Avoyelles",
+    "State": "Louisiana",
+    "lat": 31.0652,
+    "lng": -92.0441,
+    "Website": "http://www.lsuagcenter.com"
+  },
+  {
+    "FMID": 1001297,
+    "MarketName": "The GROVE Farmer's Market",
+    "city": "Atlanta",
+    "County": "DeKalb",
+    "State": "Georgia",
+    "lat": 33.7389,
+    "lng": -84.3256
+  },
+  {
+    "FMID": 1003684,
+    "MarketName": "The Heritage Harvest Certified Farmers Market",
+    "city": "Rancho Cucamonga",
+    "County": "San Bernardino",
+    "State": "California",
+    "lat": 34.1109,
+    "lng": -117.5323,
+    "Website": "http://www.heritagefarmersmarket.blogspot.com"
+  },
+  {
+    "FMID": 1003379,
+    "MarketName": "The Lexington Farmers' Market",
+    "city": "Lexington",
+    "County": "Fayette",
+    "State": "Kentucky",
+    "lat": 38.0175,
+    "lng": -84.5262,
+    "Website": "http://www.lexingtonfarmersmarket.com"
+  },
+  {
+    "FMID": 1006069,
+    "MarketName": "The Minturn Market",
+    "city": "Minturn",
+    "County": "Eagle",
+    "State": "Colorado",
+    "lat": 39.5884,
+    "lng": -106.4315,
+    "Website": "http://www.minturnmarket.org"
+  },
+  {
+    "FMID": 1002645,
+    "MarketName": "The NW Regional Food Hub / ShopTheNorthwest.com",
+    "city": "Richland",
+    "County": "Benton",
+    "State": "Washington",
+    "lat": 46.2741,
+    "lng": -119.2807,
+    "Website": "http://www.ShopTheNorthwest.com"
+  },
+  {
+    "FMID": 1006521,
+    "MarketName": "The Yard Project",
+    "city": "Webstere",
+    "County": "Merrimack",
+    "State": "New Hampshire",
+    "lat": 43.331,
+    "lng": -71.7167,
+    "Website": "http://www.theyardproject.com/articulture"
+  },
+  {
+    "FMID": 1004600,
+    "MarketName": "Thorp Farmer's Market",
+    "city": "Thorp",
+    "County": "Clark",
+    "State": "Wisconsin",
+    "lat": 44.959,
+    "lng": -90.7983
+  },
+  {
+    "FMID": 1006481,
+    "MarketName": "Torrance Certified Farmers' Market -Tuesday and saturday- 2200 Crenshaw Blvd Torrance,Ca.90501",
+    "city": "Torrance",
+    "County": "Los Angeles",
+    "State": "California",
+    "lat": 33.8249,
+    "lng": -118.3284
+  },
+  {
+    "FMID": 1002152,
+    "MarketName": "Tower View Market",
+    "city": "Live Oak",
+    "County": "Suwannee",
+    "State": "Florida",
+    "lat": 30.2972,
+    "lng": -82.9814,
+    "Website": "http://www.towerviewmarket.com"
+  },
+  {
+    "FMID": 1006729,
+    "MarketName": "TRAVELERS REST COMMUNITY FARMERS MARKET",
+    "city": "Travelers Rest",
+    "County": "Greenville",
+    "State": "South Carolina",
+    "lat": 34.9676,
+    "lng": -82.4437,
+    "Website": "http://www.trfarmersmarket.com"
+  },
+  {
+    "FMID": 1001439,
+    "MarketName": "TS Smith & Sons",
+    "city": "Bridgeville",
+    "County": "Sussex",
+    "State": "Delaware",
+    "lat": 38.7499,
+    "lng": -75.597,
+    "Website": "http://www.tssmithandsons.com"
+  },
+  {
+    "FMID": 1006486,
+    "MarketName": "Turtle Lake Farmer's Market",
+    "city": "Turtle Lake",
+    "County": "Barron",
+    "State": "Wisconsin",
+    "lat": 45.3951,
+    "lng": -92.1537,
+    "Website": "http://www.villageofturtlelake.com/farmers_market.htm"
+  },
+  {
+    "FMID": 1000113,
+    "MarketName": "Tuscaloosa  County Truck Growers Association",
+    "city": "Northport",
+    "County": "Tuscaloosa",
+    "State": "Alabama",
+    "lat": 33.2194,
+    "lng": -87.591,
+    "Website": "http://www.tuscaloosafarmersmarket.com"
+  },
+  {
+    "FMID": 1001001,
+    "MarketName": "UK Robinson Center Farmers Market",
+    "city": "Jackson",
+    "County": "Breathitt",
+    "State": "Kentucky",
+    "lat": 37.5353,
+    "lng": -83.348,
+    "Website": "http://www2.ca.uky.edu/rcars"
+  },
+  {
+    "FMID": 1006408,
+    "MarketName": "University Avenue Farmers' Market",
+    "city": "Waterloo",
+    "County": "Black Hawk",
+    "State": "Iowa",
+    "lat": 42.5053,
+    "lng": -92.4038
+  },
+  {
+    "FMID": 1004464,
+    "MarketName": "Urbana's Market at the Square",
+    "city": "Urbana",
+    "County": "Champaign",
+    "State": "Illinois",
+    "lat": 40.1096,
+    "lng": -88.2054,
+    "Website": "http://www.urbanaillinois.us/market"
+  },
+  {
+    "FMID": 1006051,
+    "MarketName": "Ventnor International Farmers Market",
+    "city": "Ventnor City",
+    "County": "Atlantic",
+    "State": "New Jersey",
+    "lat": 39.3368,
+    "lng": -74.4822,
+    "Website": "http://www.ventnorbeautification.com"
+  },
+  {
+    "FMID": 1004462,
+    "MarketName": "Vestal Farmers Market",
+    "city": "Vestal",
+    "County": "Broome",
+    "State": "New York",
+    "lat": 42.0876,
+    "lng": -76.0464
+  },
+  {
+    "FMID": 1005831,
+    "MarketName": "Victor Farmers' Market",
+    "city": "Victor",
+    "County": "Ontario",
+    "State": "New York",
+    "lat": 42.9813,
+    "lng": -77.4086,
+    "Website": "http://www.victorldc.org"
+  },
+  {
+    "FMID": 1003345,
+    "MarketName": "Virginia Street Farmers Market",
+    "city": "Richmond",
+    "County": "Richmond City",
+    "State": "Virginia",
+    "lat": 37.534,
+    "lng": -77.4336,
+    "Website": "http://www.growrva.com"
+  },
+  {
+    "FMID": 1000857,
+    "MarketName": "Voorhees Town Center Farmers Market",
+    "city": "Voorhees",
+    "County": "Camden",
+    "State": "New Jersey",
+    "lat": 39.8506,
+    "lng": -75.0027,
+    "Website": "http://www.voorheestowncenter.com/about_us/farmers_market"
+  },
+  {
+    "FMID": 1006414,
+    "MarketName": "Walden Farmers Market at Woosters Grove",
+    "city": "Walden",
+    "County": "Orange",
+    "State": "New York",
+    "lat": 41.5634,
+    "lng": -74.1768,
+    "Website": "http://www.villageofwalden.org"
+  },
+  {
+    "FMID": 1004285,
+    "MarketName": "Ware Farmers' Market",
+    "city": "Ware",
+    "County": "Hampshire",
+    "State": "Massachusetts",
+    "lat": 42.2565,
+    "lng": -72.2501,
+    "Website": "http://www.warefarmersmarket.org"
+  },
+  {
+    "FMID": 1001956,
+    "MarketName": "Waterford Farmers' Market",
+    "city": "Waterford",
+    "County": "New London",
+    "State": "Connecticut",
+    "lat": 41.343,
+    "lng": -72.1315,
+    "Website": "http://www.waterfordfarmersmarket.wordpress.com"
+  },
+  {
+    "FMID": 1005795,
+    "MarketName": "Watertown Saturday Farmers Market",
+    "city": "Watertown",
+    "County": "Jefferson",
+    "State": "New York",
+    "lat": 43.9749,
+    "lng": -75.9097
+  },
+  {
+    "FMID": 1003226,
+    "MarketName": "Waukesha Farmers Market",
+    "city": "Waukesha",
+    "County": "Waukesha",
+    "State": "Wisconsin",
+    "lat": 43.0126,
+    "lng": -88.2313,
+    "Website": "http://www.downtownwaukesha.com/farmers-market.php"
+  },
+  {
+    "FMID": 1001705,
+    "MarketName": "Wayne County Farmers Market",
+    "city": "Torrey",
+    "County": "Wayne",
+    "State": "Utah",
+    "lat": 38.299,
+    "lng": -111.425
+  },
+  {
+    "FMID": 1003193,
+    "MarketName": "Weaverville Tailgate Market",
+    "city": "Weaverville",
+    "County": "Buncombe",
+    "State": "North Carolina",
+    "lat": 35.6907,
+    "lng": -82.5691,
+    "Website": "http://www.weavervilletailgate.org/"
+  },
+  {
+    "FMID": 1003220,
+    "MarketName": "Wellesley Farmers' Market",
+    "city": "WELLESLEY",
+    "County": "Suffolk",
+    "State": "Massachusetts",
+    "lat": 42.2946,
+    "lng": -71.3033,
+    "Website": "http://www.wellesleyfarmersmarket.com"
+  },
+  {
+    "FMID": 1001482,
+    "MarketName": "Wellsville Farmer's Market",
+    "city": "Wellsville",
+    "County": "Allegany",
+    "State": "New York",
+    "lat": 42.121,
+    "lng": -77.9475
+  },
+  {
+    "FMID": 1003281,
+    "MarketName": "West End Farmer's Market",
+    "city": "Johnstown",
+    "County": "Cambria",
+    "State": "Pennsylvania",
+    "lat": 40.3398,
+    "lng": -78.929,
+    "Website": "http://www.cityofjohnstownpa.net"
+  },
+  {
+    "FMID": 1005008,
+    "MarketName": "Whitefish Downtown Farmers Market",
+    "city": "Whitefish",
+    "County": "Flathead",
+    "State": "Montana",
+    "lat": 48.4125,
+    "lng": -114.3367,
+    "Website": "http://www.whitefishfarmersmarket.org"
+  },
+  {
+    "FMID": 1003508,
+    "MarketName": "Wildwood Growers' Market",
+    "city": "Wildwood",
+    "County": "Sumter",
+    "State": "Florida",
+    "lat": 28.8543,
+    "lng": -82.0408,
+    "Website": "http://www.wildwood-fl.gov"
+  },
+  {
+    "FMID": 1004578,
+    "MarketName": "Winfield Farmers' Market (Illinois)",
+    "city": "Winfield",
+    "County": "DuPage",
+    "State": "Illinois",
+    "lat": 41.8876,
+    "lng": -88.1515,
+    "Website": "http://www.westerndupagechamber.com"
+  },
+  {
+    "FMID": 1004296,
+    "MarketName": "Wiregrass Farmers Market",
+    "city": "Tifton",
+    "County": "Tift",
+    "State": "Georgia",
+    "lat": 31.4644,
+    "lng": -83.5338,
+    "Website": "http://www.wiregrassfarmersmarket.wordpress.com/"
+  },
+  {
+    "FMID": 1005510,
+    "MarketName": "Woods Farmers Market",
+    "city": "South Chesterfield",
+    "County": "Chesterfield",
+    "State": "Virginia",
+    "lat": 37.2644,
+    "lng": -77.4952
+  },
+  {
+    "FMID": 1002569,
+    "MarketName": "Worcester/Main South",
+    "city": "Worcester",
+    "County": "Worcester",
+    "State": "Massachusetts",
+    "lat": 42.2565,
+    "lng": -71.8106
+  },
+  {
+    "FMID": 1003473,
+    "MarketName": "Worland - Ten Sleep Farmer's Market",
+    "city": "Worland",
+    "County": "Washakie",
+    "State": "Wyoming",
+    "lat": 44.017,
+    "lng": -107.9572
+  },
+  {
+    "FMID": 1003525,
+    "MarketName": "Yachats Farmers Market",
+    "city": "Yachats",
+    "County": "Lincoln",
+    "State": "Oregon",
+    "lat": 44.3124,
+    "lng": -124.1044
+  },
+  {
+    "FMID": 1004658,
+    "MarketName": "York Farmers Market",
+    "city": "York",
+    "County": "York",
+    "State": "Nebraska",
+    "lat": 40.8712,
+    "lng": -97.5956,
+    "Website": "http://www.yorkchamber.org"
+  },
+  {
+    "FMID": 1003731,
+    "MarketName": "Yuba City Certified Farmers Market-Saturday",
+    "city": "Yuab City",
+    "County": "Sutter",
+    "State": "California",
+    "lat": 39.1332,
+    "lng": -121.6138
+  }
+]

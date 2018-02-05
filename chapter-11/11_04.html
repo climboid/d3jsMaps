@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>11 Hexbin maps - example 4</title>
+<meta charset="utf-8">
+
+<script src="//d3js.org/d3.v5.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="//d3js.org/d3-color.v1.min.js"></script> 
+<script src="//d3js.org/d3-interpolate.v1.min.js"></script> 
+<script src="//d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="//d3js.org/d3-hexbin.v0.2.min.js"></script>
+
+<style type="text/css">
+
+body {
+	font-family: Avenir, sans-serif;
+}
+
+#vis svg {
+	border: 1px solid #ccc;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div id="vis"></div>
+
+
+<script>
+
+
+/* Globals and SVG */
+/* =============== */
+
+var projection,
+		hexRadius,
+		hexbin;
+
+
+var margin = { top: 30, right: 30, bottom: 30, left: 30 },
+		width = 900 - margin.left - margin.right,
+		height = 600 - margin.top - margin.bottom;
+
+var svg = d3.select('#vis')
+	.append('svg')
+		.attr('width', width + margin.left + margin.top)
+		.attr('height', height + margin.top + margin.bottom)
+	.append('g')
+		.attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
+
+
+
+/* Functions */
+/* ========= */
+
+function drawHexmap(points) {
+
+	var hexes = svg.append('g').attr('id', 'hexes')
+			.selectAll('.hex')
+		.data(points)
+		.enter().append('path')
+			.attr('class', 'hex')
+			.attr('transform', function(d) { return 'translate(' + d.x + ', ' + d.y + ')'; })
+			.attr('d', hexbin.hexagon())
+			.style('fill', '#fff')
+			.style('stroke', '#ccc')
+			.style('stroke-width', 1);
+
+} // drawHexmap()
+
+function getHexPoints(points) {
+
+	hexbin = d3.hexbin() // note: global
+		.radius(hexRadius)
+		.x(function(d) { return d.x; })
+		.y(function(d) { return d.y; });
+
+	var hexPoints = hexbin(points);
+
+	return hexPoints;
+
+} // getHexPoints()
+
+function keepPointsInPolygon(points, polygon) {
+
+	var pointsInPolygon = [];
+	points.forEach(function(el) {
+
+		var inPolygon = d3.polygonContains(polygon, [el.x, el.y]);
+		if (inPolygon) pointsInPolygon.push(el);
+
+	});
+
+	return pointsInPolygon;
+
+} // keepPointsInPolygon()
+
+function getPolygonPoints(data) {
+
+	var features = data.features[0].geometry.coordinates[7][0];
+
+	var polygonPoints = [];
+	features.forEach(function(el) {
+		polygonPoints.push(projection(el));
+	});
+
+	return polygonPoints;
+
+} // getPolygonPoints()
+
+function drawPointGrid(data, color) {
+
+	svg.append('g').attr('id', 'circles')
+			.selectAll('.dot')
+		.data(data)
+		.enter().append('circle')
+			.attr('cx', function(d) { return d.x; })
+			.attr('cy', function(d) { return d.y; })
+			.attr('r', 1)
+			.attr('fill', color);
+
+} // drawPointGrid()
+
+function getPointGrid(cols) {
+
+	var hexDistance = width / cols;
+	var rows = Math.floor(height / hexDistance);
+	
+	hexRadius = hexDistance/1.5;
+
+  return d3.range(rows * cols).map(function(el, i) {
+
+  	return {
+  		x: i % cols * hexDistance,
+  		y: Math.floor(i / cols) * hexDistance,
+  		datapoint: 0
+  	};
+
+  });
+
+} // getPointGrid()
+
+function drawGeo(data) {
+
+	projection = d3.geoAlbers() // note: global
+	  .scale(1000).translate([width/2, height/2]);
+
+	var geoPath = d3.geoPath()
+		.projection(projection);
+
+	svg
+		.append('path')
+		.datum(data)
+		.attr('d', geoPath)
+		.attr('fill', 'none');
+
+} // drawGeo()
+
+function prepData(topo) {
+
+	var geo = topojson.feature(topo, topo.objects.us);
+
+	return geo;
+
+} // prepData()
+
+
+
+/* Load and build steps */
+/* ==================== */
+
+function ready(us) {
+
+	var us = prepData(us);
+
+	console.log(us);
+
+	drawGeo(us);
+
+	var points = getPointGrid(160);
+
+	var polygonPoints = getPolygonPoints(us);
+
+	var usPoints = keepPointsInPolygon(points, polygonPoints);
+
+	var hexPoints = getHexPoints(usPoints);
+
+	console.log(hexPoints);
+
+
+	drawHexmap(hexPoints);
+
+	// drawPointGrid(points, 'steelblue');
+	// drawPointGrid(usPoints, 'tomato');
+	// drawPointGrid(hexPoints, 'steelblue');
+
+} // ready()
+
+// Load data sources
+d3.json('data/us.json').then(ready);
+
+
+</script>
+
+</html>
