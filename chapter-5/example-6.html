@@ -22,7 +22,7 @@
 </head>
 <body>
   <div id="map"></div>
-  <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+  <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
   <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.js"></script>
 
   <script>
@@ -53,7 +53,7 @@
       .attr("width", width)
       .attr("height", height);
 
-  d3.json('world.json', function(data) {
+  d3.json('world.json').then(function(data) {
     var countries = topojson.feature(data, data.objects.countries);
     var m = countries.features[102];
 

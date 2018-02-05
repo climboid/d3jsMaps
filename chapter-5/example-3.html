@@ -24,7 +24,7 @@
 
 <body>
   <div id="map"></div>
-  <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+  <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
   <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.js"></script>
 
   <script>
@@ -42,7 +42,7 @@
   };
 
   // New function
-  var zoom = d3.zoom() // todo change behavior.zoom() to its equivalent in d3v4
+  var zoom = d3.zoom()
     .scaleExtent([1, 8])
     .on("zoom", zoomed);
 
@@ -53,7 +53,7 @@
       .attr("width", width)
       .attr("height", height);
 
-  d3.json('geo-data.json', function(data) {
+  d3.json('geo-data.json').then(function(data) {
     var states = topojson.feature(data, data.objects.MEX_adm1);
 
     var b, s, t;

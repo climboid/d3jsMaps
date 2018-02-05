@@ -24,7 +24,7 @@
   </head>
   <body>
 
-  <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+  <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
   <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.js"></script>
 
     <script>
@@ -40,7 +40,7 @@
         .attr("width", width)
         .attr("height", height);
 
-      d3.json("europe.json", function(error, eu) {
+      d3.json("europe.json").then(function(eu) {
         var countries = topojson.feature(eu, eu.objects.continent_Europe_subunits)
         projection.scale(1).translate([0, 0]);
 
