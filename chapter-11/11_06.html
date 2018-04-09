@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 
 <script src="//d3js.org/d3.v5.min.js"></script>
-<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="//d3js.org/topojson.v3.min.js"></script>
 <script src="//d3js.org/d3-color.v1.min.js"></script> 
 <script src="//d3js.org/d3-interpolate.v1.min.js"></script> 
 <script src="//d3js.org/d3-scale-chromatic.v1.min.js"></script>
@@ -284,8 +284,8 @@ function ready(us, markets) {
 } // ready()
 
 // Load data sources
-var usData = d3.json('data/us.json').then(function(us) { return us; });
-var marketData = d3.json('data/markets_overall.json').then(function(markets) { return markets; });
+var usData = d3.json('data/us.json');
+var marketData = d3.json('data/markets_overall.json');
 
 Promise.all([usData, marketData]).then(function(response) {
 
